@@ -1,0 +1,30 @@
+# This file was created Wed May 28 13:14:35 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2024.1 (-:
+# 
+# Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+# Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+# Working dir:  /work/rstric2s/current_sim/Application/02-1-C4H9Br_EP
+# Command line:
+#   gmx energy -f 12_nvt.edr -o 12_potential
+# gmx energy is part of G R O M A C S:
+#
+# Gravel Rubs Often Many Awfully Cauterized Sores
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  6059.754395
+   20.000000  -1346.519043
+   40.000000  -1501.530762
+   60.000000  -1375.420898
+   80.000000  -1349.727417
+  100.000000  -1402.877441

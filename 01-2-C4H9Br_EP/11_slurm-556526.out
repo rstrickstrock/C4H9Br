@@ -1,0 +1,67 @@
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/2-C4H9Br_EP
+Command line:
+  gmx grompp -f 01_emin.mdp -c 01_filledbox_2-bromobutane-ep.gro -p topol.top -o 11_emin.tpr
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group rest is 259221.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 1 [file 01_emin.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+There was 1 NOTE
+
+GROMACS reminds you: "Martin [Karplus] had a green laser, Arieh [Warshel] had a red laser, I have a *blue* laser" (Michael Levitt, Nobel lecture 2013)
+
+Setting the LD random seed to -567345481
+
+Generated 331705 of the 331705 non-bonded parameter combinations
+
+Generated 331705 of the 331705 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Other'
+
+Cleaning up constraints and constant bonded interactions with virtual sites
+Analysing residue names:
+There are:  6172      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+This run will generate roughly 7 Mb of data
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/2-C4H9Br_EP
+Command line:
+  gmx mdrun -deffnm 11_emin
+
+Reading file 11_emin.tpr, VERSION 2024.1 (single precision)
+Update groups can not be used for this system because the construction atoms of a virtual site are only partly with a group of constrained atoms
+
+Using 1 MPI thread
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 1 OpenMP thread 
+
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+03
+   Number of steps    =        50000
+
+writing lowest energy coordinates.
+
+Steepest Descents converged to Fmax < 1000 in 440 steps
+Potential Energy  = -1.1802173e+05
+Maximum force     =  8.2241821e+02 on atom 91606
+Norm of force     =  2.7872554e+01
+
+GROMACS reminds you: "Some People Say Not to Worry About the Air" (The Talking Heads)
+

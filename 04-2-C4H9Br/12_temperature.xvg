@@ -1,0 +1,30 @@
+# This file was created Mon Jun  2 09:28:10 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2024.1 (-:
+# 
+# Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+# Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+# Working dir:  /work/rstric2s/current_sim/Application/04-2-C4H9Br
+# Command line:
+#   gmx energy -f 12_nvt.edr -o 12_temperature
+# gmx energy is part of G R O M A C S:
+#
+# Getting the Right Output Means no Artefacts in Calculating Stuff
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(K)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Temperature"
+    0.000000  245.329453
+   20.000000  249.833344
+   40.000000  246.726044
+   60.000000  248.087311
+   80.000000  244.834427
+  100.000000  245.395020

@@ -1,0 +1,82 @@
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/1-C4H9Br
+Command line:
+  gmx grompp -f 03_npt.mdp -c 12_nvt.gro -t 12_nvt.trr -p topol.top -o 13_npt.tpr
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file 03_npt.mdp]:
+  verlet-buffer-pressure-tolerance is ignored when verlet-buffer-tolerance
+  < 0
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group Other is 203739.00
+trr version: GMX_trn_file (single precision)
+Reading frame       0 time    0.000   Reading frame       1 time   20.000   Reading frame       2 time   40.000   Reading frame       3 time   60.000   Reading frame       4 time   80.000   Reading frame       5 time  100.000   Last frame          5 time  100.000   
+
+There was 1 NOTE
+
+GROMACS reminds you: "Protons give an atom its identity, electrons its personality." (Bill Bryson)
+
+Setting the LD random seed to -142906401
+
+Generated 331705 of the 331705 non-bonded parameter combinations
+
+Generated 331705 of the 331705 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Other'
+
+turning H bonds into constraints...
+Analysing residue names:
+There are:  6174      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+The largest distance between excluded atoms is 0.452 nm between atom 52743 and 52752
+
+Reading Coordinates, Velocities and Box size from old trajectory
+
+Will read whole trajectory
+
+Using frame at t = 100 ps
+
+Starting time for run is 0 ps
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 72x72x72, spacing 0.147 0.147 0.147
+
+Estimate for the relative computational load of the PME mesh part: 0.26
+
+This run will generate roughly 108 Mb of data
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/1-C4H9Br
+Command line:
+  gmx mdrun -deffnm 13_npt
+
+Reading file 13_npt.tpr, VERSION 2024.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+starting mdrun '1-BROMOBUTANE'
+500000 steps,   1000.0 ps.
+
+Writing final coordinates.
+
+NOTE: 3 % of the run time was spent in domain decomposition,
+      13 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+               Core t (s)   Wall t (s)        (%)
+       Time:    31962.706    31962.706      100.0
+                         8h52:42
+                 (ns/day)    (hour/ns)
+Performance:        2.703        8.879
+
+GROMACS reminds you: "How Do You Like Your Vacation So Far ?" (Speed 2 - Cruise Control)
+

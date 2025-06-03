@@ -1,0 +1,159 @@
+;
+;	File 'topol.top' was generated
+;	By user: rstric2s (3126)
+;	On host: wr0.wr.inf.h-brs.de
+;	At date: Fri May 23 09:58:10 2025
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2024.1 (-:
+;	
+;	Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+;	Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+;	Working dir:  /work/rstric2s/current_sim/Application/1-C4H9Br
+;	Command line:
+;	  gmx pdb2gmx -f 1-bromobutane.pdb -o 1-bromobutane.gro
+;	Force field was read from current directory or a relative path - path added.
+;
+
+; Include forcefield parameters
+#include "./oplsaa_robin.ff/forcefield.itp"
+
+[ moleculetype ]
+; Name            nrexcl
+Other               3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue   1 2BE4 rtp 2BE4 q  0.0
+     1   opls_135      1   2BE4     C1      1      -0.18     12.011
+     2   opls_140      1   2BE4    H11      2       0.06      1.008
+     3   opls_140      1   2BE4    H12      3       0.06      1.008
+     4   opls_140      1   2BE4    H13      4       0.06      1.008
+     5   opls_136      1   2BE4     C2      5      -0.12     12.011
+     6   opls_140      1   2BE4    H21      6       0.06      1.008
+     7   opls_140      1   2BE4    H22      7       0.06      1.008
+     8   opls_136      1   2BE4     C3      8       0.14     12.011
+     9   opls_730      1   2BE4    BR1      9      -0.22     79.904
+    10         MW      1   2BE4    DUM     10       0.02          0   
+    11   opls_140      1   2BE4    H32     11       0.06      1.008
+    12   opls_135      1   2BE4     C4     12       -0.18    12.011
+    13   opls_140      1   2BE4    H41     13       0.06      1.008
+    14   opls_140      1   2BE4    H42     14       0.06      1.008
+    15   opls_140      1   2BE4    H43     15       0.06      1.008   ; qtot 0
+    
+[ virtual_sites2 ]
+; site from  atom1  atom2  func  a
+  10      8      9    1     0.2
+ 
+[ bonds ]
+;  ai    aj funct            c0            c1            c2            c3
+    1     2     1 
+    1     3     1 
+    1     4     1 
+    1     5     1 
+    5     6     1
+    5     7     1 ; added manually 
+    5     8     1 
+    8     9     1 
+    8    11     1 
+    8    12     1 
+   12    13     1 
+   12    14     1 
+   12    15     1 
+
+[ pairs ]
+;  ai    aj funct            c0            c1            c2            c3
+    1     9     1 
+    1    11     1 
+    1    12     1 
+    2     6     1 
+    2     7     1 ; added manually
+    2     8     1 
+    3     6     1 
+    3     7     1 ; added manually
+    3     8     1 
+    4     6     1
+    4     7     1 ; added manually 
+    4     8     1 
+    5    13     1 
+    5    14     1 
+    5    15     1 
+    6     9     1 
+    6    11     1 
+    6    12     1 
+    7     9     1 ; added manually 
+    7    11     1 ; added manually 
+    7    12     1 ; added manually 
+    9    13     1 
+    9    14     1 
+    9    15     1 
+   11    13     1 
+   11    14     1 
+   11    15     1 
+   
+[ angles ]
+;  ai    aj    ak funct            c0            c1            c2            c3
+    2     1     3     1 
+    2     1     4     1 
+    2     1     5     1 
+    3     1     4     1 
+    3     1     5     1 
+    4     1     5     1 
+    1     5     6     1 
+    1     5     7     1 ; added manually
+    1     5     8     1 
+    6     5     8     1 
+    6     5     7     1 ; added manually
+    7     5     8     1 ; added manually
+    5     8     9     1 
+    5     8    11     1 
+    5     8    12     1 
+    9     8    11     1 
+    9     8    12     1 
+   11     8    12     1 
+    8    12    13     1 
+    8    12    14     1 
+    8    12    15     1 
+   13    12    14     1 
+   13    12    15     1 
+   14    12    15     1 
+
+[ dihedrals ]
+;  ai    aj    ak    al funct            c0            c1            c2            c3            c4            c5
+    2     1     5     6     3 
+    2     1     5     7     3 ; added manually
+    2     1     5     8     3 
+    3     1     5     6     3 
+    3     1     5     7     3 ; added manually
+    3     1     5     8     3 
+    4     1     5     6     3 
+    4     1     5     7     3 ; added manually
+    4     1     5     8     3 
+    1     5     8     9     3 
+    1     5     8    11     3 
+    1     5     8    12     3 
+    6     5     8     9     3 
+    6     5     8    11     3 
+    6     5     8    12     3   
+    7     5     8     9     3 ; added manually
+    7     5     8    11     3 ; added manually
+    7     5     8    12     3 ; added manually
+    5     8    12    13     3 
+    5     8    12    14     3 
+    5     8    12    15     3 
+    9     8    12    13     3 
+    9     8    12    14     3 
+    9     8    12    15     3 
+   11     8    12    13     3 
+   11     8    12    14     3 
+   11     8    12    15     3 
+
+[ system ]
+; Name
+2-BROMOBUTANE
+
+[ molecules ]
+; Compound        #mols
+Other               129

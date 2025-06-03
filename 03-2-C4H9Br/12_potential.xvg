@@ -1,0 +1,30 @@
+# This file was created Thu May 29 10:50:48 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2024.1 (-:
+# 
+# Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+# Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+# Working dir:  /work/rstric2s/current_sim/Application/03-2-C4H9Br
+# Command line:
+#   gmx energy -f 12_nvt.edr -o 12_potential
+# gmx energy is part of G R O M A C S:
+#
+# GROup of MAchos and Cynical Suckers
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  2859.677490
+   20.000000  -921.572144
+   40.000000  -1073.033936
+   60.000000  -738.954834
+   80.000000  -903.056519
+  100.000000  -697.426086

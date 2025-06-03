@@ -1,0 +1,57 @@
+# This file was created Wed May 28 13:03:30 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2024.1 (-:
+# 
+# Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+# Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+# Working dir:  /work/rstric2s/current_sim/Application/02-1-C4H9Br_EP
+# Command line:
+#   gmx energy -f 11_emin.edr -o 11_potential
+# gmx energy is part of G R O M A C S:
+#
+# Great Red Oystrich Makes All Chemists Sane
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  205584.921875
+    1.000000  173258.187500
+    2.000000  132236.437500
+    3.000000  89566.937500
+    4.000000  60564.394531
+    5.000000  40942.074219
+    6.000000  36578.183594
+    7.000000  32332.449219
+    9.000000  27650.513672
+   10.000000  26948.671875
+   11.000000  22486.435547
+   13.000000  21653.421875
+   14.000000  21065.763672
+   16.000000  17576.041016
+   18.000000  16381.393555
+   19.000000  15226.705078
+   21.000000  14410.659180
+   22.000000  13672.134766
+   23.000000  13191.174805
+   24.000000  12371.593750
+   26.000000  11708.887695
+   27.000000  11225.393555
+   28.000000  10977.878906
+   29.000000  10337.010742
+   31.000000  9731.643555
+   32.000000  9457.563477
+   33.000000  9270.023438
+   34.000000  8903.314453
+   36.000000  8156.428223
+   37.000000  7963.871582
+   38.000000  7598.676758
+   39.000000  7520.390137
+   41.000000  6772.301270

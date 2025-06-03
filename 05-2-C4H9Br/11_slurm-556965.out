@@ -1,0 +1,60 @@
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/05-2-C4H9Br
+Command line:
+  gmx grompp -f 01_emin.mdp -c 01_filledbox_2-bromobutane.gro -p topol.top -o 11_emin.tpr
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group rest is 5331.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 1 [file 01_emin.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+There was 1 NOTE
+
+GROMACS reminds you: "You Don't Wanna Know" (Pulp Fiction)
+
+Setting the LD random seed to 2147286117
+
+Generated 331705 of the 331705 non-bonded parameter combinations
+
+Generated 331705 of the 331705 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Other'
+Analysing residue names:
+There are:   127      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+This run will generate roughly 0 Mb of data
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/05-2-C4H9Br
+Command line:
+  gmx mdrun -deffnm 11_emin
+
+Reading file 11_emin.tpr, VERSION 2024.1 (single precision)
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+03
+   Number of steps    =        50000
+
+writing lowest energy coordinates.
+
+Steepest Descents converged to Fmax < 1000 in 55 steps
+Potential Energy  =  3.2191030e+03
+Maximum force     =  8.5246033e+02 on atom 1157
+Norm of force     =  1.5626451e+02
+
+GROMACS reminds you: "You Don't Wanna Know" (Pulp Fiction)
+

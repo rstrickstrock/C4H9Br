@@ -1,0 +1,3370 @@
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Copyright 1991-2024 The GROMACS Authors.
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+                         Current GROMACS contributors:
+       Mark Abraham           Andrey Alekseenko           Vladimir Basov      
+      Cathrine Bergh            Eliane Briand               Ania Brown        
+      Mahesh Doijade            Giacomo Fiorin          Stefan Fleischmann    
+      Sergey Gorelov         Gilles Gouaillardet            Alan Gray         
+     M. Eric Irrgang         Farzaneh Jalalypour            Joe Jordan        
+     Carsten Kutzner           Justin A. Lemkul          Magnus Lundborg      
+       Pascal Merz              Vedran Miletic            Dmitry Morozov      
+       Julien Nabet              Szilard Pall        Andrea Pasquadibisceglie 
+    Michele Pellegrino          Hubert Santuz             Roland Schulz       
+     Tatiana Shugaeva          Alexey Shvetsov            Philip Turner       
+     Alessandra Villa      Sebastian Wingbermuehle  
+
+                         Previous GROMACS contributors:
+        Emile Apol             Rossen Apostolov           James Barnett       
+        Paul Bauer          Herman J.C. Berendsen          Par Bjelkmar       
+      Christian Blau          Viacheslav Bolnykh            Kevin Boyd        
+    Aldert van Buuren          Carlo Camilloni           Rudi van Drunen      
+      Anton Feenstra           Oliver Fleetwood            Vytas Gapsys       
+       Gaurav Garg             Gerrit Groenhof            Bert de Groot       
+      Anca Hamuraru           Vincent Hindriksen          Victor Holanda      
+     Aleksei Iupinov          Christoph Junghans        Prashanth Kanduri     
+   Dimitrios Karkoulis           Peter Kasson             Sebastian Kehl      
+     Sebastian Keller             Jiri Kraus               Per Larsson        
+      Viveca Lindahl            Erik Marklund           Pieter Meulenhoff     
+      Teemu Murtola              Sander Pronk             Michael Shirts      
+      Alfons Sijbers            Balint Soproni         David van der Spoel    
+      Peter Tieleman            Carsten Uphoff             Jon Vincent        
+     Teemu Virolainen         Christian Wennberg           Maarten Wolf       
+      Artem Zhmurov       
+
+                  Coordinated by the GROMACS project leaders:
+                           Berk Hess and Erik Lindahl
+
+GROMACS:      gmx mdrun, version 2024.1
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/03-1-C4H9Br_EP
+Process ID:   3262458
+Command line:
+  gmx mdrun -deffnm 13_npt
+
+GROMACS version:     2024.1
+Precision:           mixed
+Memory model:        64 bit
+MPI library:         thread_mpi
+OpenMP support:      enabled (GMX_OPENMP_MAX_THREADS = 128)
+GPU support:         disabled
+SIMD instructions:   AVX_512
+CPU FFT library:     fftw-3.3.8-sse2-avx
+GPU FFT library:     none
+Multi-GPU FFT:       none
+RDTSCP usage:        enabled
+TNG support:         enabled
+Hwloc support:       disabled
+Tracing support:     disabled
+C compiler:          /usr/local/gcc/gcc-13.2.0/bin/gcc GNU 13.2.0
+C compiler flags:    -fexcess-precision=fast -funroll-all-loops -mavx512f -mfma -mavx512vl -mavx512dq -mavx512bw -Wno-missing-field-initializers -O3 -DNDEBUG
+C++ compiler:        /usr/local/gcc/gcc-13.2.0/bin/g++ GNU 13.2.0
+C++ compiler flags:  -fexcess-precision=fast -funroll-all-loops -mavx512f -mfma -mavx512vl -mavx512dq -mavx512bw -Wno-missing-field-initializers -Wno-cast-function-type-strict SHELL:-fopenmp -O3 -DNDEBUG
+BLAS library:        External - detected on the system
+LAPACK library:      External - detected on the system
+
+
+Running on 1 node with total 1 cores, 1 processing units
+Hardware detected on host wr51:
+  CPU info:
+    Vendor: AMD
+    Brand:  AMD EPYC 9554 64-Core Processor                
+    Family: 25   Model: 17   Stepping: 1
+    Features: aes amd apic avx avx2 avx512f avx512cd avx512bw avx512vl avx512bf16 avx512secondFMA clfsh cmov cx8 cx16 f16c fma htt lahf misalignsse mmx msr nonstop_tsc pcid pclmuldq pdpe1gb popcnt pse rdrnd rdtscp sha sse2 sse3 sse4a sse4.1 sse4.2 ssse3 x2apic
+  Hardware topology: Basic
+    Packages, cores, and logical processors:
+    [indices refer to OS logical processors]
+      Package  0: [   4]
+    CPU limit set by OS: -1   Recommended max number of threads: 1
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX 1 (2015) pp. 19-25
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale 8759 (2015) pp. 3-27
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, and E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics 29 (2013) pp. 845-54
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE CITE THE DOI FOR THIS VERSION OF GROMACS ++++
+https://doi.org/10.5281/zenodo.10721181
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator                     = md-vv
+   tinit                          = 0
+   dt                             = 0.002
+   nsteps                         = 500000
+   init-step                      = 0
+   simulation-part                = 1
+   mts                            = false
+   mass-repartition-factor        = 1
+   comm-mode                      = Linear
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = 2000551879
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 10000
+   nstvout                        = 10000
+   nstfout                        = 0
+   nstlog                         = 10000
+   nstcalcenergy                  = 100
+   nstenergy                      = 10000
+   nstxout-compressed             = 0
+   compressed-x-precision         = 1000
+   cutoff-scheme                  = Verlet
+   nstlist                        = 10
+   pbc                            = xyz
+   periodic-molecules             = false
+   verlet-buffer-tolerance        = -1
+   verlet-buffer-pressure-tolerance = -1
+   rlist                          = 1.1
+   coulombtype                    = PME
+   coulomb-modifier               = Potential-shift
+   rcoulomb-switch                = 0.89
+   rcoulomb                       = 0.9
+   epsilon-r                      = 1
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = Potential-shift
+   rvdw-switch                    = 0.8
+   rvdw                           = 0.9
+   DispCorr                       = EnerPres
+   table-extension                = 1
+   fourierspacing                 = 0.16
+   fourier-nx                     = 20
+   fourier-ny                     = 20
+   fourier-nz                     = 20
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 3d
+   epsilon-surface                = 0
+   ensemble-temperature-setting   = constant
+   ensemble-temperature           = 293.15
+   tcoupl                         = V-rescale
+   nsttcouple                     = 10
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = false
+   pcoupl                         = C-rescale
+   pcoupltype                     = Isotropic
+   nstpcouple                     = 50
+   tau-p                          = 0.5
+   compressibility (3x3):
+      compressibility[    0]={ 4.50000e-05,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  4.50000e-05,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  4.50000e-05}
+   ref-p (3x3):
+      ref-p[    0]={ 1.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  1.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  1.00000e+00}
+   refcoord-scaling               = COM
+   posres-com (3):
+      posres-com[0]= 0.00000e+00
+      posres-com[1]= 0.00000e+00
+      posres-com[2]= 0.00000e+00
+   posres-comB (3):
+      posres-comB[0]= 0.00000e+00
+      posres-comB[1]= 0.00000e+00
+      posres-comB[2]= 0.00000e+00
+   QMMM                           = false
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = true
+   Shake-SOR                      = false
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = false
+   awh                            = false
+   rotation                       = false
+   interactiveMD                  = false
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = false
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = no
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = false
+   swapcoords                     = no
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+   applied-forces:
+     electric-field:
+       x:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       y:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       z:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+     density-guided-simulation:
+       active                     = false
+       group                      = protein
+       similarity-measure         = inner-product
+       atom-spreading-weight      = unity
+       force-constant             = 1e+09
+       gaussian-transform-spreading-width = 0.2
+       gaussian-transform-spreading-range-in-multiples-of-width = 4
+       reference-density-filename = reference.mrc
+       nst                        = 1
+       normalize-densities        = true
+       adaptive-force-scaling     = false
+       adaptive-force-scaling-time-constant = 4
+       shift-vector               = 
+       transformation-matrix      = 
+     qmmm-cp2k:
+       active                     = false
+       qmgroup                    = System
+       qmmethod                   = PBE
+       qmfilenames                = 
+       qmcharge                   = 0
+       qmmultiplicity             = 1
+     colvars:
+       active                     = false
+       configfile                 = 
+       seed                       = -1
+grpopts:
+   nrdf:        4023
+   ref-t:      293.15
+   tau-t:         0.1
+annealing:          No
+annealing-npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0
+
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because the construction atoms of a virtual site are only partly with a group of constrained atoms
+
+Initializing Domain Decomposition on 1 ranks
+Dynamic load balancing: auto
+Minimum cell size due to atom displacement: 0.195 nm
+Initial maximum distances in bonded interactions:
+    two-body bonded interactions: 0.442 nm, LJ-14, atoms 1640 1649
+  multi-body bonded interactions: 0.442 nm, Ryckaert-Bell., atoms 1640 1649
+Minimum cell size due to bonded interactions: 0.486 nm
+Maximum distance for 5 constraints, at 120 deg. angles, all-trans: 0.218 nm
+Estimated maximum distance required for P-LINCS: 0.218 nm
+Using 0 separate PME ranks because: there are too few total ranks for efficient splitting
+Optimizing the DD grid for 1 cells with a minimum initial size of 0.486 nm
+The maximum allowed number of cells is: X 5 Y 5 Z 5
+Domain decomposition grid 1 x 1 x 1, separate PME ranks 0
+PME domain decomposition: 1 x 1 x 1
+
+The initial number of communication pulses is:
+The initial domain decomposition cell size is:
+
+The maximum allowed distance for atoms involved in interactions is:
+                 non-bonded interactions           1.100 nm
+(the following are initial values, they could change due to box deformation)
+            two-body bonded interactions  (-rdd)   1.100 nm
+          multi-body bonded interactions  (-rdd)   1.100 nm
+              virtual site constructions  (-rcon)  2.817 nm
+  atoms separated by up to 5 constraints  (-rcon)  2.817 nm
+
+When dynamic load balancing gets turned on, these settings will change to:
+The maximum number of communication pulses is:
+The minimum size for domain decomposition cells is 1.100 nm
+The requested allowed shrink of DD cells (option -dds) is: 0.80
+The allowed shrink of domain decomposition cells is:
+The maximum allowed distance for atoms involved in interactions is:
+                 non-bonded interactions           1.100 nm
+            two-body bonded interactions  (-rdd)   1.100 nm
+          multi-body bonded interactions  (-rdd)   1.100 nm
+              virtual site constructions  (-rcon)  1.100 nm
+  atoms separated by up to 5 constraints  (-rcon)  1.100 nm
+
+Using 1 MPI thread
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 1 OpenMP thread 
+
+System total charge: -0.000
+Will do PME sum in reciprocal space for electrostatic interactions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee and L. G. Pedersen 
+A smooth particle mesh Ewald method
+J. Chem. Phys. 103 (1995) pp. 8577-8592
+-------- -------- --- Thank You --- -------- --------
+
+Using a Gaussian width (1/beta) of 0.288146 nm for Ewald
+Potential shift: LJ r^-12: -3.541e+00 r^-6: -1.882e+00, Ewald -1.111e-05
+Initialized non-bonded Coulomb Ewald tables, spacing: 8.85e-04 size: 1018
+
+Generated table with 1050 data points for 1-4 COUL.
+Tabscale = 500 points/nm
+Generated table with 1050 data points for 1-4 LJ6.
+Tabscale = 500 points/nm
+Generated table with 1050 data points for 1-4 LJ12.
+Tabscale = 500 points/nm
+Long Range LJ corr.: <C6> 6.9982e-04
+
+
+Using SIMD2xMM 4x8 nonbonded short-range kernels
+
+Using a 4x8 pair-list setup:
+  updated every 10 steps, buffer 0.200 nm, rlist 1.100 nm
+
+The average pressure is off by at most 0.00 bar due to missing LJ interactions
+
+Using Geometric Lennard-Jones combination rule
+
+Linking all bonded interactions to atoms
+There are 122 inter update-group virtual sites,
+will perform an extra communication step for selected coordinates and forces
+
+
+Initializing Parallel LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 116-122
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 1098
+There are constraints between atoms in different decomposition domains,
+will communicate selected coordinates each lincs iteration
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+G. Bussi, D. Donadio and M. Parrinello
+Canonical sampling through velocity rescaling
+J. Chem. Phys. 126 (2007) pp. 014101
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. Bernetti, G. Bussi
+Pressure control using stochastic cell rescaling
+J. Chem. Phys. 153 (2020) pp. 114107
+-------- -------- --- Thank You --- -------- --------
+
+There are: 1708 Atoms
+There are: 122 VSites
+
+Atom distribution over 1 domains: av 1830 stddev 0 min 1830 max 1830
+Center of mass motion removal mode is Linear
+We have the following groups for center of mass motion removal:
+  0:  rest
+
+Started mdrun on rank 0 Thu May 29 10:50:06 2025
+
+           Step           Time
+              0        0.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.96871e+02    3.05616e+03    5.85428e+02    2.81725e+02   -1.78973e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.42015e+03   -6.01218e+02   -7.42747e+02    2.33671e+02   -1.89232e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.81126e+03    4.62203e+03    4.62203e+03    2.87677e+02   -4.47511e+02
+ Pressure (bar)   Constr. rmsd
+    1.02325e+03    3.05991e-06
+
+
+Step 450  Warning: pressure scaling more than 1%, mu: 0.988899 0.988899 0.988899
+
+Step 500  Warning: pressure scaling more than 1%, mu: 1.01016 1.01016 1.01016
+
+Step 1750  Warning: pressure scaling more than 1%, mu: 0.988079 0.988079 0.988079
+
+Step 2150  Warning: pressure scaling more than 1%, mu: 0.986231 0.986231 0.986231
+
+Step 2200  Warning: pressure scaling more than 1%, mu: 1.01356 1.01356 1.01356
+
+Step 2250  Warning: pressure scaling more than 1%, mu: 0.989987 0.989987 0.989987
+
+Step 2300  Warning: pressure scaling more than 1%, mu: 1.01296 1.01296 1.01296
+
+Step 2550  Warning: pressure scaling more than 1%, mu: 0.989202 0.989202 0.989202
+
+Step 2700  Warning: pressure scaling more than 1%, mu: 1.01347 1.01347 1.01347
+
+Step 2750  Warning: pressure scaling more than 1%, mu: 0.986475 0.986475 0.986475
+
+Step 2950  Warning: pressure scaling more than 1%, mu: 0.989513 0.989513 0.989513
+
+Step 3000  Warning: pressure scaling more than 1%, mu: 1.01239 1.01239 1.01239
+
+Step 3050  Warning: pressure scaling more than 1%, mu: 0.98988 0.98988 0.98988
+
+Step 3100  Warning: pressure scaling more than 1%, mu: 1.01441 1.01441 1.01441
+
+Step 3150  Warning: pressure scaling more than 1%, mu: 0.989141 0.989141 0.989141
+
+Step 3250  Warning: pressure scaling more than 1%, mu: 0.98701 0.98701 0.98701
+
+Step 3300  Warning: pressure scaling more than 1%, mu: 1.01475 1.01475 1.01475
+
+Step 3350  Warning: pressure scaling more than 1%, mu: 0.987225 0.987225 0.987225
+
+Step 3400  Warning: pressure scaling more than 1%, mu: 1.01339 1.01339 1.01339
+
+Step 3450  Warning: pressure scaling more than 1%, mu: 0.988261 0.988261 0.988261
+
+Step 3500  Warning: pressure scaling more than 1%, mu: 1.01258 1.01258 1.01258
+
+Step 3550  Warning: pressure scaling more than 1%, mu: 0.983723 0.983723 0.983723
+
+Step 3600  Warning: pressure scaling more than 1%, mu: 1.0163 1.0163 1.0163
+
+Step 3650  Warning: pressure scaling more than 1%, mu: 0.983751 0.983751 0.983751
+
+Step 3700  Warning: pressure scaling more than 1%, mu: 1.02127 1.02127 1.02127
+
+Step 3750  Warning: pressure scaling more than 1%, mu: 0.985961 0.985961 0.985961
+
+Step 3800  Warning: pressure scaling more than 1%, mu: 1.01828 1.01828 1.01828
+
+Step 3850  Warning: pressure scaling more than 1%, mu: 0.981699 0.981699 0.981699
+
+Step 3900  Warning: pressure scaling more than 1%, mu: 1.01059 1.01059 1.01059
+
+Step 3950  Warning: pressure scaling more than 1%, mu: 0.985401 0.985401 0.985401
+
+Step 4000  Warning: pressure scaling more than 1%, mu: 1.01848 1.01848 1.01848
+
+Step 4050  Warning: pressure scaling more than 1%, mu: 0.989095 0.989095 0.989095
+
+Step 4100  Warning: pressure scaling more than 1%, mu: 1.01859 1.01859 1.01859
+
+Step 4150  Warning: pressure scaling more than 1%, mu: 0.986795 0.986795 0.986795
+
+Step 4200  Warning: pressure scaling more than 1%, mu: 1.0109 1.0109 1.0109
+
+Step 4250  Warning: pressure scaling more than 1%, mu: 0.983958 0.983958 0.983958
+
+Step 4300  Warning: pressure scaling more than 1%, mu: 1.01129 1.01129 1.01129
+
+Step 4400  Warning: pressure scaling more than 1%, mu: 1.02018 1.02018 1.02018
+
+Step 4450  Warning: pressure scaling more than 1%, mu: 0.983542 0.983542 0.983542
+
+Step 4500  Warning: pressure scaling more than 1%, mu: 1.01495 1.01495 1.01495
+
+Step 4550  Warning: pressure scaling more than 1%, mu: 0.984965 0.984965 0.984965
+
+Step 4600  Warning: pressure scaling more than 1%, mu: 1.01252 1.01252 1.01252
+
+Step 4650  Warning: pressure scaling more than 1%, mu: 0.985632 0.985632 0.985632
+
+Step 4700  Warning: pressure scaling more than 1%, mu: 1.01629 1.01629 1.01629
+
+Step 4750  Warning: pressure scaling more than 1%, mu: 0.985959 0.985959 0.985959
+
+Step 4800  Warning: pressure scaling more than 1%, mu: 1.01846 1.01846 1.01846
+
+Step 4850  Warning: pressure scaling more than 1%, mu: 0.982224 0.982224 0.982224
+
+Step 4950  Warning: pressure scaling more than 1%, mu: 0.987759 0.987759 0.987759
+
+Step 5200  Warning: pressure scaling more than 1%, mu: 1.01134 1.01134 1.01134
+
+Step 5250  Warning: pressure scaling more than 1%, mu: 0.989205 0.989205 0.989205
+
+Step 6950  Warning: pressure scaling more than 1%, mu: 0.988827 0.988827 0.988827
+
+Step 7700  Warning: pressure scaling more than 1%, mu: 1.01051 1.01051 1.01051
+
+Step 8600  Warning: pressure scaling more than 1%, mu: 0.98957 0.98957 0.98957
+
+Step 9500  Warning: pressure scaling more than 1%, mu: 0.986658 0.986658 0.986658
+
+Step 9550  Warning: pressure scaling more than 1%, mu: 1.01618 1.01618 1.01618
+
+Step 9600  Warning: pressure scaling more than 1%, mu: 0.986454 0.986454 0.986454
+
+Step 9650  Warning: pressure scaling more than 1%, mu: 1.01326 1.01326 1.01326
+
+Step 9700  Warning: pressure scaling more than 1%, mu: 0.989478 0.989478 0.989478
+
+Step 9750  Warning: pressure scaling more than 1%, mu: 1.018 1.018 1.018
+
+Step 9800  Warning: pressure scaling more than 1%, mu: 0.985487 0.985487 0.985487
+
+Step 9850  Warning: pressure scaling more than 1%, mu: 1.01518 1.01518 1.01518
+
+Step 9900  Warning: pressure scaling more than 1%, mu: 0.98153 0.98153 0.98153
+
+Step 9950  Warning: pressure scaling more than 1%, mu: 1.01486 1.01486 1.01486
+           Step           Time
+          10000       20.00000
+
+
+Step 10000  Warning: pressure scaling more than 1%, mu: 0.984885 0.984885 0.984885
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.96900e+02    2.98889e+03    5.61316e+02    2.32022e+02   -1.58774e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.38614e+03   -5.97821e+02   -7.82138e+02    2.27121e+02   -1.18633e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.97859e+03    4.85996e+03    3.48745e+04    2.97682e+02   -4.42479e+02
+ Pressure (bar)   Constr. rmsd
+   -5.42480e+03    3.35139e-06
+
+
+Step 10050  Warning: pressure scaling more than 1%, mu: 1.01731 1.01731 1.01731
+
+Step 10100  Warning: pressure scaling more than 1%, mu: 0.984098 0.984098 0.984098
+
+Step 10150  Warning: pressure scaling more than 1%, mu: 1.01778 1.01778 1.01778
+
+Step 10200  Warning: pressure scaling more than 1%, mu: 0.983866 0.983866 0.983866
+
+Step 10250  Warning: pressure scaling more than 1%, mu: 1.01637 1.01637 1.01637
+
+Step 10300  Warning: pressure scaling more than 1%, mu: 0.983612 0.983612 0.983612
+
+Step 10350  Warning: pressure scaling more than 1%, mu: 1.01696 1.01696 1.01696
+
+Step 10400  Warning: pressure scaling more than 1%, mu: 0.988894 0.988894 0.988894
+
+Step 10450  Warning: pressure scaling more than 1%, mu: 1.01219 1.01219 1.01219
+
+Step 10500  Warning: pressure scaling more than 1%, mu: 0.984497 0.984497 0.984497
+
+Step 10550  Warning: pressure scaling more than 1%, mu: 1.01623 1.01623 1.01623
+
+Step 10600  Warning: pressure scaling more than 1%, mu: 0.98965 0.98965 0.98965
+
+Step 10800  Warning: pressure scaling more than 1%, mu: 0.98937 0.98937 0.98937
+
+Step 11200  Warning: pressure scaling more than 1%, mu: 0.987415 0.987415 0.987415
+
+Step 12500  Warning: pressure scaling more than 1%, mu: 1.01135 1.01135 1.01135
+
+Step 14550  Warning: pressure scaling more than 1%, mu: 0.987958 0.987958 0.987958
+
+Step 14600  Warning: pressure scaling more than 1%, mu: 1.01033 1.01033 1.01033
+
+Step 15300  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+
+Step 15450  Warning: pressure scaling more than 1%, mu: 0.985409 0.985409 0.985409
+
+Step 15650  Warning: pressure scaling more than 1%, mu: 0.989191 0.989191 0.989191
+
+Step 15900  Warning: pressure scaling more than 1%, mu: 1.01196 1.01196 1.01196
+
+Step 16050  Warning: pressure scaling more than 1%, mu: 0.985652 0.985652 0.985652
+
+Step 16100  Warning: pressure scaling more than 1%, mu: 1.01673 1.01673 1.01673
+
+Step 16150  Warning: pressure scaling more than 1%, mu: 0.988211 0.988211 0.988211
+
+Step 16200  Warning: pressure scaling more than 1%, mu: 1.01379 1.01379 1.01379
+
+Step 16250  Warning: pressure scaling more than 1%, mu: 0.987743 0.987743 0.987743
+
+Step 16350  Warning: pressure scaling more than 1%, mu: 0.989944 0.989944 0.989944
+
+Step 16400  Warning: pressure scaling more than 1%, mu: 1.01415 1.01415 1.01415
+
+Step 16450  Warning: pressure scaling more than 1%, mu: 0.987565 0.987565 0.987565
+
+Step 16500  Warning: pressure scaling more than 1%, mu: 1.01599 1.01599 1.01599
+
+Step 16550  Warning: pressure scaling more than 1%, mu: 0.986079 0.986079 0.986079
+
+Step 16600  Warning: pressure scaling more than 1%, mu: 1.01124 1.01124 1.01124
+
+Step 16800  Warning: pressure scaling more than 1%, mu: 1.01306 1.01306 1.01306
+
+Step 16850  Warning: pressure scaling more than 1%, mu: 0.986407 0.986407 0.986407
+
+Step 16900  Warning: pressure scaling more than 1%, mu: 1.01815 1.01815 1.01815
+
+Step 16950  Warning: pressure scaling more than 1%, mu: 0.989426 0.989426 0.989426
+
+Step 17000  Warning: pressure scaling more than 1%, mu: 1.01263 1.01263 1.01263
+
+Step 17050  Warning: pressure scaling more than 1%, mu: 0.982868 0.982868 0.982868
+
+Step 17150  Warning: pressure scaling more than 1%, mu: 0.989169 0.989169 0.989169
+
+Step 17200  Warning: pressure scaling more than 1%, mu: 1.01144 1.01144 1.01144
+
+Step 17650  Warning: pressure scaling more than 1%, mu: 1.01301 1.01301 1.01301
+
+Step 17700  Warning: pressure scaling more than 1%, mu: 0.989917 0.989917 0.989917
+
+Step 17800  Warning: pressure scaling more than 1%, mu: 0.985767 0.985767 0.985767
+
+Step 18100  Warning: pressure scaling more than 1%, mu: 0.988254 0.988254 0.988254
+
+Step 18400  Warning: pressure scaling more than 1%, mu: 0.988692 0.988692 0.988692
+
+Step 18450  Warning: pressure scaling more than 1%, mu: 1.01068 1.01068 1.01068
+
+Step 18500  Warning: pressure scaling more than 1%, mu: 0.984906 0.984906 0.984906
+
+Step 18550  Warning: pressure scaling more than 1%, mu: 1.01084 1.01084 1.01084
+
+Step 18750  Warning: pressure scaling more than 1%, mu: 1.01386 1.01386 1.01386
+
+Step 18800  Warning: pressure scaling more than 1%, mu: 0.986392 0.986392 0.986392
+
+Step 18850  Warning: pressure scaling more than 1%, mu: 1.01494 1.01494 1.01494
+
+Step 18900  Warning: pressure scaling more than 1%, mu: 0.986167 0.986167 0.986167
+
+Step 18950  Warning: pressure scaling more than 1%, mu: 1.01574 1.01574 1.01574
+
+Step 19000  Warning: pressure scaling more than 1%, mu: 0.989563 0.989563 0.989563
+
+Step 19150  Warning: pressure scaling more than 1%, mu: 1.01216 1.01216 1.01216
+           Step           Time
+          20000       40.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.17906e+02    3.09284e+03    6.35790e+02    2.78732e+02   -1.73711e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.39218e+03   -6.03073e+02   -7.66403e+02    2.29076e+02   -8.10160e+01
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.83127e+03    4.75025e+03    6.31505e+04    2.88873e+02   -4.50271e+02
+ Pressure (bar)   Constr. rmsd
+    1.02983e+03    3.32584e-06
+
+
+Step 21000  Warning: pressure scaling more than 1%, mu: 0.989791 0.989791 0.989791
+           Step           Time
+          30000       60.00000
+
+
+Step 30000  Warning: pressure scaling more than 1%, mu: 1.01006 1.01006 1.01006
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.03793e+02    2.93901e+03    5.68734e+02    2.96239e+02   -1.86595e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.62537e+03   -6.33872e+02   -7.55806e+02    2.19753e+02   -5.74120e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.18343e+03    4.60931e+03    7.00031e+04    3.09929e+02   -4.97341e+02
+ Pressure (bar)   Constr. rmsd
+    2.91061e+03    3.20326e-06
+
+
+Step 30150  Warning: pressure scaling more than 1%, mu: 0.989064 0.989064 0.989064
+
+Step 30250  Warning: pressure scaling more than 1%, mu: 0.989848 0.989848 0.989848
+
+Step 30650  Warning: pressure scaling more than 1%, mu: 0.987822 0.987822 0.987822
+
+Step 30750  Warning: pressure scaling more than 1%, mu: 0.986371 0.986371 0.986371
+
+Step 30800  Warning: pressure scaling more than 1%, mu: 1.01225 1.01225 1.01225
+
+Step 30850  Warning: pressure scaling more than 1%, mu: 0.989101 0.989101 0.989101
+
+Step 30900  Warning: pressure scaling more than 1%, mu: 1.01553 1.01553 1.01553
+
+Step 30950  Warning: pressure scaling more than 1%, mu: 0.98483 0.98483 0.98483
+
+Step 31000  Warning: pressure scaling more than 1%, mu: 1.01305 1.01305 1.01305
+
+Step 31100  Warning: pressure scaling more than 1%, mu: 1.01112 1.01112 1.01112
+
+Step 31150  Warning: pressure scaling more than 1%, mu: 0.987823 0.987823 0.987823
+
+Step 31200  Warning: pressure scaling more than 1%, mu: 1.01597 1.01597 1.01597
+
+Step 31250  Warning: pressure scaling more than 1%, mu: 0.986199 0.986199 0.986199
+
+Step 31300  Warning: pressure scaling more than 1%, mu: 1.01321 1.01321 1.01321
+
+Step 31350  Warning: pressure scaling more than 1%, mu: 0.985454 0.985454 0.985454
+
+Step 31400  Warning: pressure scaling more than 1%, mu: 1.02209 1.02209 1.02209
+
+Step 31450  Warning: pressure scaling more than 1%, mu: 0.979815 0.979815 0.979815
+
+Step 31500  Warning: pressure scaling more than 1%, mu: 1.02159 1.02159 1.02159
+
+Step 31550  Warning: pressure scaling more than 1%, mu: 0.984976 0.984976 0.984976
+
+Step 31600  Warning: pressure scaling more than 1%, mu: 1.01169 1.01169 1.01169
+
+Step 31650  Warning: pressure scaling more than 1%, mu: 0.982457 0.982457 0.982457
+
+Step 31700  Warning: pressure scaling more than 1%, mu: 1.01587 1.01587 1.01587
+
+Step 31750  Warning: pressure scaling more than 1%, mu: 0.987957 0.987957 0.987957
+
+Step 31800  Warning: pressure scaling more than 1%, mu: 1.01873 1.01873 1.01873
+
+Step 31850  Warning: pressure scaling more than 1%, mu: 0.985287 0.985287 0.985287
+
+Step 31900  Warning: pressure scaling more than 1%, mu: 1.01358 1.01358 1.01358
+
+Step 31950  Warning: pressure scaling more than 1%, mu: 0.98627 0.98627 0.98627
+
+Step 32100  Warning: pressure scaling more than 1%, mu: 1.01057 1.01057 1.01057
+
+Step 32250  Warning: pressure scaling more than 1%, mu: 0.989701 0.989701 0.989701
+
+Step 32350  Warning: pressure scaling more than 1%, mu: 0.989652 0.989652 0.989652
+
+Step 32500  Warning: pressure scaling more than 1%, mu: 1.01508 1.01508 1.01508
+
+Step 32900  Warning: pressure scaling more than 1%, mu: 1.01015 1.01015 1.01015
+
+Step 33950  Warning: pressure scaling more than 1%, mu: 0.989649 0.989649 0.989649
+
+Step 34000  Warning: pressure scaling more than 1%, mu: 1.01504 1.01504 1.01504
+
+Step 35900  Warning: pressure scaling more than 1%, mu: 1.01006 1.01006 1.01006
+
+Step 37650  Warning: pressure scaling more than 1%, mu: 0.986091 0.986091 0.986091
+
+Step 39750  Warning: pressure scaling more than 1%, mu: 1.01091 1.01091 1.01091
+           Step           Time
+          40000       80.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.58050e+02    2.94666e+03    6.24407e+02    2.65774e+02   -1.72586e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.37687e+03   -6.00124e+02   -7.61112e+02    2.17906e+02   -1.97899e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.93635e+03    4.73845e+03    9.08133e+04    2.95156e+02   -4.45888e+02
+ Pressure (bar)   Constr. rmsd
+   -6.30826e+02    3.47826e-06
+
+
+Step 40800  Warning: pressure scaling more than 1%, mu: 0.989844 0.989844 0.989844
+
+Step 41250  Warning: pressure scaling more than 1%, mu: 1.01101 1.01101 1.01101
+
+Step 42200  Warning: pressure scaling more than 1%, mu: 0.987608 0.987608 0.987608
+
+Step 42250  Warning: pressure scaling more than 1%, mu: 1.01085 1.01085 1.01085
+
+Step 42300  Warning: pressure scaling more than 1%, mu: 0.98958 0.98958 0.98958
+
+Step 42350  Warning: pressure scaling more than 1%, mu: 1.01165 1.01165 1.01165
+
+Step 43350  Warning: pressure scaling more than 1%, mu: 0.988369 0.988369 0.988369
+
+Step 43450  Warning: pressure scaling more than 1%, mu: 0.988529 0.988529 0.988529
+
+Step 43500  Warning: pressure scaling more than 1%, mu: 1.01205 1.01205 1.01205
+
+Step 43550  Warning: pressure scaling more than 1%, mu: 0.989175 0.989175 0.989175
+
+Step 43600  Warning: pressure scaling more than 1%, mu: 1.01421 1.01421 1.01421
+
+Step 43650  Warning: pressure scaling more than 1%, mu: 0.987083 0.987083 0.987083
+
+Step 43700  Warning: pressure scaling more than 1%, mu: 1.01616 1.01616 1.01616
+
+Step 43750  Warning: pressure scaling more than 1%, mu: 0.982817 0.982817 0.982817
+
+Step 43800  Warning: pressure scaling more than 1%, mu: 1.01372 1.01372 1.01372
+
+Step 43850  Warning: pressure scaling more than 1%, mu: 0.984641 0.984641 0.984641
+
+Step 43900  Warning: pressure scaling more than 1%, mu: 1.01871 1.01871 1.01871
+
+Step 43950  Warning: pressure scaling more than 1%, mu: 0.986769 0.986769 0.986769
+
+Step 44000  Warning: pressure scaling more than 1%, mu: 1.01749 1.01749 1.01749
+
+Step 44050  Warning: pressure scaling more than 1%, mu: 0.979975 0.979975 0.979975
+
+Step 44100  Warning: pressure scaling more than 1%, mu: 1.01826 1.01826 1.01826
+
+Step 44150  Warning: pressure scaling more than 1%, mu: 0.983237 0.983237 0.983237
+
+Step 44200  Warning: pressure scaling more than 1%, mu: 1.01358 1.01358 1.01358
+
+Step 44300  Warning: pressure scaling more than 1%, mu: 1.01136 1.01136 1.01136
+
+Step 44350  Warning: pressure scaling more than 1%, mu: 0.98881 0.98881 0.98881
+
+Step 44600  Warning: pressure scaling more than 1%, mu: 1.01405 1.01405 1.01405
+
+Step 44700  Warning: pressure scaling more than 1%, mu: 1.0113 1.0113 1.0113
+
+Step 44750  Warning: pressure scaling more than 1%, mu: 0.98667 0.98667 0.98667
+
+Step 45000  Warning: pressure scaling more than 1%, mu: 1.01028 1.01028 1.01028
+
+Step 47000  Warning: pressure scaling more than 1%, mu: 1.01157 1.01157 1.01157
+           Step           Time
+          50000      100.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.40788e+02    2.87099e+03    6.19041e+02    2.92875e+02   -1.49640e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.57630e+03   -6.36764e+02   -8.06140e+02    2.24283e+02   -5.20865e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.84672e+03    4.32586e+03    1.08907e+05    2.89797e+02   -5.01880e+02
+ Pressure (bar)   Constr. rmsd
+    1.04950e+03    3.16232e-06
+
+
+Step 50200  Warning: pressure scaling more than 1%, mu: 1.01223 1.01223 1.01223
+
+Step 50300  Warning: pressure scaling more than 1%, mu: 1.01164 1.01164 1.01164
+
+Step 50450  Warning: pressure scaling more than 1%, mu: 0.988292 0.988292 0.988292
+
+Step 50850  Warning: pressure scaling more than 1%, mu: 0.984178 0.984178 0.984178
+
+Step 50900  Warning: pressure scaling more than 1%, mu: 1.01108 1.01108 1.01108
+
+Step 51250  Warning: pressure scaling more than 1%, mu: 0.988806 0.988806 0.988806
+
+Step 51350  Warning: pressure scaling more than 1%, mu: 0.988544 0.988544 0.988544
+
+Step 51600  Warning: pressure scaling more than 1%, mu: 1.01242 1.01242 1.01242
+
+Step 51650  Warning: pressure scaling more than 1%, mu: 0.98989 0.98989 0.98989
+
+Step 52050  Warning: pressure scaling more than 1%, mu: 0.986155 0.986155 0.986155
+
+Step 52300  Warning: pressure scaling more than 1%, mu: 1.0127 1.0127 1.0127
+
+Step 53000  Warning: pressure scaling more than 1%, mu: 1.01025 1.01025 1.01025
+
+Step 53250  Warning: pressure scaling more than 1%, mu: 0.987024 0.987024 0.987024
+
+Step 53300  Warning: pressure scaling more than 1%, mu: 1.01318 1.01318 1.01318
+
+Step 53350  Warning: pressure scaling more than 1%, mu: 0.987598 0.987598 0.987598
+
+Step 53400  Warning: pressure scaling more than 1%, mu: 1.01321 1.01321 1.01321
+
+Step 53800  Warning: pressure scaling more than 1%, mu: 1.01269 1.01269 1.01269
+
+Step 53850  Warning: pressure scaling more than 1%, mu: 0.985735 0.985735 0.985735
+
+Step 53900  Warning: pressure scaling more than 1%, mu: 1.01405 1.01405 1.01405
+
+Step 53950  Warning: pressure scaling more than 1%, mu: 0.989445 0.989445 0.989445
+
+Step 54350  Warning: pressure scaling more than 1%, mu: 0.988005 0.988005 0.988005
+
+Step 54400  Warning: pressure scaling more than 1%, mu: 1.01501 1.01501 1.01501
+
+Step 54800  Warning: pressure scaling more than 1%, mu: 1.01196 1.01196 1.01196
+
+Step 54900  Warning: pressure scaling more than 1%, mu: 1.01043 1.01043 1.01043
+
+Step 55850  Warning: pressure scaling more than 1%, mu: 0.988085 0.988085 0.988085
+
+Step 56000  Warning: pressure scaling more than 1%, mu: 1.01134 1.01134 1.01134
+
+Step 56100  Warning: pressure scaling more than 1%, mu: 1.01645 1.01645 1.01645
+
+Step 56150  Warning: pressure scaling more than 1%, mu: 0.984993 0.984993 0.984993
+
+Step 56200  Warning: pressure scaling more than 1%, mu: 1.01036 1.01036 1.01036
+
+Step 56300  Warning: pressure scaling more than 1%, mu: 1.01007 1.01007 1.01007
+
+Step 56500  Warning: pressure scaling more than 1%, mu: 1.01006 1.01006 1.01006
+
+Step 56550  Warning: pressure scaling more than 1%, mu: 0.987437 0.987437 0.987437
+
+Step 56600  Warning: pressure scaling more than 1%, mu: 1.01107 1.01107 1.01107
+
+Step 56900  Warning: pressure scaling more than 1%, mu: 1.01062 1.01062 1.01062
+
+Step 58750  Warning: pressure scaling more than 1%, mu: 0.989239 0.989239 0.989239
+           Step           Time
+          60000      120.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.18298e+02    3.01312e+03    5.97777e+02    2.94309e+02   -1.63122e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.68203e+03   -6.43109e+02   -7.86538e+02    2.10891e+02   -5.40400e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.95763e+03    4.41723e+03    1.29165e+05    2.96429e+02   -5.11913e+02
+ Pressure (bar)   Constr. rmsd
+    7.93996e+02    2.93854e-06
+
+
+Step 61700  Warning: pressure scaling more than 1%, mu: 0.988132 0.988132 0.988132
+
+Step 62400  Warning: pressure scaling more than 1%, mu: 0.987914 0.987914 0.987914
+
+Step 62500  Warning: pressure scaling more than 1%, mu: 0.988457 0.988457 0.988457
+
+Step 62650  Warning: pressure scaling more than 1%, mu: 1.01123 1.01123 1.01123
+
+Step 62800  Warning: pressure scaling more than 1%, mu: 0.988763 0.988763 0.988763
+
+Step 63050  Warning: pressure scaling more than 1%, mu: 1.01085 1.01085 1.01085
+
+Step 63200  Warning: pressure scaling more than 1%, mu: 0.986654 0.986654 0.986654
+
+Step 64600  Warning: pressure scaling more than 1%, mu: 0.987596 0.987596 0.987596
+
+Step 64650  Warning: pressure scaling more than 1%, mu: 1.01047 1.01047 1.01047
+
+Step 68150  Warning: pressure scaling more than 1%, mu: 1.01225 1.01225 1.01225
+
+Step 68250  Warning: pressure scaling more than 1%, mu: 1.01016 1.01016 1.01016
+
+Step 68300  Warning: pressure scaling more than 1%, mu: 0.989831 0.989831 0.989831
+
+Step 68400  Warning: pressure scaling more than 1%, mu: 0.989014 0.989014 0.989014
+
+Step 68450  Warning: pressure scaling more than 1%, mu: 1.01227 1.01227 1.01227
+
+Step 68500  Warning: pressure scaling more than 1%, mu: 0.988089 0.988089 0.988089
+
+Step 68550  Warning: pressure scaling more than 1%, mu: 1.01684 1.01684 1.01684
+
+Step 68650  Warning: pressure scaling more than 1%, mu: 1.01064 1.01064 1.01064
+
+Step 68800  Warning: pressure scaling more than 1%, mu: 0.989142 0.989142 0.989142
+
+Step 69600  Warning: pressure scaling more than 1%, mu: 1.01192 1.01192 1.01192
+
+Step 69650  Warning: pressure scaling more than 1%, mu: 0.98826 0.98826 0.98826
+
+Step 69700  Warning: pressure scaling more than 1%, mu: 1.0158 1.0158 1.0158
+
+Step 69750  Warning: pressure scaling more than 1%, mu: 0.987939 0.987939 0.987939
+
+Step 69800  Warning: pressure scaling more than 1%, mu: 1.0104 1.0104 1.0104
+           Step           Time
+          70000      140.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.86116e+02    2.94762e+03    5.91848e+02    2.89067e+02   -1.66445e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.50492e+03   -6.14070e+02   -7.68661e+02    2.16355e+02   -4.23089e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.97297e+03    4.54988e+03    1.42046e+05    2.97346e+02   -4.66809e+02
+ Pressure (bar)   Constr. rmsd
+    6.68856e+02    3.43931e-06
+
+
+Step 70050  Warning: pressure scaling more than 1%, mu: 0.989988 0.989988 0.989988
+
+Step 70150  Warning: pressure scaling more than 1%, mu: 0.988098 0.988098 0.988098
+
+Step 70850  Warning: pressure scaling more than 1%, mu: 0.988774 0.988774 0.988774
+
+Step 71250  Warning: pressure scaling more than 1%, mu: 0.989578 0.989578 0.989578
+
+Step 71300  Warning: pressure scaling more than 1%, mu: 1.01342 1.01342 1.01342
+
+Step 74700  Warning: pressure scaling more than 1%, mu: 1.01109 1.01109 1.01109
+
+Step 75100  Warning: pressure scaling more than 1%, mu: 1.01081 1.01081 1.01081
+
+Step 75200  Warning: pressure scaling more than 1%, mu: 1.01051 1.01051 1.01051
+
+Step 75250  Warning: pressure scaling more than 1%, mu: 0.98625 0.98625 0.98625
+
+Step 75450  Warning: pressure scaling more than 1%, mu: 0.989981 0.989981 0.989981
+
+Step 76150  Warning: pressure scaling more than 1%, mu: 0.989006 0.989006 0.989006
+
+Step 76200  Warning: pressure scaling more than 1%, mu: 1.01108 1.01108 1.01108
+
+Step 76250  Warning: pressure scaling more than 1%, mu: 0.989389 0.989389 0.989389
+
+Step 76300  Warning: pressure scaling more than 1%, mu: 1.01052 1.01052 1.01052
+
+Step 76400  Warning: pressure scaling more than 1%, mu: 1.01318 1.01318 1.01318
+
+Step 76500  Warning: pressure scaling more than 1%, mu: 1.01385 1.01385 1.01385
+
+Step 76900  Warning: pressure scaling more than 1%, mu: 1.01167 1.01167 1.01167
+
+Step 77600  Warning: pressure scaling more than 1%, mu: 1.01249 1.01249 1.01249
+
+Step 78450  Warning: pressure scaling more than 1%, mu: 0.989867 0.989867 0.989867
+
+Step 79450  Warning: pressure scaling more than 1%, mu: 1.01128 1.01128 1.01128
+           Step           Time
+          80000      160.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.95156e+02    3.05999e+03    6.82944e+02    2.61963e+02   -1.69285e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.45470e+03   -6.11176e+02   -7.59823e+02    2.05570e+02   -8.93626e+01
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.63831e+03    4.54895e+03    1.57003e+05    2.77336e+02   -4.62428e+02
+ Pressure (bar)   Constr. rmsd
+   -1.01959e+03    3.09022e-06
+
+
+Step 80100  Warning: pressure scaling more than 1%, mu: 0.989439 0.989439 0.989439
+
+Step 81050  Warning: pressure scaling more than 1%, mu: 1.01004 1.01004 1.01004
+
+Step 82700  Warning: pressure scaling more than 1%, mu: 1.01024 1.01024 1.01024
+
+Step 84600  Warning: pressure scaling more than 1%, mu: 0.988576 0.988576 0.988576
+
+Step 85650  Warning: pressure scaling more than 1%, mu: 0.989735 0.989735 0.989735
+
+Step 85700  Warning: pressure scaling more than 1%, mu: 1.01296 1.01296 1.01296
+
+Step 87100  Warning: pressure scaling more than 1%, mu: 1.01165 1.01165 1.01165
+           Step           Time
+          90000      180.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.12586e+02    2.98916e+03    5.88024e+02    2.73239e+02   -1.82756e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.63878e+03   -6.44325e+02   -7.45134e+02    2.37150e+02   -5.10834e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.79745e+03    4.28662e+03    1.64763e+05    2.86851e+02   -5.13847e+02
+ Pressure (bar)   Constr. rmsd
+    3.76986e+02    2.89810e-06
+
+
+Step 90450  Warning: pressure scaling more than 1%, mu: 0.988584 0.988584 0.988584
+
+Step 90500  Warning: pressure scaling more than 1%, mu: 1.01261 1.01261 1.01261
+
+Step 90550  Warning: pressure scaling more than 1%, mu: 0.984309 0.984309 0.984309
+
+Step 90600  Warning: pressure scaling more than 1%, mu: 1.01747 1.01747 1.01747
+
+Step 90700  Warning: pressure scaling more than 1%, mu: 1.01098 1.01098 1.01098
+
+Step 96000  Warning: pressure scaling more than 1%, mu: 1.01145 1.01145 1.01145
+
+Step 96250  Warning: pressure scaling more than 1%, mu: 0.989295 0.989295 0.989295
+
+Step 96500  Warning: pressure scaling more than 1%, mu: 1.01174 1.01174 1.01174
+
+Step 96800  Warning: pressure scaling more than 1%, mu: 1.01174 1.01174 1.01174
+
+Step 97050  Warning: pressure scaling more than 1%, mu: 0.989569 0.989569 0.989569
+
+Step 97300  Warning: pressure scaling more than 1%, mu: 1.01376 1.01376 1.01376
+
+Step 97350  Warning: pressure scaling more than 1%, mu: 0.987927 0.987927 0.987927
+
+Step 97400  Warning: pressure scaling more than 1%, mu: 1.01349 1.01349 1.01349
+
+Step 97450  Warning: pressure scaling more than 1%, mu: 0.98674 0.98674 0.98674
+
+Step 98100  Warning: pressure scaling more than 1%, mu: 1.01112 1.01112 1.01112
+
+Step 99200  Warning: pressure scaling more than 1%, mu: 1.01092 1.01092 1.01092
+           Step           Time
+         100000      200.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.88556e+02    2.98594e+03    6.19234e+02    2.90157e+02   -1.89508e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.59993e+03   -6.20361e+02   -7.19153e+02    2.15134e+02   -4.29928e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.91417e+03    4.48424e+03    1.76085e+05    2.93830e+02   -4.76404e+02
+ Pressure (bar)   Constr. rmsd
+    7.30357e+02    2.91631e-06
+
+
+Step 101650  Warning: pressure scaling more than 1%, mu: 0.989835 0.989835 0.989835
+
+Step 102800  Warning: pressure scaling more than 1%, mu: 0.98957 0.98957 0.98957
+
+Step 102850  Warning: pressure scaling more than 1%, mu: 1.01702 1.01702 1.01702
+
+Step 102900  Warning: pressure scaling more than 1%, mu: 0.986839 0.986839 0.986839
+
+Step 102950  Warning: pressure scaling more than 1%, mu: 1.01195 1.01195 1.01195
+
+Step 103000  Warning: pressure scaling more than 1%, mu: 0.986584 0.986584 0.986584
+
+Step 103050  Warning: pressure scaling more than 1%, mu: 1.01206 1.01206 1.01206
+
+Step 103100  Warning: pressure scaling more than 1%, mu: 0.985682 0.985682 0.985682
+
+Step 103150  Warning: pressure scaling more than 1%, mu: 1.01354 1.01354 1.01354
+
+Step 103200  Warning: pressure scaling more than 1%, mu: 0.987453 0.987453 0.987453
+
+Step 103250  Warning: pressure scaling more than 1%, mu: 1.0114 1.0114 1.0114
+
+Step 103350  Warning: pressure scaling more than 1%, mu: 1.01147 1.01147 1.01147
+
+Step 104000  Warning: pressure scaling more than 1%, mu: 1.01216 1.01216 1.01216
+
+Step 104100  Warning: pressure scaling more than 1%, mu: 1.01114 1.01114 1.01114
+
+Step 104400  Warning: pressure scaling more than 1%, mu: 1.01546 1.01546 1.01546
+
+Step 104650  Warning: pressure scaling more than 1%, mu: 0.985742 0.985742 0.985742
+
+Step 105150  Warning: pressure scaling more than 1%, mu: 1.01106 1.01106 1.01106
+
+Step 105500  Warning: pressure scaling more than 1%, mu: 1.01028 1.01028 1.01028
+
+Step 106700  Warning: pressure scaling more than 1%, mu: 0.989637 0.989637 0.989637
+
+Step 108600  Warning: pressure scaling more than 1%, mu: 0.985176 0.985176 0.985176
+
+Step 108650  Warning: pressure scaling more than 1%, mu: 1.01355 1.01355 1.01355
+
+Step 108700  Warning: pressure scaling more than 1%, mu: 0.986786 0.986786 0.986786
+
+Step 108750  Warning: pressure scaling more than 1%, mu: 1.01672 1.01672 1.01672
+
+Step 109050  Warning: pressure scaling more than 1%, mu: 1.01178 1.01178 1.01178
+
+Step 109100  Warning: pressure scaling more than 1%, mu: 0.989483 0.989483 0.989483
+
+Step 109150  Warning: pressure scaling more than 1%, mu: 1.01454 1.01454 1.01454
+
+Step 109300  Warning: pressure scaling more than 1%, mu: 0.989191 0.989191 0.989191
+
+Step 109350  Warning: pressure scaling more than 1%, mu: 1.0114 1.0114 1.0114
+
+Step 109400  Warning: pressure scaling more than 1%, mu: 0.986763 0.986763 0.986763
+
+Step 109500  Warning: pressure scaling more than 1%, mu: 0.988226 0.988226 0.988226
+
+Step 109550  Warning: pressure scaling more than 1%, mu: 1.0111 1.0111 1.0111
+
+Step 109750  Warning: pressure scaling more than 1%, mu: 1.01028 1.01028 1.01028
+
+Step 109800  Warning: pressure scaling more than 1%, mu: 0.988931 0.988931 0.988931
+           Step           Time
+         110000      220.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.03716e+02    2.78606e+03    6.18820e+02    2.78267e+02   -2.03163e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.56836e+03   -6.22688e+02   -7.11209e+02    2.21487e+02   -5.97071e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.87335e+03    4.27628e+03    1.93269e+05    2.91389e+02   -4.79977e+02
+ Pressure (bar)   Constr. rmsd
+   -9.45593e+02    3.25053e-06
+
+
+Step 111650  Warning: pressure scaling more than 1%, mu: 0.989958 0.989958 0.989958
+
+Step 111700  Warning: pressure scaling more than 1%, mu: 1.01035 1.01035 1.01035
+
+Step 111800  Warning: pressure scaling more than 1%, mu: 1.01077 1.01077 1.01077
+
+Step 112550  Warning: pressure scaling more than 1%, mu: 1.01063 1.01063 1.01063
+
+Step 116450  Warning: pressure scaling more than 1%, mu: 1.01352 1.01352 1.01352
+           Step           Time
+         120000      240.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.07160e+02    2.97583e+03    5.67736e+02    2.74677e+02   -1.89253e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.62050e+03   -6.34157e+02   -7.44519e+02    2.10572e+02   -5.52450e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.01134e+03    4.45889e+03    2.01820e+05    2.99640e+02   -4.97787e+02
+ Pressure (bar)   Constr. rmsd
+    7.69866e+02    3.20306e-06
+
+
+Step 121600  Warning: pressure scaling more than 1%, mu: 1.01101 1.01101 1.01101
+
+Step 121650  Warning: pressure scaling more than 1%, mu: 0.98669 0.98669 0.98669
+
+Step 121700  Warning: pressure scaling more than 1%, mu: 1.01191 1.01191 1.01191
+
+Step 121900  Warning: pressure scaling more than 1%, mu: 1.01034 1.01034 1.01034
+
+Step 121950  Warning: pressure scaling more than 1%, mu: 0.987476 0.987476 0.987476
+
+Step 122100  Warning: pressure scaling more than 1%, mu: 1.01171 1.01171 1.01171
+
+Step 123350  Warning: pressure scaling more than 1%, mu: 0.988373 0.988373 0.988373
+
+Step 123600  Warning: pressure scaling more than 1%, mu: 1.01173 1.01173 1.01173
+
+Step 123650  Warning: pressure scaling more than 1%, mu: 0.989536 0.989536 0.989536
+
+Step 123750  Warning: pressure scaling more than 1%, mu: 0.989258 0.989258 0.989258
+
+Step 124000  Warning: pressure scaling more than 1%, mu: 1.01045 1.01045 1.01045
+
+Step 127650  Warning: pressure scaling more than 1%, mu: 0.987851 0.987851 0.987851
+
+Step 128050  Warning: pressure scaling more than 1%, mu: 0.988356 0.988356 0.988356
+
+Step 128250  Warning: pressure scaling more than 1%, mu: 0.989852 0.989852 0.989852
+
+Step 128300  Warning: pressure scaling more than 1%, mu: 1.01036 1.01036 1.01036
+
+Step 128350  Warning: pressure scaling more than 1%, mu: 0.98761 0.98761 0.98761
+           Step           Time
+         130000      260.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.32482e+02    3.04102e+03    5.86569e+02    2.56196e+02   -2.10321e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.47698e+03   -6.18285e+02   -6.98508e+02    2.20336e+02   -2.67486e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.87495e+03    4.60746e+03    2.13933e+05    2.91485e+02   -4.73228e+02
+ Pressure (bar)   Constr. rmsd
+   -1.12491e+02    3.45415e-06
+
+
+Step 133350  Warning: pressure scaling more than 1%, mu: 1.01287 1.01287 1.01287
+
+Step 135650  Warning: pressure scaling more than 1%, mu: 0.987626 0.987626 0.987626
+
+Step 135700  Warning: pressure scaling more than 1%, mu: 1.01152 1.01152 1.01152
+
+Step 136100  Warning: pressure scaling more than 1%, mu: 1.0102 1.0102 1.0102
+
+Step 137900  Warning: pressure scaling more than 1%, mu: 0.988825 0.988825 0.988825
+
+Step 139800  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+           Step           Time
+         140000      280.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.85722e+02    3.13517e+03    6.65855e+02    2.82670e+02   -1.74778e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.60837e+03   -6.27930e+02   -7.49573e+02    2.18775e+02   -2.72465e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.96935e+03    4.69689e+03    2.21830e+05    2.97129e+02   -4.88078e+02
+ Pressure (bar)   Constr. rmsd
+   -6.08580e+02    3.31156e-06
+
+
+Step 145100  Warning: pressure scaling more than 1%, mu: 1.01096 1.01096 1.01096
+
+Step 146150  Warning: pressure scaling more than 1%, mu: 0.98483 0.98483 0.98483
+
+Step 146700  Warning: pressure scaling more than 1%, mu: 1.01141 1.01141 1.01141
+
+Step 146750  Warning: pressure scaling more than 1%, mu: 0.988852 0.988852 0.988852
+
+Step 148000  Warning: pressure scaling more than 1%, mu: 1.01078 1.01078 1.01078
+
+Step 148050  Warning: pressure scaling more than 1%, mu: 0.989391 0.989391 0.989391
+
+Step 148200  Warning: pressure scaling more than 1%, mu: 1.01255 1.01255 1.01255
+
+Step 148250  Warning: pressure scaling more than 1%, mu: 0.988263 0.988263 0.988263
+
+Step 148300  Warning: pressure scaling more than 1%, mu: 1.0138 1.0138 1.0138
+
+Step 148350  Warning: pressure scaling more than 1%, mu: 0.980982 0.980982 0.980982
+
+Step 148400  Warning: pressure scaling more than 1%, mu: 1.01542 1.01542 1.01542
+
+Step 148500  Warning: pressure scaling more than 1%, mu: 1.01185 1.01185 1.01185
+
+Step 148600  Warning: pressure scaling more than 1%, mu: 1.01579 1.01579 1.01579
+
+Step 148650  Warning: pressure scaling more than 1%, mu: 0.987976 0.987976 0.987976
+
+Step 148950  Warning: pressure scaling more than 1%, mu: 0.985623 0.985623 0.985623
+
+Step 149000  Warning: pressure scaling more than 1%, mu: 1.01476 1.01476 1.01476
+
+Step 149100  Warning: pressure scaling more than 1%, mu: 1.01091 1.01091 1.01091
+
+Step 149250  Warning: pressure scaling more than 1%, mu: 0.988997 0.988997 0.988997
+
+Step 149400  Warning: pressure scaling more than 1%, mu: 1.0206 1.0206 1.0206
+
+Step 149500  Warning: pressure scaling more than 1%, mu: 1.01572 1.01572 1.01572
+
+Step 149650  Warning: pressure scaling more than 1%, mu: 0.988036 0.988036 0.988036
+           Step           Time
+         150000      300.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.83181e+02    3.05124e+03    5.83006e+02    2.43546e+02   -1.72665e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.33448e+03   -6.05525e+02   -7.52465e+02    2.51889e+02   -1.52280e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.13430e+03    4.98202e+03    2.36955e+05    3.06992e+02   -4.53934e+02
+ Pressure (bar)   Constr. rmsd
+   -1.45635e+03    3.22016e-06
+
+
+Step 150800  Warning: pressure scaling more than 1%, mu: 0.988339 0.988339 0.988339
+
+Step 150900  Warning: pressure scaling more than 1%, mu: 0.986779 0.986779 0.986779
+
+Step 150950  Warning: pressure scaling more than 1%, mu: 1.01309 1.01309 1.01309
+
+Step 151750  Warning: pressure scaling more than 1%, mu: 1.01033 1.01033 1.01033
+
+Step 151800  Warning: pressure scaling more than 1%, mu: 0.986258 0.986258 0.986258
+
+Step 151900  Warning: pressure scaling more than 1%, mu: 0.989413 0.989413 0.989413
+
+Step 152200  Warning: pressure scaling more than 1%, mu: 0.987495 0.987495 0.987495
+
+Step 152300  Warning: pressure scaling more than 1%, mu: 0.989975 0.989975 0.989975
+
+Step 156350  Warning: pressure scaling more than 1%, mu: 1.01224 1.01224 1.01224
+
+Step 156400  Warning: pressure scaling more than 1%, mu: 0.98645 0.98645 0.98645
+
+Step 156450  Warning: pressure scaling more than 1%, mu: 1.01382 1.01382 1.01382
+
+Step 156500  Warning: pressure scaling more than 1%, mu: 0.984985 0.984985 0.984985
+
+Step 156600  Warning: pressure scaling more than 1%, mu: 0.988582 0.988582 0.988582
+
+Step 156750  Warning: pressure scaling more than 1%, mu: 1.01429 1.01429 1.01429
+
+Step 156800  Warning: pressure scaling more than 1%, mu: 0.986083 0.986083 0.986083
+
+Step 156850  Warning: pressure scaling more than 1%, mu: 1.01429 1.01429 1.01429
+
+Step 157000  Warning: pressure scaling more than 1%, mu: 0.9893 0.9893 0.9893
+
+Step 157050  Warning: pressure scaling more than 1%, mu: 1.01636 1.01636 1.01636
+
+Step 157100  Warning: pressure scaling more than 1%, mu: 0.986822 0.986822 0.986822
+
+Step 157150  Warning: pressure scaling more than 1%, mu: 1.01789 1.01789 1.01789
+
+Step 157200  Warning: pressure scaling more than 1%, mu: 0.985897 0.985897 0.985897
+
+Step 157450  Warning: pressure scaling more than 1%, mu: 1.01075 1.01075 1.01075
+
+Step 157550  Warning: pressure scaling more than 1%, mu: 1.01334 1.01334 1.01334
+           Step           Time
+         160000      320.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.41342e+02    3.27811e+03    6.72956e+02    2.54074e+02   -1.85031e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.62804e+03   -6.39073e+02   -7.33933e+02    2.27830e+02   -1.11762e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.04374e+03    4.93198e+03    2.51418e+05    3.01577e+02   -5.05520e+02
+ Pressure (bar)   Constr. rmsd
+    6.70219e+02    3.36694e-06
+
+
+Step 161050  Warning: pressure scaling more than 1%, mu: 1.01251 1.01251 1.01251
+
+Step 163700  Warning: pressure scaling more than 1%, mu: 1.01229 1.01229 1.01229
+
+Step 164100  Warning: pressure scaling more than 1%, mu: 1.01073 1.01073 1.01073
+
+Step 164700  Warning: pressure scaling more than 1%, mu: 0.987542 0.987542 0.987542
+
+Step 164850  Warning: pressure scaling more than 1%, mu: 1.01326 1.01326 1.01326
+
+Step 165650  Warning: pressure scaling more than 1%, mu: 1.01257 1.01257 1.01257
+
+Step 165800  Warning: pressure scaling more than 1%, mu: 0.988875 0.988875 0.988875
+           Step           Time
+         170000      340.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.22170e+02    3.11789e+03    6.29786e+02    2.72838e+02   -1.92016e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.64532e+03   -6.28778e+02   -7.38178e+02    2.07531e+02   -3.54077e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.89421e+03    4.54013e+03    2.60340e+05    2.92636e+02   -4.89393e+02
+ Pressure (bar)   Constr. rmsd
+   -2.18327e+03    3.37965e-06
+
+
+Step 170550  Warning: pressure scaling more than 1%, mu: 1.01261 1.01261 1.01261
+
+Step 171850  Warning: pressure scaling more than 1%, mu: 1.0123 1.0123 1.0123
+
+Step 171900  Warning: pressure scaling more than 1%, mu: 0.989325 0.989325 0.989325
+
+Step 171950  Warning: pressure scaling more than 1%, mu: 1.01268 1.01268 1.01268
+
+Step 172200  Warning: pressure scaling more than 1%, mu: 0.985415 0.985415 0.985415
+
+Step 172250  Warning: pressure scaling more than 1%, mu: 1.0155 1.0155 1.0155
+
+Step 172300  Warning: pressure scaling more than 1%, mu: 0.989141 0.989141 0.989141
+
+Step 172350  Warning: pressure scaling more than 1%, mu: 1.01426 1.01426 1.01426
+
+Step 172450  Warning: pressure scaling more than 1%, mu: 1.01425 1.01425 1.01425
+
+Step 172500  Warning: pressure scaling more than 1%, mu: 0.981823 0.981823 0.981823
+
+Step 172550  Warning: pressure scaling more than 1%, mu: 1.01309 1.01309 1.01309
+
+Step 172600  Warning: pressure scaling more than 1%, mu: 0.982167 0.982167 0.982167
+
+Step 172650  Warning: pressure scaling more than 1%, mu: 1.01487 1.01487 1.01487
+
+Step 172700  Warning: pressure scaling more than 1%, mu: 0.989857 0.989857 0.989857
+
+Step 172750  Warning: pressure scaling more than 1%, mu: 1.01421 1.01421 1.01421
+
+Step 172900  Warning: pressure scaling more than 1%, mu: 0.983839 0.983839 0.983839
+
+Step 172950  Warning: pressure scaling more than 1%, mu: 1.01798 1.01798 1.01798
+
+Step 173000  Warning: pressure scaling more than 1%, mu: 0.984173 0.984173 0.984173
+
+Step 173050  Warning: pressure scaling more than 1%, mu: 1.01403 1.01403 1.01403
+
+Step 173100  Warning: pressure scaling more than 1%, mu: 0.987519 0.987519 0.987519
+
+Step 173150  Warning: pressure scaling more than 1%, mu: 1.01312 1.01312 1.01312
+
+Step 176600  Warning: pressure scaling more than 1%, mu: 1.01042 1.01042 1.01042
+
+Step 177100  Warning: pressure scaling more than 1%, mu: 1.0108 1.0108 1.0108
+
+Step 177350  Warning: pressure scaling more than 1%, mu: 0.986508 0.986508 0.986508
+           Step           Time
+         180000      360.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.06626e+02    3.04358e+03    5.67055e+02    2.71698e+02   -1.94029e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.47922e+03   -6.19612e+02   -7.46997e+02    2.12818e+02   -3.38084e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.01144e+03    4.67336e+03    2.77263e+05    2.99646e+02   -4.75257e+02
+ Pressure (bar)   Constr. rmsd
+    7.76310e+02    3.35136e-06
+
+
+Step 181800  Warning: pressure scaling more than 1%, mu: 1.01035 1.01035 1.01035
+
+Step 181850  Warning: pressure scaling more than 1%, mu: 0.989325 0.989325 0.989325
+
+Step 181900  Warning: pressure scaling more than 1%, mu: 1.01619 1.01619 1.01619
+
+Step 182200  Warning: pressure scaling more than 1%, mu: 1.01061 1.01061 1.01061
+
+Step 183950  Warning: pressure scaling more than 1%, mu: 0.988224 0.988224 0.988224
+
+Step 184650  Warning: pressure scaling more than 1%, mu: 0.98952 0.98952 0.98952
+
+Step 185850  Warning: pressure scaling more than 1%, mu: 1.01116 1.01116 1.01116
+
+Step 186400  Warning: pressure scaling more than 1%, mu: 0.98918 0.98918 0.98918
+
+Step 186550  Warning: pressure scaling more than 1%, mu: 1.01837 1.01837 1.01837
+
+Step 186700  Warning: pressure scaling more than 1%, mu: 0.989736 0.989736 0.989736
+
+Step 186800  Warning: pressure scaling more than 1%, mu: 0.986219 0.986219 0.986219
+
+Step 186850  Warning: pressure scaling more than 1%, mu: 1.01328 1.01328 1.01328
+
+Step 187500  Warning: pressure scaling more than 1%, mu: 0.98821 0.98821 0.98821
+           Step           Time
+         190000      380.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.04484e+02    3.18386e+03    6.31196e+02    2.87212e+02   -1.79512e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.54139e+03   -6.26852e+02   -7.27551e+02    2.38396e+02   -1.30155e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.82400e+03    4.69385e+03    2.89898e+05    2.88439e+02   -4.86406e+02
+ Pressure (bar)   Constr. rmsd
+   -1.44968e+02    3.05407e-06
+
+
+Step 190300  Warning: pressure scaling more than 1%, mu: 0.989152 0.989152 0.989152
+
+Step 190450  Warning: pressure scaling more than 1%, mu: 1.01106 1.01106 1.01106
+
+Step 190750  Warning: pressure scaling more than 1%, mu: 1.01004 1.01004 1.01004
+
+Step 198700  Warning: pressure scaling more than 1%, mu: 1.01122 1.01122 1.01122
+
+Step 198850  Warning: pressure scaling more than 1%, mu: 0.988696 0.988696 0.988696
+
+Step 198950  Warning: pressure scaling more than 1%, mu: 0.984955 0.984955 0.984955
+
+Step 199000  Warning: pressure scaling more than 1%, mu: 1.01074 1.01074 1.01074
+
+Step 199100  Warning: pressure scaling more than 1%, mu: 1.01304 1.01304 1.01304
+
+Step 199200  Warning: pressure scaling more than 1%, mu: 1.01049 1.01049 1.01049
+
+Step 199350  Warning: pressure scaling more than 1%, mu: 0.988525 0.988525 0.988525
+
+Step 199400  Warning: pressure scaling more than 1%, mu: 1.0149 1.0149 1.0149
+
+Step 199450  Warning: pressure scaling more than 1%, mu: 0.986618 0.986618 0.986618
+
+Step 199500  Warning: pressure scaling more than 1%, mu: 1.01675 1.01675 1.01675
+           Step           Time
+         200000      400.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.41969e+02    3.00658e+03    6.00460e+02    2.74812e+02   -1.86649e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.56820e+03   -6.21296e+02   -7.27606e+02    2.32307e+02   -3.47625e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.92964e+03    4.58201e+03    2.99912e+05    2.94755e+02   -4.77839e+02
+ Pressure (bar)   Constr. rmsd
+   -2.03718e+02    3.10439e-06
+
+
+Step 202750  Warning: pressure scaling more than 1%, mu: 1.01008 1.01008 1.01008
+
+Step 203750  Warning: pressure scaling more than 1%, mu: 1.01347 1.01347 1.01347
+
+Step 204650  Warning: pressure scaling more than 1%, mu: 1.01027 1.01027 1.01027
+
+Step 204700  Warning: pressure scaling more than 1%, mu: 0.989486 0.989486 0.989486
+
+Step 206850  Warning: pressure scaling more than 1%, mu: 1.01157 1.01157 1.01157
+
+Step 208100  Warning: pressure scaling more than 1%, mu: 1.0152 1.0152 1.0152
+
+Step 208150  Warning: pressure scaling more than 1%, mu: 0.989936 0.989936 0.989936
+
+Step 208400  Warning: pressure scaling more than 1%, mu: 1.01054 1.01054 1.01054
+
+Step 208550  Warning: pressure scaling more than 1%, mu: 0.987362 0.987362 0.987362
+
+Step 208700  Warning: pressure scaling more than 1%, mu: 1.01287 1.01287 1.01287
+
+Step 208800  Warning: pressure scaling more than 1%, mu: 1.01374 1.01374 1.01374
+
+Step 209750  Warning: pressure scaling more than 1%, mu: 0.988211 0.988211 0.988211
+           Step           Time
+         210000      420.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.15891e+02    3.05252e+03    6.43321e+02    2.99366e+02   -1.69200e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.46050e+03   -6.10426e+02   -7.51759e+02    2.43255e+02   -1.37530e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.10202e+03    4.96449e+03    3.11318e+05    3.05062e+02   -4.61296e+02
+ Pressure (bar)   Constr. rmsd
+    2.23812e+03    3.32665e-06
+
+
+Step 211550  Warning: pressure scaling more than 1%, mu: 0.985821 0.985821 0.985821
+
+Step 211800  Warning: pressure scaling more than 1%, mu: 1.01343 1.01343 1.01343
+
+Step 211850  Warning: pressure scaling more than 1%, mu: 0.989523 0.989523 0.989523
+
+Step 211950  Warning: pressure scaling more than 1%, mu: 0.984401 0.984401 0.984401
+
+Step 212450  Warning: pressure scaling more than 1%, mu: 0.984873 0.984873 0.984873
+
+Step 212500  Warning: pressure scaling more than 1%, mu: 1.01568 1.01568 1.01568
+
+Step 215200  Warning: pressure scaling more than 1%, mu: 1.01075 1.01075 1.01075
+
+Step 217150  Warning: pressure scaling more than 1%, mu: 1.01182 1.01182 1.01182
+
+Step 217350  Warning: pressure scaling more than 1%, mu: 1.01005 1.01005 1.01005
+
+Step 217400  Warning: pressure scaling more than 1%, mu: 0.985602 0.985602 0.985602
+
+Step 217450  Warning: pressure scaling more than 1%, mu: 1.01183 1.01183 1.01183
+
+Step 217500  Warning: pressure scaling more than 1%, mu: 0.986745 0.986745 0.986745
+
+Step 217550  Warning: pressure scaling more than 1%, mu: 1.01786 1.01786 1.01786
+
+Step 217600  Warning: pressure scaling more than 1%, mu: 0.989617 0.989617 0.989617
+
+Step 217650  Warning: pressure scaling more than 1%, mu: 1.01296 1.01296 1.01296
+
+Step 217700  Warning: pressure scaling more than 1%, mu: 0.988325 0.988325 0.988325
+
+Step 217750  Warning: pressure scaling more than 1%, mu: 1.01064 1.01064 1.01064
+
+Step 217800  Warning: pressure scaling more than 1%, mu: 0.988289 0.988289 0.988289
+           Step           Time
+         220000      440.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.90678e+02    2.99845e+03    6.08059e+02    2.72034e+02   -1.88124e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.47559e+03   -6.09893e+02   -7.31282e+02    2.31539e+02   -3.04139e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.83586e+03    4.53172e+03    3.24244e+05    2.89147e+02   -4.60492e+02
+ Pressure (bar)   Constr. rmsd
+    3.08882e+02    3.25824e-06
+
+
+Step 224450  Warning: pressure scaling more than 1%, mu: 1.01207 1.01207 1.01207
+
+Step 224500  Warning: pressure scaling more than 1%, mu: 0.988108 0.988108 0.988108
+
+Step 224550  Warning: pressure scaling more than 1%, mu: 1.01451 1.01451 1.01451
+
+Step 224600  Warning: pressure scaling more than 1%, mu: 0.986698 0.986698 0.986698
+
+Step 224700  Warning: pressure scaling more than 1%, mu: 0.987865 0.987865 0.987865
+
+Step 225900  Warning: pressure scaling more than 1%, mu: 1.01031 1.01031 1.01031
+
+Step 227100  Warning: pressure scaling more than 1%, mu: 0.989185 0.989185 0.989185
+
+Step 227150  Warning: pressure scaling more than 1%, mu: 1.0102 1.0102 1.0102
+
+Step 227400  Warning: pressure scaling more than 1%, mu: 0.988861 0.988861 0.988861
+
+Step 227550  Warning: pressure scaling more than 1%, mu: 1.01034 1.01034 1.01034
+
+Step 227800  Warning: pressure scaling more than 1%, mu: 0.987728 0.987728 0.987728
+
+Step 227850  Warning: pressure scaling more than 1%, mu: 1.01011 1.01011 1.01011
+
+Step 227950  Warning: pressure scaling more than 1%, mu: 1.01028 1.01028 1.01028
+
+Step 229300  Warning: pressure scaling more than 1%, mu: 0.989222 0.989222 0.989222
+           Step           Time
+         230000      460.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.20172e+02    3.14986e+03    6.10744e+02    2.90474e+02   -1.78626e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.48032e+03   -6.14466e+02   -7.43450e+02    2.17930e+02   -1.27678e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.05355e+03    4.92587e+03    3.34256e+05    3.02164e+02   -4.67411e+02
+ Pressure (bar)   Constr. rmsd
+   -1.49443e+02    3.26595e-06
+
+
+Step 230550  Warning: pressure scaling more than 1%, mu: 0.988552 0.988552 0.988552
+
+Step 232400  Warning: pressure scaling more than 1%, mu: 1.01093 1.01093 1.01093
+
+Step 232800  Warning: pressure scaling more than 1%, mu: 1.01126 1.01126 1.01126
+
+Step 235900  Warning: pressure scaling more than 1%, mu: 0.98982 0.98982 0.98982
+
+Step 237550  Warning: pressure scaling more than 1%, mu: 1.01169 1.01169 1.01169
+
+Step 237650  Warning: pressure scaling more than 1%, mu: 1.01354 1.01354 1.01354
+
+Step 237700  Warning: pressure scaling more than 1%, mu: 0.989126 0.989126 0.989126
+
+Step 237750  Warning: pressure scaling more than 1%, mu: 1.01054 1.01054 1.01054
+
+Step 237800  Warning: pressure scaling more than 1%, mu: 0.983919 0.983919 0.983919
+
+Step 237850  Warning: pressure scaling more than 1%, mu: 1.01024 1.01024 1.01024
+
+Step 238250  Warning: pressure scaling more than 1%, mu: 1.01111 1.01111 1.01111
+
+Step 238350  Warning: pressure scaling more than 1%, mu: 1.01275 1.01275 1.01275
+
+Step 238400  Warning: pressure scaling more than 1%, mu: 0.986411 0.986411 0.986411
+
+Step 239100  Warning: pressure scaling more than 1%, mu: 1.01001 1.01001 1.01001
+           Step           Time
+         240000      480.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.98658e+02    2.82381e+03    5.60617e+02    2.67153e+02   -1.71131e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.61281e+03   -6.28375e+02   -7.68338e+02    2.16355e+02   -7.14056e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.01403e+03    4.29998e+03    3.45237e+05    2.99801e+02   -4.88768e+02
+ Pressure (bar)   Constr. rmsd
+   -6.52354e+02    3.19900e-06
+
+
+Step 241300  Warning: pressure scaling more than 1%, mu: 0.98713 0.98713 0.98713
+
+Step 242400  Warning: pressure scaling more than 1%, mu: 0.986846 0.986846 0.986846
+
+Step 242450  Warning: pressure scaling more than 1%, mu: 1.01055 1.01055 1.01055
+
+Step 242850  Warning: pressure scaling more than 1%, mu: 1.01289 1.01289 1.01289
+
+Step 242900  Warning: pressure scaling more than 1%, mu: 0.989654 0.989654 0.989654
+
+Step 242950  Warning: pressure scaling more than 1%, mu: 1.01168 1.01168 1.01168
+
+Step 243100  Warning: pressure scaling more than 1%, mu: 0.987154 0.987154 0.987154
+
+Step 243150  Warning: pressure scaling more than 1%, mu: 1.01228 1.01228 1.01228
+
+Step 243200  Warning: pressure scaling more than 1%, mu: 0.987484 0.987484 0.987484
+
+Step 243250  Warning: pressure scaling more than 1%, mu: 1.01182 1.01182 1.01182
+
+Step 243300  Warning: pressure scaling more than 1%, mu: 0.986005 0.986005 0.986005
+
+Step 243350  Warning: pressure scaling more than 1%, mu: 1.01855 1.01855 1.01855
+
+Step 243400  Warning: pressure scaling more than 1%, mu: 0.982459 0.982459 0.982459
+
+Step 243450  Warning: pressure scaling more than 1%, mu: 1.01836 1.01836 1.01836
+
+Step 243500  Warning: pressure scaling more than 1%, mu: 0.985794 0.985794 0.985794
+
+Step 243550  Warning: pressure scaling more than 1%, mu: 1.01076 1.01076 1.01076
+
+Step 243650  Warning: pressure scaling more than 1%, mu: 1.01124 1.01124 1.01124
+
+Step 243700  Warning: pressure scaling more than 1%, mu: 0.98701 0.98701 0.98701
+
+Step 243750  Warning: pressure scaling more than 1%, mu: 1.01075 1.01075 1.01075
+
+Step 243800  Warning: pressure scaling more than 1%, mu: 0.989722 0.989722 0.989722
+
+Step 243950  Warning: pressure scaling more than 1%, mu: 1.01311 1.01311 1.01311
+
+Step 244000  Warning: pressure scaling more than 1%, mu: 0.989464 0.989464 0.989464
+
+Step 244050  Warning: pressure scaling more than 1%, mu: 1.01443 1.01443 1.01443
+
+Step 244100  Warning: pressure scaling more than 1%, mu: 0.986315 0.986315 0.986315
+
+Step 244200  Warning: pressure scaling more than 1%, mu: 0.987902 0.987902 0.987902
+
+Step 244350  Warning: pressure scaling more than 1%, mu: 1.01365 1.01365 1.01365
+
+Step 244450  Warning: pressure scaling more than 1%, mu: 1.01591 1.01591 1.01591
+
+Step 244500  Warning: pressure scaling more than 1%, mu: 0.983684 0.983684 0.983684
+
+Step 244600  Warning: pressure scaling more than 1%, mu: 0.989522 0.989522 0.989522
+
+Step 244650  Warning: pressure scaling more than 1%, mu: 1.01213 1.01213 1.01213
+
+Step 244750  Warning: pressure scaling more than 1%, mu: 1.01915 1.01915 1.01915
+
+Step 244800  Warning: pressure scaling more than 1%, mu: 0.985675 0.985675 0.985675
+           Step           Time
+         250000      500.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.61951e+02    3.05975e+03    5.91539e+02    2.56305e+02   -2.06657e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.69056e+03   -6.36442e+02   -6.96999e+02    2.26950e+02   -5.34161e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.01315e+03    4.47899e+03    3.63963e+05    2.99748e+02   -5.01374e+02
+ Pressure (bar)   Constr. rmsd
+   -7.92982e+02    3.26371e-06
+
+
+Step 251650  Warning: pressure scaling more than 1%, mu: 0.987332 0.987332 0.987332
+
+Step 251700  Warning: pressure scaling more than 1%, mu: 1.01074 1.01074 1.01074
+
+Step 252400  Warning: pressure scaling more than 1%, mu: 1.01 1.01 1.01
+
+Step 252950  Warning: pressure scaling more than 1%, mu: 1.01228 1.01228 1.01228
+
+Step 253200  Warning: pressure scaling more than 1%, mu: 0.984679 0.984679 0.984679
+
+Step 253250  Warning: pressure scaling more than 1%, mu: 1.01532 1.01532 1.01532
+
+Step 253300  Warning: pressure scaling more than 1%, mu: 0.987703 0.987703 0.987703
+
+Step 253500  Warning: pressure scaling more than 1%, mu: 0.985198 0.985198 0.985198
+
+Step 253600  Warning: pressure scaling more than 1%, mu: 0.985078 0.985078 0.985078
+
+Step 253650  Warning: pressure scaling more than 1%, mu: 1.01581 1.01581 1.01581
+
+Step 253750  Warning: pressure scaling more than 1%, mu: 1.01115 1.01115 1.01115
+
+Step 253850  Warning: pressure scaling more than 1%, mu: 1.01307 1.01307 1.01307
+
+Step 253900  Warning: pressure scaling more than 1%, mu: 0.986206 0.986206 0.986206
+
+Step 254000  Warning: pressure scaling more than 1%, mu: 0.984993 0.984993 0.984993
+
+Step 254050  Warning: pressure scaling more than 1%, mu: 1.01424 1.01424 1.01424
+
+Step 254100  Warning: pressure scaling more than 1%, mu: 0.987193 0.987193 0.987193
+
+Step 254150  Warning: pressure scaling more than 1%, mu: 1.01514 1.01514 1.01514
+
+Step 254200  Warning: pressure scaling more than 1%, mu: 0.987734 0.987734 0.987734
+
+Step 254250  Warning: pressure scaling more than 1%, mu: 1.01774 1.01774 1.01774
+
+Step 254300  Warning: pressure scaling more than 1%, mu: 0.984009 0.984009 0.984009
+
+Step 254350  Warning: pressure scaling more than 1%, mu: 1.0109 1.0109 1.0109
+
+Step 258550  Warning: pressure scaling more than 1%, mu: 1.01007 1.01007 1.01007
+
+Step 258750  Warning: pressure scaling more than 1%, mu: 1.01208 1.01208 1.01208
+
+Step 258800  Warning: pressure scaling more than 1%, mu: 0.988941 0.988941 0.988941
+
+Step 259200  Warning: pressure scaling more than 1%, mu: 0.988595 0.988595 0.988595
+           Step           Time
+         260000      520.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.88674e+02    3.01193e+03    5.76072e+02    2.70075e+02   -1.91585e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.47665e+03   -6.25848e+02   -7.50580e+02    2.25768e+02   -2.72147e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.93716e+03    4.66501e+03    3.78702e+05    2.95204e+02   -4.84852e+02
+ Pressure (bar)   Constr. rmsd
+   -1.20241e+02    3.61291e-06
+
+
+Step 261900  Warning: pressure scaling more than 1%, mu: 1.0134 1.0134 1.0134
+
+Step 262000  Warning: pressure scaling more than 1%, mu: 1.01017 1.01017 1.01017
+
+Step 262050  Warning: pressure scaling more than 1%, mu: 0.986997 0.986997 0.986997
+
+Step 262300  Warning: pressure scaling more than 1%, mu: 1.01057 1.01057 1.01057
+
+Step 262350  Warning: pressure scaling more than 1%, mu: 0.988233 0.988233 0.988233
+
+Step 262750  Warning: pressure scaling more than 1%, mu: 0.98695 0.98695 0.98695
+
+Step 263900  Warning: pressure scaling more than 1%, mu: 1.01064 1.01064 1.01064
+
+Step 264850  Warning: pressure scaling more than 1%, mu: 0.98899 0.98899 0.98899
+
+Step 265000  Warning: pressure scaling more than 1%, mu: 1.01156 1.01156 1.01156
+
+Step 265150  Warning: pressure scaling more than 1%, mu: 0.989719 0.989719 0.989719
+
+Step 266450  Warning: pressure scaling more than 1%, mu: 1.01127 1.01127 1.01127
+
+Step 266550  Warning: pressure scaling more than 1%, mu: 1.01143 1.01143 1.01143
+
+Step 266700  Warning: pressure scaling more than 1%, mu: 0.989609 0.989609 0.989609
+
+Step 266950  Warning: pressure scaling more than 1%, mu: 1.01265 1.01265 1.01265
+
+Step 268900  Warning: pressure scaling more than 1%, mu: 0.987544 0.987544 0.987544
+
+Step 269050  Warning: pressure scaling more than 1%, mu: 1.01144 1.01144 1.01144
+
+Step 269100  Warning: pressure scaling more than 1%, mu: 0.987557 0.987557 0.987557
+
+Step 269200  Warning: pressure scaling more than 1%, mu: 0.98917 0.98917 0.98917
+
+Step 269350  Warning: pressure scaling more than 1%, mu: 1.01201 1.01201 1.01201
+
+Step 269900  Warning: pressure scaling more than 1%, mu: 0.989086 0.989086 0.989086
+           Step           Time
+         270000      540.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.82516e+02    2.98924e+03    6.82478e+02    2.67463e+02   -1.69667e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.47103e+03   -6.16517e+02   -7.45441e+02    2.19250e+02   -1.61700e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.03224e+03    4.87054e+03    3.93266e+05    3.00890e+02   -4.70529e+02
+ Pressure (bar)   Constr. rmsd
+   -2.17466e+03    3.37898e-06
+
+
+Step 270050  Warning: pressure scaling more than 1%, mu: 1.01078 1.01078 1.01078
+
+Step 270150  Warning: pressure scaling more than 1%, mu: 1.01341 1.01341 1.01341
+
+Step 270200  Warning: pressure scaling more than 1%, mu: 0.986544 0.986544 0.986544
+
+Step 270900  Warning: pressure scaling more than 1%, mu: 0.988311 0.988311 0.988311
+
+Step 272550  Warning: pressure scaling more than 1%, mu: 0.989831 0.989831 0.989831
+
+Step 272750  Warning: pressure scaling more than 1%, mu: 0.989691 0.989691 0.989691
+
+Step 272800  Warning: pressure scaling more than 1%, mu: 1.01136 1.01136 1.01136
+
+Step 272850  Warning: pressure scaling more than 1%, mu: 0.985474 0.985474 0.985474
+
+Step 273000  Warning: pressure scaling more than 1%, mu: 1.01037 1.01037 1.01037
+
+Step 275100  Warning: pressure scaling more than 1%, mu: 1.01128 1.01128 1.01128
+
+Step 275700  Warning: pressure scaling more than 1%, mu: 0.989307 0.989307 0.989307
+
+Step 275950  Warning: pressure scaling more than 1%, mu: 1.01059 1.01059 1.01059
+
+Step 276100  Warning: pressure scaling more than 1%, mu: 0.986635 0.986635 0.986635
+
+Step 276500  Warning: pressure scaling more than 1%, mu: 0.989471 0.989471 0.989471
+
+Step 276550  Warning: pressure scaling more than 1%, mu: 1.01101 1.01101 1.01101
+
+Step 276600  Warning: pressure scaling more than 1%, mu: 0.987914 0.987914 0.987914
+
+Step 276650  Warning: pressure scaling more than 1%, mu: 1.01332 1.01332 1.01332
+
+Step 276700  Warning: pressure scaling more than 1%, mu: 0.987325 0.987325 0.987325
+
+Step 276750  Warning: pressure scaling more than 1%, mu: 1.01898 1.01898 1.01898
+
+Step 276800  Warning: pressure scaling more than 1%, mu: 0.98486 0.98486 0.98486
+
+Step 276850  Warning: pressure scaling more than 1%, mu: 1.01276 1.01276 1.01276
+
+Step 276900  Warning: pressure scaling more than 1%, mu: 0.983941 0.983941 0.983941
+
+Step 277000  Warning: pressure scaling more than 1%, mu: 0.988997 0.988997 0.988997
+
+Step 277050  Warning: pressure scaling more than 1%, mu: 1.01857 1.01857 1.01857
+
+Step 277100  Warning: pressure scaling more than 1%, mu: 0.988356 0.988356 0.988356
+
+Step 277150  Warning: pressure scaling more than 1%, mu: 1.01609 1.01609 1.01609
+
+Step 277200  Warning: pressure scaling more than 1%, mu: 0.982425 0.982425 0.982425
+
+Step 277250  Warning: pressure scaling more than 1%, mu: 1.01304 1.01304 1.01304
+
+Step 277300  Warning: pressure scaling more than 1%, mu: 0.98513 0.98513 0.98513
+
+Step 277550  Warning: pressure scaling more than 1%, mu: 1.01063 1.01063 1.01063
+
+Step 277600  Warning: pressure scaling more than 1%, mu: 0.987485 0.987485 0.987485
+
+Step 277700  Warning: pressure scaling more than 1%, mu: 0.986754 0.986754 0.986754
+
+Step 277850  Warning: pressure scaling more than 1%, mu: 1.01037 1.01037 1.01037
+           Step           Time
+         280000      560.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.13795e+02    3.02707e+03    5.94003e+02    2.76136e+02   -1.81390e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.53367e+03   -6.24047e+02   -7.54712e+02    2.21374e+02   -3.61434e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.03312e+03    4.67169e+03    4.10856e+05    3.00942e+02   -4.82071e+02
+ Pressure (bar)   Constr. rmsd
+    2.94798e+03    3.68053e-06
+
+
+Step 281050  Warning: pressure scaling more than 1%, mu: 0.985722 0.985722 0.985722
+
+Step 281100  Warning: pressure scaling more than 1%, mu: 1.0176 1.0176 1.0176
+
+Step 281200  Warning: pressure scaling more than 1%, mu: 1.01165 1.01165 1.01165
+
+Step 281350  Warning: pressure scaling more than 1%, mu: 0.989932 0.989932 0.989932
+
+Step 281500  Warning: pressure scaling more than 1%, mu: 1.01059 1.01059 1.01059
+
+Step 281550  Warning: pressure scaling more than 1%, mu: 0.987178 0.987178 0.987178
+
+Step 281600  Warning: pressure scaling more than 1%, mu: 1.01142 1.01142 1.01142
+
+Step 281650  Warning: pressure scaling more than 1%, mu: 0.989903 0.989903 0.989903
+
+Step 281950  Warning: pressure scaling more than 1%, mu: 0.987768 0.987768 0.987768
+
+Step 282000  Warning: pressure scaling more than 1%, mu: 1.01607 1.01607 1.01607
+
+Step 282050  Warning: pressure scaling more than 1%, mu: 0.988976 0.988976 0.988976
+
+Step 282100  Warning: pressure scaling more than 1%, mu: 1.01025 1.01025 1.01025
+
+Step 282250  Warning: pressure scaling more than 1%, mu: 0.98902 0.98902 0.98902
+
+Step 282300  Warning: pressure scaling more than 1%, mu: 1.01289 1.01289 1.01289
+
+Step 282350  Warning: pressure scaling more than 1%, mu: 0.986019 0.986019 0.986019
+
+Step 282400  Warning: pressure scaling more than 1%, mu: 1.01954 1.01954 1.01954
+
+Step 282450  Warning: pressure scaling more than 1%, mu: 0.986838 0.986838 0.986838
+
+Step 282500  Warning: pressure scaling more than 1%, mu: 1.01348 1.01348 1.01348
+
+Step 282550  Warning: pressure scaling more than 1%, mu: 0.985455 0.985455 0.985455
+
+Step 282650  Warning: pressure scaling more than 1%, mu: 0.988889 0.988889 0.988889
+
+Step 282700  Warning: pressure scaling more than 1%, mu: 1.01459 1.01459 1.01459
+
+Step 282800  Warning: pressure scaling more than 1%, mu: 1.01106 1.01106 1.01106
+
+Step 282850  Warning: pressure scaling more than 1%, mu: 0.989266 0.989266 0.989266
+
+Step 282900  Warning: pressure scaling more than 1%, mu: 1.01088 1.01088 1.01088
+
+Step 282950  Warning: pressure scaling more than 1%, mu: 0.988352 0.988352 0.988352
+
+Step 283000  Warning: pressure scaling more than 1%, mu: 1.01369 1.01369 1.01369
+
+Step 283050  Warning: pressure scaling more than 1%, mu: 0.989809 0.989809 0.989809
+
+Step 283100  Warning: pressure scaling more than 1%, mu: 1.01151 1.01151 1.01151
+
+Step 283200  Warning: pressure scaling more than 1%, mu: 1.01136 1.01136 1.01136
+
+Step 283350  Warning: pressure scaling more than 1%, mu: 0.986986 0.986986 0.986986
+
+Step 283400  Warning: pressure scaling more than 1%, mu: 1.01137 1.01137 1.01137
+
+Step 283600  Warning: pressure scaling more than 1%, mu: 1.01358 1.01358 1.01358
+
+Step 283700  Warning: pressure scaling more than 1%, mu: 1.01292 1.01292 1.01292
+
+Step 283750  Warning: pressure scaling more than 1%, mu: 0.984156 0.984156 0.984156
+
+Step 283800  Warning: pressure scaling more than 1%, mu: 1.0104 1.0104 1.0104
+
+Step 283850  Warning: pressure scaling more than 1%, mu: 0.986714 0.986714 0.986714
+
+Step 289650  Warning: pressure scaling more than 1%, mu: 1.01097 1.01097 1.01097
+
+Step 289700  Warning: pressure scaling more than 1%, mu: 0.987678 0.987678 0.987678
+
+Step 289750  Warning: pressure scaling more than 1%, mu: 1.01763 1.01763 1.01763
+
+Step 289800  Warning: pressure scaling more than 1%, mu: 0.98726 0.98726 0.98726
+           Step           Time
+         290000      580.00000
+
+
+Step 290000  Warning: pressure scaling more than 1%, mu: 0.98988 0.98988 0.98988
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.18601e+02    3.01604e+03    6.19095e+02    2.66234e+02   -1.96980e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.39567e+03   -6.03854e+02   -7.23569e+02    2.20690e+02   -7.94109e+01
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.83265e+03    4.75324e+03    4.29721e+05    2.88956e+02   -4.51437e+02
+ Pressure (bar)   Constr. rmsd
+   -3.14431e+03    3.31416e-06
+
+
+Step 290050  Warning: pressure scaling more than 1%, mu: 1.01394 1.01394 1.01394
+
+Step 290100  Warning: pressure scaling more than 1%, mu: 0.988306 0.988306 0.988306
+
+Step 295100  Warning: pressure scaling more than 1%, mu: 0.988191 0.988191 0.988191
+
+Step 295500  Warning: pressure scaling more than 1%, mu: 0.989328 0.989328 0.989328
+
+Step 297550  Warning: pressure scaling more than 1%, mu: 1.01231 1.01231 1.01231
+
+Step 297600  Warning: pressure scaling more than 1%, mu: 0.986081 0.986081 0.986081
+
+Step 297650  Warning: pressure scaling more than 1%, mu: 1.01345 1.01345 1.01345
+
+Step 297700  Warning: pressure scaling more than 1%, mu: 0.988623 0.988623 0.988623
+
+Step 297850  Warning: pressure scaling more than 1%, mu: 1.01118 1.01118 1.01118
+
+Step 298000  Warning: pressure scaling more than 1%, mu: 0.98883 0.98883 0.98883
+
+Step 298050  Warning: pressure scaling more than 1%, mu: 1.01081 1.01081 1.01081
+           Step           Time
+         300000      600.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.44097e+02    3.08825e+03    6.22929e+02    2.94527e+02   -1.91131e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.45887e+03   -6.12796e+02   -7.36970e+02    2.14531e+02   -1.35438e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.81692e+03    4.68148e+03    4.40601e+05    2.88015e+02   -4.64878e+02
+ Pressure (bar)   Constr. rmsd
+   -6.64076e+02    2.81117e-06
+
+
+Step 302000  Warning: pressure scaling more than 1%, mu: 1.01049 1.01049 1.01049
+
+Step 302500  Warning: pressure scaling more than 1%, mu: 1.0113 1.0113 1.0113
+
+Step 305050  Warning: pressure scaling more than 1%, mu: 0.987844 0.987844 0.987844
+
+Step 305100  Warning: pressure scaling more than 1%, mu: 1.01232 1.01232 1.01232
+
+Step 305200  Warning: pressure scaling more than 1%, mu: 1.01187 1.01187 1.01187
+
+Step 305250  Warning: pressure scaling more than 1%, mu: 0.986046 0.986046 0.986046
+
+Step 305300  Warning: pressure scaling more than 1%, mu: 1.01563 1.01563 1.01563
+
+Step 305400  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+
+Step 305450  Warning: pressure scaling more than 1%, mu: 0.988699 0.988699 0.988699
+
+Step 305550  Warning: pressure scaling more than 1%, mu: 0.984992 0.984992 0.984992
+
+Step 305600  Warning: pressure scaling more than 1%, mu: 1.01214 1.01214 1.01214
+
+Step 305650  Warning: pressure scaling more than 1%, mu: 0.98786 0.98786 0.98786
+
+Step 305700  Warning: pressure scaling more than 1%, mu: 1.01048 1.01048 1.01048
+           Step           Time
+         310000      620.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.83347e+02    2.95358e+03    6.16382e+02    2.57573e+02   -1.91980e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.49671e+03   -6.16125e+02   -7.35078e+02    2.10519e+02   -3.18490e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.89999e+03    4.58150e+03    4.51050e+05    2.92982e+02   -4.69933e+02
+ Pressure (bar)   Constr. rmsd
+   -2.28803e+03    3.49315e-06
+
+
+Step 312600  Warning: pressure scaling more than 1%, mu: 0.9898 0.9898 0.9898
+
+Step 313050  Warning: pressure scaling more than 1%, mu: 1.01388 1.01388 1.01388
+
+Step 313100  Warning: pressure scaling more than 1%, mu: 0.98301 0.98301 0.98301
+
+Step 313150  Warning: pressure scaling more than 1%, mu: 1.01607 1.01607 1.01607
+
+Step 313200  Warning: pressure scaling more than 1%, mu: 0.983474 0.983474 0.983474
+
+Step 313250  Warning: pressure scaling more than 1%, mu: 1.01141 1.01141 1.01141
+
+Step 313300  Warning: pressure scaling more than 1%, mu: 0.988856 0.988856 0.988856
+
+Step 313350  Warning: pressure scaling more than 1%, mu: 1.01059 1.01059 1.01059
+
+Step 313450  Warning: pressure scaling more than 1%, mu: 1.0135 1.0135 1.0135
+
+Step 313500  Warning: pressure scaling more than 1%, mu: 0.987329 0.987329 0.987329
+
+Step 313550  Warning: pressure scaling more than 1%, mu: 1.01418 1.01418 1.01418
+
+Step 313600  Warning: pressure scaling more than 1%, mu: 0.985238 0.985238 0.985238
+
+Step 313650  Warning: pressure scaling more than 1%, mu: 1.01437 1.01437 1.01437
+
+Step 313700  Warning: pressure scaling more than 1%, mu: 0.988693 0.988693 0.988693
+
+Step 313750  Warning: pressure scaling more than 1%, mu: 1.01082 1.01082 1.01082
+
+Step 313950  Warning: pressure scaling more than 1%, mu: 1.01003 1.01003 1.01003
+
+Step 314050  Warning: pressure scaling more than 1%, mu: 1.01281 1.01281 1.01281
+
+Step 314100  Warning: pressure scaling more than 1%, mu: 0.986874 0.986874 0.986874
+
+Step 314150  Warning: pressure scaling more than 1%, mu: 1.01037 1.01037 1.01037
+
+Step 314250  Warning: pressure scaling more than 1%, mu: 1.01048 1.01048 1.01048
+
+Step 314350  Warning: pressure scaling more than 1%, mu: 1.01253 1.01253 1.01253
+
+Step 314500  Warning: pressure scaling more than 1%, mu: 0.987851 0.987851 0.987851
+
+Step 314650  Warning: pressure scaling more than 1%, mu: 1.01436 1.01436 1.01436
+
+Step 314700  Warning: pressure scaling more than 1%, mu: 0.987926 0.987926 0.987926
+
+Step 314750  Warning: pressure scaling more than 1%, mu: 1.01086 1.01086 1.01086
+
+Step 315300  Warning: pressure scaling more than 1%, mu: 0.989127 0.989127 0.989127
+
+Step 315700  Warning: pressure scaling more than 1%, mu: 0.98732 0.98732 0.98732
+
+Step 315750  Warning: pressure scaling more than 1%, mu: 1.01372 1.01372 1.01372
+
+Step 315850  Warning: pressure scaling more than 1%, mu: 1.01051 1.01051 1.01051
+
+Step 316400  Warning: pressure scaling more than 1%, mu: 0.988071 0.988071 0.988071
+
+Step 317900  Warning: pressure scaling more than 1%, mu: 0.98956 0.98956 0.98956
+
+Step 318000  Warning: pressure scaling more than 1%, mu: 0.987334 0.987334 0.987334
+
+Step 318050  Warning: pressure scaling more than 1%, mu: 1.0107 1.0107 1.0107
+
+Step 318550  Warning: pressure scaling more than 1%, mu: 1.01142 1.01142 1.01142
+           Step           Time
+         320000      640.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.70672e+02    2.85907e+03    5.97384e+02    2.75345e+02   -1.78128e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.55371e+03   -6.30252e+02   -7.54364e+02    2.10822e+02   -5.03152e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.89066e+03    4.38751e+03    4.69593e+05    2.92424e+02   -4.91687e+02
+ Pressure (bar)   Constr. rmsd
+   -1.74494e+03    3.05865e-06
+
+
+Step 321400  Warning: pressure scaling more than 1%, mu: 1.01637 1.01637 1.01637
+
+Step 321450  Warning: pressure scaling more than 1%, mu: 0.985535 0.985535 0.985535
+
+Step 321500  Warning: pressure scaling more than 1%, mu: 1.01346 1.01346 1.01346
+
+Step 325600  Warning: pressure scaling more than 1%, mu: 0.987396 0.987396 0.987396
+
+Step 325650  Warning: pressure scaling more than 1%, mu: 1.01025 1.01025 1.01025
+
+Step 325850  Warning: pressure scaling more than 1%, mu: 1.01503 1.01503 1.01503
+
+Step 325900  Warning: pressure scaling more than 1%, mu: 0.989853 0.989853 0.989853
+
+Step 325950  Warning: pressure scaling more than 1%, mu: 1.01002 1.01002 1.01002
+
+Step 326000  Warning: pressure scaling more than 1%, mu: 0.985546 0.985546 0.985546
+
+Step 326050  Warning: pressure scaling more than 1%, mu: 1.01322 1.01322 1.01322
+
+Step 326250  Warning: pressure scaling more than 1%, mu: 1.01123 1.01123 1.01123
+
+Step 326300  Warning: pressure scaling more than 1%, mu: 0.989053 0.989053 0.989053
+
+Step 326400  Warning: pressure scaling more than 1%, mu: 0.989863 0.989863 0.989863
+
+Step 327000  Warning: pressure scaling more than 1%, mu: 1.01399 1.01399 1.01399
+
+Step 327050  Warning: pressure scaling more than 1%, mu: 0.984428 0.984428 0.984428
+
+Step 327100  Warning: pressure scaling more than 1%, mu: 1.01652 1.01652 1.01652
+
+Step 327200  Warning: pressure scaling more than 1%, mu: 1.01341 1.01341 1.01341
+
+Step 327250  Warning: pressure scaling more than 1%, mu: 0.987574 0.987574 0.987574
+
+Step 327350  Warning: pressure scaling more than 1%, mu: 0.985464 0.985464 0.985464
+
+Step 327500  Warning: pressure scaling more than 1%, mu: 1.01593 1.01593 1.01593
+
+Step 327550  Warning: pressure scaling more than 1%, mu: 0.9877 0.9877 0.9877
+
+Step 327600  Warning: pressure scaling more than 1%, mu: 1.01175 1.01175 1.01175
+
+Step 328050  Warning: pressure scaling more than 1%, mu: 0.989719 0.989719 0.989719
+           Step           Time
+         330000      660.00000
+
+
+Step 330000  Warning: pressure scaling more than 1%, mu: 1.01378 1.01378 1.01378
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.20928e+02    2.87974e+03    6.37607e+02    2.95541e+02   -1.78180e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.48963e+03   -6.26207e+02   -7.74859e+02    2.15999e+02   -4.19059e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.06269e+03    4.64363e+03    4.83554e+05    3.02710e+02   -4.85407e+02
+ Pressure (bar)   Constr. rmsd
+    3.26654e+03    3.06977e-06
+
+
+Step 330050  Warning: pressure scaling more than 1%, mu: 0.989056 0.989056 0.989056
+
+Step 330400  Warning: pressure scaling more than 1%, mu: 1.01147 1.01147 1.01147
+
+Step 330700  Warning: pressure scaling more than 1%, mu: 1.01406 1.01406 1.01406
+
+Step 335100  Warning: pressure scaling more than 1%, mu: 0.98895 0.98895 0.98895
+
+Step 335400  Warning: pressure scaling more than 1%, mu: 0.989833 0.989833 0.989833
+
+Step 335450  Warning: pressure scaling more than 1%, mu: 1.01234 1.01234 1.01234
+
+Step 335700  Warning: pressure scaling more than 1%, mu: 0.989236 0.989236 0.989236
+
+Step 335900  Warning: pressure scaling more than 1%, mu: 0.989652 0.989652 0.989652
+
+Step 335950  Warning: pressure scaling more than 1%, mu: 1.01217 1.01217 1.01217
+
+Step 336200  Warning: pressure scaling more than 1%, mu: 0.983993 0.983993 0.983993
+
+Step 336350  Warning: pressure scaling more than 1%, mu: 1.01063 1.01063 1.01063
+
+Step 336600  Warning: pressure scaling more than 1%, mu: 0.988825 0.988825 0.988825
+           Step           Time
+         340000      680.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.71239e+02    3.05724e+03    6.28639e+02    2.74972e+02   -1.79298e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.54422e+03   -6.17554e+02   -7.51681e+02    2.12397e+02   -2.48268e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.04126e+03    4.79300e+03    4.94230e+05    3.01429e+02   -4.72111e+02
+ Pressure (bar)   Constr. rmsd
+   -2.09029e+02    3.39846e-06
+
+
+Step 341350  Warning: pressure scaling more than 1%, mu: 1.01381 1.01381 1.01381
+
+Step 341400  Warning: pressure scaling more than 1%, mu: 0.988064 0.988064 0.988064
+
+Step 341500  Warning: pressure scaling more than 1%, mu: 0.987446 0.987446 0.987446
+
+Step 341650  Warning: pressure scaling more than 1%, mu: 1.01189 1.01189 1.01189
+
+Step 341700  Warning: pressure scaling more than 1%, mu: 0.988224 0.988224 0.988224
+
+Step 341750  Warning: pressure scaling more than 1%, mu: 1.01734 1.01734 1.01734
+
+Step 341800  Warning: pressure scaling more than 1%, mu: 0.985359 0.985359 0.985359
+
+Step 341850  Warning: pressure scaling more than 1%, mu: 1.01329 1.01329 1.01329
+
+Step 341900  Warning: pressure scaling more than 1%, mu: 0.987782 0.987782 0.987782
+
+Step 341950  Warning: pressure scaling more than 1%, mu: 1.01097 1.01097 1.01097
+
+Step 342000  Warning: pressure scaling more than 1%, mu: 0.98766 0.98766 0.98766
+
+Step 342050  Warning: pressure scaling more than 1%, mu: 1.01313 1.01313 1.01313
+
+Step 342100  Warning: pressure scaling more than 1%, mu: 0.985291 0.985291 0.985291
+
+Step 342150  Warning: pressure scaling more than 1%, mu: 1.0188 1.0188 1.0188
+
+Step 342200  Warning: pressure scaling more than 1%, mu: 0.98553 0.98553 0.98553
+
+Step 342250  Warning: pressure scaling more than 1%, mu: 1.01955 1.01955 1.01955
+
+Step 342300  Warning: pressure scaling more than 1%, mu: 0.983337 0.983337 0.983337
+
+Step 342350  Warning: pressure scaling more than 1%, mu: 1.01573 1.01573 1.01573
+
+Step 342400  Warning: pressure scaling more than 1%, mu: 0.988125 0.988125 0.988125
+
+Step 342450  Warning: pressure scaling more than 1%, mu: 1.01016 1.01016 1.01016
+
+Step 342500  Warning: pressure scaling more than 1%, mu: 0.986685 0.986685 0.986685
+
+Step 342550  Warning: pressure scaling more than 1%, mu: 1.01476 1.01476 1.01476
+
+Step 342600  Warning: pressure scaling more than 1%, mu: 0.989303 0.989303 0.989303
+
+Step 342650  Warning: pressure scaling more than 1%, mu: 1.01173 1.01173 1.01173
+
+Step 344400  Warning: pressure scaling more than 1%, mu: 0.987478 0.987478 0.987478
+
+Step 344450  Warning: pressure scaling more than 1%, mu: 1.01084 1.01084 1.01084
+
+Step 346900  Warning: pressure scaling more than 1%, mu: 1.01048 1.01048 1.01048
+
+Step 348550  Warning: pressure scaling more than 1%, mu: 0.988236 0.988236 0.988236
+
+Step 348600  Warning: pressure scaling more than 1%, mu: 1.0119 1.0119 1.0119
+
+Step 348700  Warning: pressure scaling more than 1%, mu: 1.01293 1.01293 1.01293
+
+Step 348850  Warning: pressure scaling more than 1%, mu: 0.984701 0.984701 0.984701
+
+Step 348900  Warning: pressure scaling more than 1%, mu: 1.01116 1.01116 1.01116
+
+Step 349000  Warning: pressure scaling more than 1%, mu: 1.0132 1.0132 1.0132
+
+Step 349100  Warning: pressure scaling more than 1%, mu: 1.01143 1.01143 1.01143
+
+Step 349150  Warning: pressure scaling more than 1%, mu: 0.986518 0.986518 0.986518
+
+Step 349250  Warning: pressure scaling more than 1%, mu: 0.987825 0.987825 0.987825
+
+Step 349300  Warning: pressure scaling more than 1%, mu: 1.01954 1.01954 1.01954
+
+Step 349350  Warning: pressure scaling more than 1%, mu: 0.982998 0.982998 0.982998
+
+Step 349400  Warning: pressure scaling more than 1%, mu: 1.02028 1.02028 1.02028
+
+Step 349450  Warning: pressure scaling more than 1%, mu: 0.981795 0.981795 0.981795
+
+Step 349500  Warning: pressure scaling more than 1%, mu: 1.01914 1.01914 1.01914
+
+Step 349550  Warning: pressure scaling more than 1%, mu: 0.983854 0.983854 0.983854
+
+Step 349600  Warning: pressure scaling more than 1%, mu: 1.01251 1.01251 1.01251
+
+Step 349650  Warning: pressure scaling more than 1%, mu: 0.989562 0.989562 0.989562
+
+Step 349700  Warning: pressure scaling more than 1%, mu: 1.01476 1.01476 1.01476
+
+Step 349750  Warning: pressure scaling more than 1%, mu: 0.986384 0.986384 0.986384
+
+Step 349800  Warning: pressure scaling more than 1%, mu: 1.01199 1.01199 1.01199
+
+Step 349850  Warning: pressure scaling more than 1%, mu: 0.988083 0.988083 0.988083
+           Step           Time
+         350000      700.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.29409e+02    3.04802e+03    6.00814e+02    2.84062e+02   -1.75826e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.54269e+03   -6.23478e+02   -7.53641e+02    2.19399e+02   -4.13929e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.09439e+03    4.68046e+03    5.17929e+05    3.04606e+02   -4.81195e+02
+ Pressure (bar)   Constr. rmsd
+    3.21183e+03    3.33787e-06
+
+
+Step 350200  Warning: pressure scaling more than 1%, mu: 1.01143 1.01143 1.01143
+
+Step 350250  Warning: pressure scaling more than 1%, mu: 0.989686 0.989686 0.989686
+
+Step 350400  Warning: pressure scaling more than 1%, mu: 1.01018 1.01018 1.01018
+
+Step 350450  Warning: pressure scaling more than 1%, mu: 0.989017 0.989017 0.989017
+
+Step 350500  Warning: pressure scaling more than 1%, mu: 1.01062 1.01062 1.01062
+
+Step 350550  Warning: pressure scaling more than 1%, mu: 0.989802 0.989802 0.989802
+
+Step 355400  Warning: pressure scaling more than 1%, mu: 1.01023 1.01023 1.01023
+
+Step 356750  Warning: pressure scaling more than 1%, mu: 1.01006 1.01006 1.01006
+
+Step 357650  Warning: pressure scaling more than 1%, mu: 1.01247 1.01247 1.01247
+
+Step 357750  Warning: pressure scaling more than 1%, mu: 1.01027 1.01027 1.01027
+
+Step 358150  Warning: pressure scaling more than 1%, mu: 1.01038 1.01038 1.01038
+
+Step 358650  Warning: pressure scaling more than 1%, mu: 1.0143 1.0143 1.0143
+
+Step 358700  Warning: pressure scaling more than 1%, mu: 0.986359 0.986359 0.986359
+
+Step 358750  Warning: pressure scaling more than 1%, mu: 1.01611 1.01611 1.01611
+
+Step 358800  Warning: pressure scaling more than 1%, mu: 0.986412 0.986412 0.986412
+
+Step 358850  Warning: pressure scaling more than 1%, mu: 1.01268 1.01268 1.01268
+
+Step 358900  Warning: pressure scaling more than 1%, mu: 0.988971 0.988971 0.988971
+
+Step 359000  Warning: pressure scaling more than 1%, mu: 0.989116 0.989116 0.989116
+
+Step 359050  Warning: pressure scaling more than 1%, mu: 1.01629 1.01629 1.01629
+
+Step 359100  Warning: pressure scaling more than 1%, mu: 0.988231 0.988231 0.988231
+
+Step 359150  Warning: pressure scaling more than 1%, mu: 1.01438 1.01438 1.01438
+
+Step 359200  Warning: pressure scaling more than 1%, mu: 0.985621 0.985621 0.985621
+
+Step 359250  Warning: pressure scaling more than 1%, mu: 1.01238 1.01238 1.01238
+
+Step 359300  Warning: pressure scaling more than 1%, mu: 0.988648 0.988648 0.988648
+
+Step 359350  Warning: pressure scaling more than 1%, mu: 1.01644 1.01644 1.01644
+
+Step 359400  Warning: pressure scaling more than 1%, mu: 0.984948 0.984948 0.984948
+
+Step 359450  Warning: pressure scaling more than 1%, mu: 1.01679 1.01679 1.01679
+
+Step 359500  Warning: pressure scaling more than 1%, mu: 0.986714 0.986714 0.986714
+
+Step 359600  Warning: pressure scaling more than 1%, mu: 0.985779 0.985779 0.985779
+
+Step 359750  Warning: pressure scaling more than 1%, mu: 1.01196 1.01196 1.01196
+           Step           Time
+         360000      720.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.69410e+02    2.90207e+03    6.73745e+02    2.60888e+02   -1.73961e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.37570e+03   -6.00376e+02   -7.51147e+02    2.24742e+02   -1.70329e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.97922e+03    4.80889e+03    5.35552e+05    2.97719e+02   -4.46262e+02
+ Pressure (bar)   Constr. rmsd
+   -3.76050e+03    3.54328e-06
+
+
+Step 360800  Warning: pressure scaling more than 1%, mu: 0.989262 0.989262 0.989262
+
+Step 360850  Warning: pressure scaling more than 1%, mu: 1.01215 1.01215 1.01215
+
+Step 363850  Warning: pressure scaling more than 1%, mu: 0.988378 0.988378 0.988378
+
+Step 363900  Warning: pressure scaling more than 1%, mu: 1.01255 1.01255 1.01255
+
+Step 363950  Warning: pressure scaling more than 1%, mu: 0.98947 0.98947 0.98947
+
+Step 366200  Warning: pressure scaling more than 1%, mu: 0.987543 0.987543 0.987543
+
+Step 368600  Warning: pressure scaling more than 1%, mu: 0.98969 0.98969 0.98969
+
+Step 369550  Warning: pressure scaling more than 1%, mu: 1.0114 1.0114 1.0114
+
+Step 369600  Warning: pressure scaling more than 1%, mu: 0.988975 0.988975 0.988975
+
+Step 369650  Warning: pressure scaling more than 1%, mu: 1.01984 1.01984 1.01984
+
+Step 369700  Warning: pressure scaling more than 1%, mu: 0.989258 0.989258 0.989258
+           Step           Time
+         370000      740.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.74953e+02    2.93562e+03    6.09093e+02    2.85275e+02   -2.06880e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.42690e+03   -6.17140e+02   -7.00823e+02    2.23792e+02   -3.23010e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.91890e+03    4.59589e+03    5.47740e+05    2.94113e+02   -4.71479e+02
+ Pressure (bar)   Constr. rmsd
+   -1.85247e+03    3.19295e-06
+
+
+Step 370950  Warning: pressure scaling more than 1%, mu: 1.01166 1.01166 1.01166
+
+Step 371150  Warning: pressure scaling more than 1%, mu: 1.01372 1.01372 1.01372
+
+Step 372950  Warning: pressure scaling more than 1%, mu: 0.989967 0.989967 0.989967
+
+Step 373050  Warning: pressure scaling more than 1%, mu: 0.98636 0.98636 0.98636
+
+Step 373200  Warning: pressure scaling more than 1%, mu: 1.01598 1.01598 1.01598
+
+Step 373350  Warning: pressure scaling more than 1%, mu: 0.985891 0.985891 0.985891
+
+Step 373400  Warning: pressure scaling more than 1%, mu: 1.01039 1.01039 1.01039
+
+Step 373450  Warning: pressure scaling more than 1%, mu: 0.986537 0.986537 0.986537
+
+Step 373500  Warning: pressure scaling more than 1%, mu: 1.01682 1.01682 1.01682
+
+Step 373550  Warning: pressure scaling more than 1%, mu: 0.989156 0.989156 0.989156
+
+Step 373600  Warning: pressure scaling more than 1%, mu: 1.0153 1.0153 1.0153
+
+Step 373650  Warning: pressure scaling more than 1%, mu: 0.983647 0.983647 0.983647
+
+Step 373700  Warning: pressure scaling more than 1%, mu: 1.01403 1.01403 1.01403
+
+Step 373750  Warning: pressure scaling more than 1%, mu: 0.983505 0.983505 0.983505
+
+Step 374200  Warning: pressure scaling more than 1%, mu: 1.01189 1.01189 1.01189
+
+Step 375350  Warning: pressure scaling more than 1%, mu: 1.01126 1.01126 1.01126
+
+Step 377550  Warning: pressure scaling more than 1%, mu: 1.01271 1.01271 1.01271
+
+Step 377900  Warning: pressure scaling more than 1%, mu: 0.98961 0.98961 0.98961
+
+Step 377950  Warning: pressure scaling more than 1%, mu: 1.01208 1.01208 1.01208
+
+Step 378000  Warning: pressure scaling more than 1%, mu: 0.989156 0.989156 0.989156
+
+Step 378400  Warning: pressure scaling more than 1%, mu: 0.989715 0.989715 0.989715
+
+Step 378450  Warning: pressure scaling more than 1%, mu: 1.01069 1.01069 1.01069
+
+Step 378800  Warning: pressure scaling more than 1%, mu: 0.989624 0.989624 0.989624
+
+Step 378850  Warning: pressure scaling more than 1%, mu: 1.012 1.012 1.012
+
+Step 378900  Warning: pressure scaling more than 1%, mu: 0.986256 0.986256 0.986256
+
+Step 379450  Warning: pressure scaling more than 1%, mu: 1.01354 1.01354 1.01354
+
+Step 379550  Warning: pressure scaling more than 1%, mu: 1.01131 1.01131 1.01131
+           Step           Time
+         380000      760.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.33790e+02    2.98440e+03    6.26069e+02    2.93703e+02   -1.90334e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.54738e+03   -6.21575e+02   -7.50471e+02    2.03281e+02   -3.68510e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.76927e+03    4.40076e+03    5.66245e+05    2.85166e+02   -4.78267e+02
+ Pressure (bar)   Constr. rmsd
+   -2.50944e+02    3.57863e-06
+
+
+Step 383800  Warning: pressure scaling more than 1%, mu: 0.989161 0.989161 0.989161
+
+Step 384400  Warning: pressure scaling more than 1%, mu: 1.01035 1.01035 1.01035
+
+Step 384450  Warning: pressure scaling more than 1%, mu: 0.988826 0.988826 0.988826
+
+Step 385450  Warning: pressure scaling more than 1%, mu: 0.988478 0.988478 0.988478
+           Step           Time
+         390000      780.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.24983e+02    3.09179e+03    5.72962e+02    2.83588e+02   -1.78826e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.48375e+03   -6.13858e+02   -7.41581e+02    2.29145e+02   -2.15547e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.83616e+03    4.62061e+03    5.72438e+05    2.89165e+02   -4.66488e+02
+ Pressure (bar)   Constr. rmsd
+   -1.43753e+03    3.31234e-06
+
+
+Step 392950  Warning: pressure scaling more than 1%, mu: 1.01267 1.01267 1.01267
+
+Step 393000  Warning: pressure scaling more than 1%, mu: 0.987946 0.987946 0.987946
+
+Step 393050  Warning: pressure scaling more than 1%, mu: 1.01182 1.01182 1.01182
+
+Step 394950  Warning: pressure scaling more than 1%, mu: 1.01202 1.01202 1.01202
+
+Step 396900  Warning: pressure scaling more than 1%, mu: 1.01039 1.01039 1.01039
+
+Step 397650  Warning: pressure scaling more than 1%, mu: 1.01179 1.01179 1.01179
+           Step           Time
+         400000      800.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.80213e+02    2.91360e+03    6.03082e+02    2.80245e+02   -1.85666e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.53341e+03   -6.22784e+02   -7.40667e+02    2.28062e+02   -4.77328e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.88836e+03    4.41103e+03    5.81042e+05    2.92286e+02   -4.80126e+02
+ Pressure (bar)   Constr. rmsd
+    1.48127e+03    3.13671e-06
+
+
+Step 400050  Warning: pressure scaling more than 1%, mu: 0.989386 0.989386 0.989386
+
+Step 400200  Warning: pressure scaling more than 1%, mu: 1.0113 1.0113 1.0113
+
+Step 400250  Warning: pressure scaling more than 1%, mu: 0.989663 0.989663 0.989663
+
+Step 401900  Warning: pressure scaling more than 1%, mu: 1.01189 1.01189 1.01189
+
+Step 402050  Warning: pressure scaling more than 1%, mu: 0.987122 0.987122 0.987122
+
+Step 402450  Warning: pressure scaling more than 1%, mu: 0.986767 0.986767 0.986767
+
+Step 402500  Warning: pressure scaling more than 1%, mu: 1.01339 1.01339 1.01339
+
+Step 402850  Warning: pressure scaling more than 1%, mu: 0.989161 0.989161 0.989161
+
+Step 403000  Warning: pressure scaling more than 1%, mu: 1.01021 1.01021 1.01021
+
+Step 403100  Warning: pressure scaling more than 1%, mu: 1.01265 1.01265 1.01265
+
+Step 408850  Warning: pressure scaling more than 1%, mu: 0.986467 0.986467 0.986467
+           Step           Time
+         410000      820.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.28711e+02    2.86830e+03    4.94893e+02    2.61107e+02   -1.96313e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.52942e+03   -6.22402e+02   -7.15386e+02    2.34181e+02   -6.76331e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.84683e+03    4.17050e+03    5.91208e+05    2.89803e+02   -4.79537e+02
+ Pressure (bar)   Constr. rmsd
+    1.10949e+03    3.14035e-06
+
+
+Step 411900  Warning: pressure scaling more than 1%, mu: 1.01116 1.01116 1.01116
+
+Step 412450  Warning: pressure scaling more than 1%, mu: 0.989926 0.989926 0.989926
+
+Step 412700  Warning: pressure scaling more than 1%, mu: 1.01247 1.01247 1.01247
+
+Step 412800  Warning: pressure scaling more than 1%, mu: 1.0128 1.0128 1.0128
+
+Step 412850  Warning: pressure scaling more than 1%, mu: 0.982467 0.982467 0.982467
+
+Step 412900  Warning: pressure scaling more than 1%, mu: 1.015 1.015 1.015
+
+Step 412950  Warning: pressure scaling more than 1%, mu: 0.987294 0.987294 0.987294
+
+Step 413050  Warning: pressure scaling more than 1%, mu: 0.988363 0.988363 0.988363
+
+Step 413100  Warning: pressure scaling more than 1%, mu: 1.0162 1.0162 1.0162
+
+Step 413200  Warning: pressure scaling more than 1%, mu: 1.01253 1.01253 1.01253
+
+Step 413250  Warning: pressure scaling more than 1%, mu: 0.985181 0.985181 0.985181
+
+Step 413350  Warning: pressure scaling more than 1%, mu: 0.988498 0.988498 0.988498
+
+Step 413400  Warning: pressure scaling more than 1%, mu: 1.01009 1.01009 1.01009
+
+Step 413450  Warning: pressure scaling more than 1%, mu: 0.989174 0.989174 0.989174
+
+Step 413500  Warning: pressure scaling more than 1%, mu: 1.01296 1.01296 1.01296
+
+Step 413650  Warning: pressure scaling more than 1%, mu: 0.987421 0.987421 0.987421
+
+Step 414400  Warning: pressure scaling more than 1%, mu: 1.01354 1.01354 1.01354
+
+Step 415800  Warning: pressure scaling more than 1%, mu: 1.01317 1.01317 1.01317
+
+Step 416700  Warning: pressure scaling more than 1%, mu: 1.01047 1.01047 1.01047
+
+Step 417100  Warning: pressure scaling more than 1%, mu: 1.01033 1.01033 1.01033
+
+Step 417150  Warning: pressure scaling more than 1%, mu: 0.987709 0.987709 0.987709
+
+Step 417200  Warning: pressure scaling more than 1%, mu: 1.01031 1.01031 1.01031
+
+Step 417300  Warning: pressure scaling more than 1%, mu: 1.01209 1.01209 1.01209
+
+Step 417350  Warning: pressure scaling more than 1%, mu: 0.988899 0.988899 0.988899
+
+Step 417700  Warning: pressure scaling more than 1%, mu: 1.01164 1.01164 1.01164
+
+Step 418500  Warning: pressure scaling more than 1%, mu: 1.0104 1.0104 1.0104
+
+Step 418650  Warning: pressure scaling more than 1%, mu: 0.989227 0.989227 0.989227
+
+Step 418750  Warning: pressure scaling more than 1%, mu: 0.988467 0.988467 0.988467
+           Step           Time
+         420000      840.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.36143e+02    2.93379e+03    6.15979e+02    2.91255e+02   -2.04792e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.45990e+03   -6.08380e+02   -7.17361e+02    2.29493e+02   -2.83777e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.88030e+03    4.59653e+03    6.07459e+05    2.91805e+02   -4.58216e+02
+ Pressure (bar)   Constr. rmsd
+   -8.90208e+01    3.18327e-06
+
+
+Step 423900  Warning: pressure scaling more than 1%, mu: 1.0167 1.0167 1.0167
+
+Step 423950  Warning: pressure scaling more than 1%, mu: 0.989844 0.989844 0.989844
+
+Step 424000  Warning: pressure scaling more than 1%, mu: 1.01096 1.01096 1.01096
+
+Step 427600  Warning: pressure scaling more than 1%, mu: 1.01047 1.01047 1.01047
+
+Step 427850  Warning: pressure scaling more than 1%, mu: 0.988036 0.988036 0.988036
+
+Step 428000  Warning: pressure scaling more than 1%, mu: 1.01081 1.01081 1.01081
+
+Step 428350  Warning: pressure scaling more than 1%, mu: 0.989123 0.989123 0.989123
+
+Step 428700  Warning: pressure scaling more than 1%, mu: 1.01077 1.01077 1.01077
+
+Step 428800  Warning: pressure scaling more than 1%, mu: 1.01017 1.01017 1.01017
+
+Step 428850  Warning: pressure scaling more than 1%, mu: 0.985585 0.985585 0.985585
+
+Step 428950  Warning: pressure scaling more than 1%, mu: 0.98989 0.98989 0.98989
+
+Step 429000  Warning: pressure scaling more than 1%, mu: 1.01007 1.01007 1.01007
+
+Step 429700  Warning: pressure scaling more than 1%, mu: 1.01024 1.01024 1.01024
+
+Step 429750  Warning: pressure scaling more than 1%, mu: 0.989241 0.989241 0.989241
+
+Step 429900  Warning: pressure scaling more than 1%, mu: 1.01053 1.01053 1.01053
+
+Step 429950  Warning: pressure scaling more than 1%, mu: 0.989842 0.989842 0.989842
+           Step           Time
+         430000      860.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.77996e+02    2.91448e+03    5.81714e+02    3.09112e+02   -2.01953e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.51054e+03   -6.18480e+02   -7.01407e+02    2.25565e+02   -4.23509e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.17965e+03    4.75614e+03    6.19499e+05    3.09703e+02   -4.73525e+02
+ Pressure (bar)   Constr. rmsd
+    2.51205e+03    2.91145e-06
+
+
+Step 431150  Warning: pressure scaling more than 1%, mu: 0.988414 0.988414 0.988414
+
+Step 434650  Warning: pressure scaling more than 1%, mu: 1.01114 1.01114 1.01114
+
+Step 435100  Warning: pressure scaling more than 1%, mu: 0.989901 0.989901 0.989901
+
+Step 435800  Warning: pressure scaling more than 1%, mu: 0.988534 0.988534 0.988534
+
+Step 439550  Warning: pressure scaling more than 1%, mu: 1.01115 1.01115 1.01115
+
+Step 439800  Warning: pressure scaling more than 1%, mu: 0.989708 0.989708 0.989708
+           Step           Time
+         440000      880.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.16786e+02    2.80167e+03    6.29772e+02    2.62946e+02   -1.95395e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.49353e+03   -6.23603e+02   -7.30391e+02    2.07036e+02   -4.24707e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.81561e+03    4.39090e+03    6.29982e+05    2.87937e+02   -4.81386e+02
+ Pressure (bar)   Constr. rmsd
+   -1.95286e+03    3.06856e-06
+
+
+Step 440200  Warning: pressure scaling more than 1%, mu: 0.98767 0.98767 0.98767
+
+Step 443400  Warning: pressure scaling more than 1%, mu: 1.01012 1.01012 1.01012
+
+Step 443450  Warning: pressure scaling more than 1%, mu: 0.989587 0.989587 0.989587
+
+Step 444050  Warning: pressure scaling more than 1%, mu: 0.987567 0.987567 0.987567
+
+Step 444200  Warning: pressure scaling more than 1%, mu: 1.01079 1.01079 1.01079
+
+Step 446200  Warning: pressure scaling more than 1%, mu: 1.01271 1.01271 1.01271
+
+Step 446300  Warning: pressure scaling more than 1%, mu: 1.0124 1.0124 1.0124
+
+Step 446450  Warning: pressure scaling more than 1%, mu: 0.987542 0.987542 0.987542
+
+Step 446500  Warning: pressure scaling more than 1%, mu: 1.01393 1.01393 1.01393
+
+Step 446550  Warning: pressure scaling more than 1%, mu: 0.987883 0.987883 0.987883
+
+Step 446600  Warning: pressure scaling more than 1%, mu: 1.013 1.013 1.013
+
+Step 446700  Warning: pressure scaling more than 1%, mu: 1.01135 1.01135 1.01135
+
+Step 447100  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+           Step           Time
+         450000      900.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.15011e+02    3.01035e+03    5.86034e+02    2.72036e+02   -1.91197e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.47334e+03   -6.18917e+02   -7.23937e+02    2.35650e+02   -2.88312e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.91681e+03    4.62850e+03    6.39230e+05    2.93988e+02   -4.74193e+02
+ Pressure (bar)   Constr. rmsd
+   -1.63094e+03    3.07137e-06
+
+
+Step 450400  Warning: pressure scaling more than 1%, mu: 0.98678 0.98678 0.98678
+
+Step 456800  Warning: pressure scaling more than 1%, mu: 0.987677 0.987677 0.987677
+
+Step 457050  Warning: pressure scaling more than 1%, mu: 1.01048 1.01048 1.01048
+
+Step 457100  Warning: pressure scaling more than 1%, mu: 0.989085 0.989085 0.989085
+
+Step 457200  Warning: pressure scaling more than 1%, mu: 0.989451 0.989451 0.989451
+
+Step 457300  Warning: pressure scaling more than 1%, mu: 0.989915 0.989915 0.989915
+
+Step 457350  Warning: pressure scaling more than 1%, mu: 1.01149 1.01149 1.01149
+
+Step 458850  Warning: pressure scaling more than 1%, mu: 0.989081 0.989081 0.989081
+
+Step 459900  Warning: pressure scaling more than 1%, mu: 1.01038 1.01038 1.01038
+           Step           Time
+         460000      920.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.96133e+02    2.92075e+03    5.88916e+02    2.78143e+02   -2.02373e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.55410e+03   -6.16109e+02   -7.19284e+02    2.23251e+02   -4.84668e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.80204e+03    4.31737e+03    6.47966e+05    2.87125e+02   -4.69908e+02
+ Pressure (bar)   Constr. rmsd
+    1.11057e+03    3.37731e-06
+
+
+Step 460200  Warning: pressure scaling more than 1%, mu: 1.01825 1.01825 1.01825
+
+Step 460350  Warning: pressure scaling more than 1%, mu: 0.988747 0.988747 0.988747
+
+Step 460450  Warning: pressure scaling more than 1%, mu: 0.988449 0.988449 0.988449
+
+Step 460600  Warning: pressure scaling more than 1%, mu: 1.01328 1.01328 1.01328
+
+Step 460650  Warning: pressure scaling more than 1%, mu: 0.989854 0.989854 0.989854
+
+Step 460750  Warning: pressure scaling more than 1%, mu: 0.985677 0.985677 0.985677
+
+Step 460850  Warning: pressure scaling more than 1%, mu: 0.989169 0.989169 0.989169
+
+Step 461050  Warning: pressure scaling more than 1%, mu: 0.986167 0.986167 0.986167
+
+Step 461100  Warning: pressure scaling more than 1%, mu: 1.01137 1.01137 1.01137
+
+Step 461150  Warning: pressure scaling more than 1%, mu: 0.988374 0.988374 0.988374
+
+Step 464250  Warning: pressure scaling more than 1%, mu: 1.0122 1.0122 1.0122
+
+Step 464500  Warning: pressure scaling more than 1%, mu: 0.988457 0.988457 0.988457
+
+Step 464600  Warning: pressure scaling more than 1%, mu: 0.9896 0.9896 0.9896
+
+Step 464650  Warning: pressure scaling more than 1%, mu: 1.01625 1.01625 1.01625
+
+Step 464700  Warning: pressure scaling more than 1%, mu: 0.988627 0.988627 0.988627
+
+Step 464750  Warning: pressure scaling more than 1%, mu: 1.01565 1.01565 1.01565
+
+Step 464800  Warning: pressure scaling more than 1%, mu: 0.986881 0.986881 0.986881
+
+Step 465150  Warning: pressure scaling more than 1%, mu: 1.01407 1.01407 1.01407
+
+Step 467400  Warning: pressure scaling more than 1%, mu: 1.0115 1.0115 1.0115
+
+Step 468150  Warning: pressure scaling more than 1%, mu: 1.01172 1.01172 1.01172
+           Step           Time
+         470000      940.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.38509e+02    3.10082e+03    5.95055e+02    2.92864e+02   -1.86755e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.50151e+03   -6.18967e+02   -7.42062e+02    2.06841e+02   -3.15206e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.92726e+03    4.61206e+03    6.61788e+05    2.94613e+02   -4.74270e+02
+ Pressure (bar)   Constr. rmsd
+    8.32523e+02    3.31404e-06
+
+
+Step 470650  Warning: pressure scaling more than 1%, mu: 1.0112 1.0112 1.0112
+
+Step 471300  Warning: pressure scaling more than 1%, mu: 0.986349 0.986349 0.986349
+
+Step 472750  Warning: pressure scaling more than 1%, mu: 0.989146 0.989146 0.989146
+
+Step 472800  Warning: pressure scaling more than 1%, mu: 1.01349 1.01349 1.01349
+
+Step 472900  Warning: pressure scaling more than 1%, mu: 1.01017 1.01017 1.01017
+
+Step 472950  Warning: pressure scaling more than 1%, mu: 0.988794 0.988794 0.988794
+
+Step 473300  Warning: pressure scaling more than 1%, mu: 1.01166 1.01166 1.01166
+
+Step 474650  Warning: pressure scaling more than 1%, mu: 1.01015 1.01015 1.01015
+
+Step 474750  Warning: pressure scaling more than 1%, mu: 1.01555 1.01555 1.01555
+
+Step 474800  Warning: pressure scaling more than 1%, mu: 0.989993 0.989993 0.989993
+
+Step 475000  Warning: pressure scaling more than 1%, mu: 0.989322 0.989322 0.989322
+
+Step 475150  Warning: pressure scaling more than 1%, mu: 1.01232 1.01232 1.01232
+
+Step 475200  Warning: pressure scaling more than 1%, mu: 0.988972 0.988972 0.988972
+
+Step 475250  Warning: pressure scaling more than 1%, mu: 1.01119 1.01119 1.01119
+
+Step 475300  Warning: pressure scaling more than 1%, mu: 0.985774 0.985774 0.985774
+
+Step 475350  Warning: pressure scaling more than 1%, mu: 1.01277 1.01277 1.01277
+
+Step 475400  Warning: pressure scaling more than 1%, mu: 0.989197 0.989197 0.989197
+
+Step 475450  Warning: pressure scaling more than 1%, mu: 1.01109 1.01109 1.01109
+
+Step 475600  Warning: pressure scaling more than 1%, mu: 0.985875 0.985875 0.985875
+
+Step 475650  Warning: pressure scaling more than 1%, mu: 1.01176 1.01176 1.01176
+
+Step 475700  Warning: pressure scaling more than 1%, mu: 0.983447 0.983447 0.983447
+
+Step 475750  Warning: pressure scaling more than 1%, mu: 1.02323 1.02323 1.02323
+
+Step 475800  Warning: pressure scaling more than 1%, mu: 0.983941 0.983941 0.983941
+
+Step 475850  Warning: pressure scaling more than 1%, mu: 1.01376 1.01376 1.01376
+
+Step 475950  Warning: pressure scaling more than 1%, mu: 1.01142 1.01142 1.01142
+
+Step 476050  Warning: pressure scaling more than 1%, mu: 1.01257 1.01257 1.01257
+
+Step 476100  Warning: pressure scaling more than 1%, mu: 0.984684 0.984684 0.984684
+
+Step 476150  Warning: pressure scaling more than 1%, mu: 1.01397 1.01397 1.01397
+
+Step 476200  Warning: pressure scaling more than 1%, mu: 0.989028 0.989028 0.989028
+
+Step 476250  Warning: pressure scaling more than 1%, mu: 1.0163 1.0163 1.0163
+
+Step 476300  Warning: pressure scaling more than 1%, mu: 0.987061 0.987061 0.987061
+
+Step 476350  Warning: pressure scaling more than 1%, mu: 1.01477 1.01477 1.01477
+
+Step 476400  Warning: pressure scaling more than 1%, mu: 0.985032 0.985032 0.985032
+
+Step 476800  Warning: pressure scaling more than 1%, mu: 0.987451 0.987451 0.987451
+
+Step 476850  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+
+Step 479600  Warning: pressure scaling more than 1%, mu: 1.01057 1.01057 1.01057
+           Step           Time
+         480000      960.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.82391e+02    2.98766e+03    6.21432e+02    2.67048e+02   -1.69852e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.67240e+03   -6.35457e+02   -7.77914e+02    2.22245e+02   -4.74850e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    5.04466e+03    4.56981e+03    6.81014e+05    3.01632e+02   -4.99826e+02
+ Pressure (bar)   Constr. rmsd
+    1.49259e+03    3.35046e-06
+
+
+Step 483100  Warning: pressure scaling more than 1%, mu: 1.01029 1.01029 1.01029
+
+Step 484600  Warning: pressure scaling more than 1%, mu: 1.01122 1.01122 1.01122
+
+Step 484650  Warning: pressure scaling more than 1%, mu: 0.987943 0.987943 0.987943
+
+Step 484700  Warning: pressure scaling more than 1%, mu: 1.01223 1.01223 1.01223
+
+Step 484750  Warning: pressure scaling more than 1%, mu: 0.989724 0.989724 0.989724
+
+Step 486450  Warning: pressure scaling more than 1%, mu: 0.989408 0.989408 0.989408
+
+Step 486550  Warning: pressure scaling more than 1%, mu: 0.986659 0.986659 0.986659
+
+Step 486600  Warning: pressure scaling more than 1%, mu: 1.01049 1.01049 1.01049
+
+Step 486850  Warning: pressure scaling more than 1%, mu: 0.989892 0.989892 0.989892
+
+Step 486900  Warning: pressure scaling more than 1%, mu: 1.01072 1.01072 1.01072
+
+Step 486950  Warning: pressure scaling more than 1%, mu: 0.98526 0.98526 0.98526
+
+Step 487250  Warning: pressure scaling more than 1%, mu: 0.984819 0.984819 0.984819
+
+Step 487400  Warning: pressure scaling more than 1%, mu: 1.01357 1.01357 1.01357
+
+Step 487450  Warning: pressure scaling more than 1%, mu: 0.988879 0.988879 0.988879
+
+Step 487500  Warning: pressure scaling more than 1%, mu: 1.01121 1.01121 1.01121
+
+Step 487800  Warning: pressure scaling more than 1%, mu: 1.01167 1.01167 1.01167
+
+Step 487850  Warning: pressure scaling more than 1%, mu: 0.985033 0.985033 0.985033
+
+Step 487900  Warning: pressure scaling more than 1%, mu: 1.0134 1.0134 1.0134
+
+Step 487950  Warning: pressure scaling more than 1%, mu: 0.985262 0.985262 0.985262
+
+Step 488000  Warning: pressure scaling more than 1%, mu: 1.01417 1.01417 1.01417
+
+Step 488050  Warning: pressure scaling more than 1%, mu: 0.988555 0.988555 0.988555
+
+Step 488100  Warning: pressure scaling more than 1%, mu: 1.01666 1.01666 1.01666
+
+Step 488250  Warning: pressure scaling more than 1%, mu: 0.989296 0.989296 0.989296
+
+Step 488400  Warning: pressure scaling more than 1%, mu: 1.01402 1.01402 1.01402
+
+Step 488500  Warning: pressure scaling more than 1%, mu: 1.01539 1.01539 1.01539
+
+Step 488550  Warning: pressure scaling more than 1%, mu: 0.98995 0.98995 0.98995
+
+Step 488900  Warning: pressure scaling more than 1%, mu: 1.01063 1.01063 1.01063
+           Step           Time
+         490000      980.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.30799e+02    3.01566e+03    6.17269e+02    2.52010e+02   -1.71404e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.51593e+03   -6.17679e+02   -7.68501e+02    2.13194e+02   -3.44579e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.86634e+03    4.52176e+03    6.95638e+05    2.90970e+02   -4.72301e+02
+ Pressure (bar)   Constr. rmsd
+    2.87166e+02    3.23539e-06
+
+
+Step 492200  Warning: pressure scaling more than 1%, mu: 0.986475 0.986475 0.986475
+
+Step 492250  Warning: pressure scaling more than 1%, mu: 1.01351 1.01351 1.01351
+
+Step 492350  Warning: pressure scaling more than 1%, mu: 1.01418 1.01418 1.01418
+
+Step 492400  Warning: pressure scaling more than 1%, mu: 0.9891 0.9891 0.9891
+
+Step 492500  Warning: pressure scaling more than 1%, mu: 0.988957 0.988957 0.988957
+
+Step 492600  Warning: pressure scaling more than 1%, mu: 0.989393 0.989393 0.989393
+
+Step 492650  Warning: pressure scaling more than 1%, mu: 1.01478 1.01478 1.01478
+
+Step 492700  Warning: pressure scaling more than 1%, mu: 0.985713 0.985713 0.985713
+
+Step 492750  Warning: pressure scaling more than 1%, mu: 1.01857 1.01857 1.01857
+
+Step 492800  Warning: pressure scaling more than 1%, mu: 0.987237 0.987237 0.987237
+
+Step 492850  Warning: pressure scaling more than 1%, mu: 1.01062 1.01062 1.01062
+
+Step 493000  Warning: pressure scaling more than 1%, mu: 0.987229 0.987229 0.987229
+
+Step 493050  Warning: pressure scaling more than 1%, mu: 1.01397 1.01397 1.01397
+
+Step 493100  Warning: pressure scaling more than 1%, mu: 0.987815 0.987815 0.987815
+
+Step 493150  Warning: pressure scaling more than 1%, mu: 1.01484 1.01484 1.01484
+
+Step 493200  Warning: pressure scaling more than 1%, mu: 0.987233 0.987233 0.987233
+
+Step 493450  Warning: pressure scaling more than 1%, mu: 1.01248 1.01248 1.01248
+
+Step 493500  Warning: pressure scaling more than 1%, mu: 0.987642 0.987642 0.987642
+
+Step 493550  Warning: pressure scaling more than 1%, mu: 1.01734 1.01734 1.01734
+
+Step 493600  Warning: pressure scaling more than 1%, mu: 0.986806 0.986806 0.986806
+
+Step 493650  Warning: pressure scaling more than 1%, mu: 1.01035 1.01035 1.01035
+
+Step 493700  Warning: pressure scaling more than 1%, mu: 0.989269 0.989269 0.989269
+
+Step 495650  Warning: pressure scaling more than 1%, mu: 0.986223 0.986223 0.986223
+           Step           Time
+         500000     1000.00000
+
+Writing checkpoint, step 500000 at Thu May 29 11:01:29 2025
+
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.99069e+02    3.09070e+03    6.49694e+02    2.72584e+02   -1.84330e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.55475e+03   -6.25742e+02   -7.27862e+02    2.29645e+02   -2.50996e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.92313e+03    4.67214e+03    7.10194e+05    2.94366e+02   -4.84689e+02
+ Pressure (bar)   Constr. rmsd
+   -3.08059e+02    3.22526e-06
+
+
+Energy conservation over simulation part #1 of length 1000 ps, time 0 to 1000 ps
+  Conserved energy drift: 3.86e-01 kJ/mol/ps per atom
+
+
+	<======  ###############  ==>
+	<====  A V E R A G E S  ====>
+	<==  ###############  ======>
+
+	Statistics over 500001 steps using 5001 frames
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.31098e+02    3.00243e+03    6.13016e+02    2.80324e+02   -1.83814e+02
+        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.      Potential
+   -3.52054e+03   -6.20812e+02   -7.44742e+02    2.21416e+02   -3.21616e+02
+    Kinetic En.   Total Energy  Conserved En.    Temperature Pres. DC (bar)
+    4.92515e+03    4.60354e+03    3.73286e+05    2.94487e+02   -4.77293e+02
+ Pressure (bar)   Constr. rmsd
+    6.64146e+01    0.00000e+00
+
+          Box-X          Box-Y          Box-Z
+    2.78733e+00    2.78733e+00    2.78733e+00
+
+   Total Virial (kJ/mol)
+    1.61582e+03    1.91078e-01    1.91165e+00
+    1.91067e-01    1.60015e+03    7.22240e+00
+    1.91170e+00    7.22253e+00    1.61388e+03
+
+   Pressure (bar)
+    5.88238e+01    4.02490e+00   -4.17976e+00
+    4.02491e+00    8.06548e+01   -1.04030e+01
+   -4.17984e+00   -1.04032e+01    5.97652e+01
+
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ Pair Search distance check           32721.698704      294495.288     0.9
+ NxN Ewald Elec. + LJ [F]            444981.106128    29368753.004    87.8
+ NxN Ewald Elec. + LJ [V&F]            4496.385360      481113.234     1.4
+ NxN Ewald Elec. [F]                  13661.631696      833359.533     2.5
+ NxN Ewald Elec. [V&F]                  138.335216       11620.158     0.0
+ 1,4 nonbonded interactions            1647.003294      148230.296     0.4
+ Calc Weights                          2745.005490       98820.198     0.3
+ Spread Q Bspline                     58560.117120      117120.234     0.4
+ Gather F Bspline                     58560.117120      351360.703     1.1
+ 3D-FFT                              103726.207452      829809.660     2.5
+ Solve PME                             2200.004400      140800.282     0.4
+ Reset In Box                            91.500000         274.500     0.0
+ CG-CoM                                  91.501830         274.505     0.0
+ Bonds                                  244.000488       14396.029     0.0
+ Angles                                1464.002928      245952.492     0.7
+ RB-Dihedrals                          1647.003294      406809.814     1.2
+ Virial                                  37.501875         675.034     0.0
+ Stop-CM                                  9.151830          91.518     0.0
+ P-Coupling                              18.301830         109.811     0.0
+ Calc-Ekin                              183.001830        4941.049     0.0
+ Lincs                                 1098.002196       65880.132     0.2
+ Lincs-Mat                             8784.017568       35136.070     0.1
+ Constraint-V                          1098.002196        9882.020     0.0
+ Constraint-Vir                          43.922196        1054.133     0.0
+ Virtual Site 2                          63.440244        1459.126     0.0
+-----------------------------------------------------------------------------
+ Total                                                33462418.823   100.0
+-----------------------------------------------------------------------------
+
+
+    D O M A I N   D E C O M P O S I T I O N   S T A T I S T I C S
+
+ av. #atoms communicated per step for force:  2 x 0.0
+ av. #atoms communicated per step for vsites: 3 x 0.0
+ av. #atoms communicated per step for LINCS:  2 x 0.0
+
+
+      R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+On 1 MPI rank
+
+ Activity:              Num   Num      Call    Wall time         Giga-Cycles
+                        Ranks Threads  Count      (s)         total sum    %
+--------------------------------------------------------------------------------
+ Domain decomp.            1    1      50000      20.818         64.535   3.0
+ Vsite constr.             1    1     500502       1.037          3.215   0.2
+ Neighbor search           1    1      50001     100.716        312.220  14.7
+ Force                     1    1     500001     449.443       1393.268  65.8
+ PME mesh                  1    1     500001      68.537        212.465  10.0
+ NB X/F buffer ops.        1    1     950001       2.330          7.224   0.3
+ Vsite spread              1    1     520002       0.337          1.044   0.0
+ Write traj.               1    1         51       0.020          0.061   0.0
+ Update                    1    1    1600004       9.447         29.286   1.4
+ Constraints               1    1    1000002      27.648         85.710   4.0
+ Rest                                              2.759          8.554   0.4
+--------------------------------------------------------------------------------
+ Total                                           683.094       2117.583 100.0
+--------------------------------------------------------------------------------
+ Breakdown of PME mesh activities
+--------------------------------------------------------------------------------
+ PME spread                1    1     500001      25.938         80.408   3.8
+ PME gather                1    1     500001      27.601         85.563   4.0
+ PME 3D-FFT                1    1    1000002      10.324         32.003   1.5
+ PME solve Elec            1    1     500001       4.395         13.625   0.6
+--------------------------------------------------------------------------------
+
+NOTE: 3 % of the run time was spent in domain decomposition,
+      15 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      683.093      683.094      100.0
+                 (ns/day)    (hour/ns)
+Performance:      126.484        0.190
+Finished mdrun on rank 0 Thu May 29 11:01:29 2025
+

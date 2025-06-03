@@ -1,0 +1,90 @@
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/1-C4H9Br_EP/single_molecule
+Command line:
+  gmx grompp -f 02_nvt.mdp -c 11_emin_single-molecule.gro -p topol_single-molecule.top -o 12_nvt_single-molecule.tpr
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file 02_nvt.mdp]:
+  verlet-buffer-pressure-tolerance is ignored when verlet-buffer-tolerance
+  < 0
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group Other is 30.00
+
+NOTE 2 [file 02_nvt.mdp]:
+  The optimal PME mesh load for parallel simulations is below 0.5
+  and for highly parallel simulations between 0.25 and 0.33,
+  for higher performance, increase the cut-off and the PME grid spacing.
+
+
+
+There were 2 NOTEs
+
+GROMACS reminds you: "Your daddy ain't your daddy but your daddy don't know" (Dalahan)
+
+Setting the LD random seed to 2004615022
+
+Generated 331705 of the 331705 non-bonded parameter combinations
+
+Generated 331705 of the 331705 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Other'
+
+turning H bonds into constraints...
+
+Setting gen_seed to -35397636
+
+Velocities were taken from a Maxwell distribution at 293.15 K
+
+Cleaning up constraints and constant bonded interactions with virtual sites
+Analysing residue names:
+There are:     1      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+The largest distance between excluded atoms is 0.425 nm between atom 5 and 14
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 72x72x72, spacing 0.148 0.148 0.148
+
+Estimate for the relative computational load of the PME mesh part: 1.00
+
+This run will generate roughly 0 Mb of data
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/1-C4H9Br_EP/single_molecule
+Command line:
+  gmx mdrun -deffnm 12_nvt_single-molecule
+
+Reading file 12_nvt_single-molecule.tpr, VERSION 2024.1 (single precision)
+
+NOTE: Parallelization is limited by the small number of atoms,
+      only starting 1 thread-MPI ranks.
+      You can use the -nt and/or -ntmpi option to optimize the number of threads.
+
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because the construction atoms of a virtual site are only partly with a group of constrained atoms
+
+Using 1 MPI thread
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 1 OpenMP thread 
+
+starting mdrun '1-BROMOBUTANE_EP'
+50000 steps,    100.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:       90.587       90.588      100.0
+                 (ns/day)    (hour/ns)
+Performance:       95.379        0.252
+
+GROMACS reminds you: "Science grows like a weed every year." (Kary Mullis)
+

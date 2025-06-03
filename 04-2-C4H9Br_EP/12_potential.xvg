@@ -1,0 +1,30 @@
+# This file was created Mon Jun  2 09:29:22 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2024.1 (-:
+# 
+# Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+# Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+# Working dir:  /work/rstric2s/current_sim/Application/04-2-C4H9Br_EP
+# Command line:
+#   gmx energy -f 12_nvt.edr -o 12_potential
+# gmx energy is part of G R O M A C S:
+#
+# Glycine aRginine prOline Methionine Alanine Cystine Serine
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  584.345337
+   20.000000  -1308.941650
+   40.000000  -1396.314941
+   60.000000  -1344.834473
+   80.000000  -1372.625000
+  100.000000  -1438.716797

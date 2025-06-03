@@ -1,0 +1,30 @@
+# This file was created Tue May 27 12:45:44 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2024.1 (-:
+# 
+# Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+# Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+# Working dir:  /work/rstric2s/current_sim/Application/1-C4H9Br_EP/single_molecule
+# Command line:
+#   gmx energy -f 11_emin_single-molecule.edr -o 11_potential
+# gmx energy is part of G R O M A C S:
+#
+# Good ROcking Metal Altar for Chronical Sinners
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  403.312317
+    1.000000  221.943756
+    2.000000  129.542786
+    3.000000   70.339584
+    5.000000   68.745079
+    7.000000   44.833939

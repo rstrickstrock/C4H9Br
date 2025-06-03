@@ -1,0 +1,82 @@
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/03-1-C4H9Br_EP
+Command line:
+  gmx grompp -f 02_nvt.mdp -c 11_emin.gro -p topol.top -o 12_nvt.tpr
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file 02_nvt.mdp]:
+  verlet-buffer-pressure-tolerance is ignored when verlet-buffer-tolerance
+  < 0
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group Other is 4023.00
+
+There was 1 NOTE
+
+GROMACS reminds you: "For those who want some proof that physicists are human, the proof is in the idiocy of all the different units which they use for measuring energy." (Richard Feynman)
+
+Setting the LD random seed to -1346373917
+
+Generated 331705 of the 331705 non-bonded parameter combinations
+
+Generated 331705 of the 331705 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Other'
+
+turning H bonds into constraints...
+
+Setting gen_seed to -1281172481
+
+Velocities were taken from a Maxwell distribution at 293.15 K
+
+Cleaning up constraints and constant bonded interactions with virtual sites
+Analysing residue names:
+There are:   122      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+The largest distance between excluded atoms is 0.440 nm between atom 965 and 974
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 20x20x20, spacing 0.141 0.141 0.141
+
+Estimate for the relative computational load of the PME mesh part: 0.24
+
+This run will generate roughly 0 Mb of data
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/03-1-C4H9Br_EP
+Command line:
+  gmx mdrun -deffnm 12_nvt
+
+Reading file 12_nvt.tpr, VERSION 2024.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because the construction atoms of a virtual site are only partly with a group of constrained atoms
+
+Using 1 MPI thread
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 1 OpenMP thread 
+
+starting mdrun '1-BROMOBUTANE_EP'
+50000 steps,    100.0 ps.
+
+Writing final coordinates.
+
+NOTE: 3 % of the run time was spent in domain decomposition,
+      15 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+               Core t (s)   Wall t (s)        (%)
+       Time:       66.521       66.521      100.0
+                 (ns/day)    (hour/ns)
+Performance:      129.886        0.185
+
+GROMACS reminds you: "If all else fails, immortality can always be assured by spectacular error." (John Kenneth Galbraith)
+

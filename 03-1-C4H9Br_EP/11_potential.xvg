@@ -1,0 +1,48 @@
+# This file was created Thu May 29 10:39:28 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2024.1 (-:
+# 
+# Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+# Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+# Working dir:  /work/rstric2s/current_sim/Application/03-1-C4H9Br_EP
+# Command line:
+#   gmx energy -f 11_emin.edr -o 11_potential
+# gmx energy is part of G R O M A C S:
+#
+# Giant Rising Ordinary Mutants for A Clerical Setup
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  83482.914062
+    1.000000  70664.562500
+    2.000000  53170.640625
+    3.000000  34962.496094
+    4.000000  23677.558594
+    5.000000  15641.810547
+    7.000000  14387.151367
+    8.000000  11342.499023
+   10.000000  10434.958008
+   11.000000  9862.479492
+   12.000000  9549.933594
+   13.000000  9507.775391
+   15.000000  7187.872559
+   16.000000  6940.575195
+   17.000000  5921.231445
+   19.000000  5055.243652
+   21.000000  4846.765137
+   22.000000  4609.781250
+   23.000000  4576.233398
+   24.000000  4260.542480
+   26.000000  3958.696533
+   27.000000  3901.768555
+   28.000000  3663.913086
+   30.000000  3411.580078

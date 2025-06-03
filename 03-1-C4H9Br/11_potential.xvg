@@ -1,0 +1,44 @@
+# This file was created Thu May 29 10:36:47 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2024.1 (-:
+# 
+# Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+# Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+# Working dir:  /work/rstric2s/current_sim/Application/03-1-C4H9Br
+# Command line:
+#   gmx energy -f 11_emin.edr -o 11_potential
+# gmx energy is part of G R O M A C S:
+#
+# Great Red Owns Many ACres of Sand 
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  112114.515625
+    1.000000  89809.156250
+    2.000000  67958.765625
+    3.000000  48335.468750
+    4.000000  35228.628906
+    5.000000  25893.416016
+    6.000000  18686.044922
+    8.000000  17249.363281
+    9.000000  16291.666016
+   10.000000  14831.365234
+   12.000000  13256.239258
+   13.000000  13196.683594
+   14.000000  12404.476562
+   16.000000  10773.925781
+   18.000000  10061.634766
+   19.000000  9485.541016
+   21.000000  9065.255859
+   22.000000  8734.923828
+   23.000000  8422.500000
+   25.000000  7984.092285

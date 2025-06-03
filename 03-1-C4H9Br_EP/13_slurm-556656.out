@@ -1,0 +1,2224 @@
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/03-1-C4H9Br_EP
+Command line:
+  gmx grompp -f 03_npt.mdp -c 12_nvt.gro -t 12_nvt.trr -p topol.top -o 13_npt.tpr
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file 03_npt.mdp]:
+  verlet-buffer-pressure-tolerance is ignored when verlet-buffer-tolerance
+  < 0
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group Other is 4023.00
+trr version: GMX_trn_file (single precision)
+Reading frame       0 time    0.000   Reading frame       1 time   20.000   Reading frame       2 time   40.000   Reading frame       3 time   60.000   Reading frame       4 time   80.000   Reading frame       5 time  100.000   Last frame          5 time  100.000   
+
+There was 1 NOTE
+
+GROMACS reminds you: "Any one who considers arithmetical methods of producing random digits is, of course, in a state of sin." (John von Neumann)
+
+Setting the LD random seed to 2000551879
+
+Generated 331705 of the 331705 non-bonded parameter combinations
+
+Generated 331705 of the 331705 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Other'
+
+turning H bonds into constraints...
+
+Cleaning up constraints and constant bonded interactions with virtual sites
+Analysing residue names:
+There are:   122      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+The largest distance between excluded atoms is 0.443 nm between atom 1640 and 1649
+
+Reading Coordinates, Velocities and Box size from old trajectory
+
+Will read whole trajectory
+
+Using frame at t = 100 ps
+
+Starting time for run is 0 ps
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 20x20x20, spacing 0.141 0.141 0.141
+
+Estimate for the relative computational load of the PME mesh part: 0.24
+
+This run will generate roughly 2 Mb of data
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/03-1-C4H9Br_EP
+Command line:
+  gmx mdrun -deffnm 13_npt
+
+Reading file 13_npt.tpr, VERSION 2024.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because the construction atoms of a virtual site are only partly with a group of constrained atoms
+
+Using 1 MPI thread
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 1 OpenMP thread 
+
+starting mdrun '1-BROMOBUTANE_EP'
+500000 steps,   1000.0 ps.
+
+Step 450  Warning: pressure scaling more than 1%, mu: 0.988899 0.988899 0.988899
+
+Step 500  Warning: pressure scaling more than 1%, mu: 1.01016 1.01016 1.01016
+
+Step 1750  Warning: pressure scaling more than 1%, mu: 0.988079 0.988079 0.988079
+
+Step 2150  Warning: pressure scaling more than 1%, mu: 0.986231 0.986231 0.986231
+
+Step 2200  Warning: pressure scaling more than 1%, mu: 1.01356 1.01356 1.01356
+
+Step 2250  Warning: pressure scaling more than 1%, mu: 0.989987 0.989987 0.989987
+
+Step 2300  Warning: pressure scaling more than 1%, mu: 1.01296 1.01296 1.01296
+
+Step 2550  Warning: pressure scaling more than 1%, mu: 0.989202 0.989202 0.989202
+
+Step 2700  Warning: pressure scaling more than 1%, mu: 1.01347 1.01347 1.01347
+
+Step 2750  Warning: pressure scaling more than 1%, mu: 0.986475 0.986475 0.986475
+
+Step 2950  Warning: pressure scaling more than 1%, mu: 0.989513 0.989513 0.989513
+
+Step 3000  Warning: pressure scaling more than 1%, mu: 1.01239 1.01239 1.01239
+
+Step 3050  Warning: pressure scaling more than 1%, mu: 0.98988 0.98988 0.98988
+
+Step 3100  Warning: pressure scaling more than 1%, mu: 1.01441 1.01441 1.01441
+
+Step 3150  Warning: pressure scaling more than 1%, mu: 0.989141 0.989141 0.989141
+
+Step 3250  Warning: pressure scaling more than 1%, mu: 0.98701 0.98701 0.98701
+
+Step 3300  Warning: pressure scaling more than 1%, mu: 1.01475 1.01475 1.01475
+
+Step 3350  Warning: pressure scaling more than 1%, mu: 0.987225 0.987225 0.987225
+
+Step 3400  Warning: pressure scaling more than 1%, mu: 1.01339 1.01339 1.01339
+
+Step 3450  Warning: pressure scaling more than 1%, mu: 0.988261 0.988261 0.988261
+
+Step 3500  Warning: pressure scaling more than 1%, mu: 1.01258 1.01258 1.01258
+
+Step 3550  Warning: pressure scaling more than 1%, mu: 0.983723 0.983723 0.983723
+
+Step 3600  Warning: pressure scaling more than 1%, mu: 1.0163 1.0163 1.0163
+
+Step 3650  Warning: pressure scaling more than 1%, mu: 0.983751 0.983751 0.983751
+
+Step 3700  Warning: pressure scaling more than 1%, mu: 1.02127 1.02127 1.02127
+
+Step 3750  Warning: pressure scaling more than 1%, mu: 0.985961 0.985961 0.985961
+
+Step 3800  Warning: pressure scaling more than 1%, mu: 1.01828 1.01828 1.01828
+
+Step 3850  Warning: pressure scaling more than 1%, mu: 0.981699 0.981699 0.981699
+
+Step 3900  Warning: pressure scaling more than 1%, mu: 1.01059 1.01059 1.01059
+
+Step 3950  Warning: pressure scaling more than 1%, mu: 0.985401 0.985401 0.985401
+
+Step 4000  Warning: pressure scaling more than 1%, mu: 1.01848 1.01848 1.01848
+
+Step 4050  Warning: pressure scaling more than 1%, mu: 0.989095 0.989095 0.989095
+
+Step 4100  Warning: pressure scaling more than 1%, mu: 1.01859 1.01859 1.01859
+
+Step 4150  Warning: pressure scaling more than 1%, mu: 0.986795 0.986795 0.986795
+
+Step 4200  Warning: pressure scaling more than 1%, mu: 1.0109 1.0109 1.0109
+
+Step 4250  Warning: pressure scaling more than 1%, mu: 0.983958 0.983958 0.983958
+
+Step 4300  Warning: pressure scaling more than 1%, mu: 1.01129 1.01129 1.01129
+
+Step 4400  Warning: pressure scaling more than 1%, mu: 1.02018 1.02018 1.02018
+
+Step 4450  Warning: pressure scaling more than 1%, mu: 0.983542 0.983542 0.983542
+
+Step 4500  Warning: pressure scaling more than 1%, mu: 1.01495 1.01495 1.01495
+
+Step 4550  Warning: pressure scaling more than 1%, mu: 0.984965 0.984965 0.984965
+
+Step 4600  Warning: pressure scaling more than 1%, mu: 1.01252 1.01252 1.01252
+
+Step 4650  Warning: pressure scaling more than 1%, mu: 0.985632 0.985632 0.985632
+
+Step 4700  Warning: pressure scaling more than 1%, mu: 1.01629 1.01629 1.01629
+
+Step 4750  Warning: pressure scaling more than 1%, mu: 0.985959 0.985959 0.985959
+
+Step 4800  Warning: pressure scaling more than 1%, mu: 1.01846 1.01846 1.01846
+
+Step 4850  Warning: pressure scaling more than 1%, mu: 0.982224 0.982224 0.982224
+
+Step 4950  Warning: pressure scaling more than 1%, mu: 0.987759 0.987759 0.987759
+
+Step 5200  Warning: pressure scaling more than 1%, mu: 1.01134 1.01134 1.01134
+
+Step 5250  Warning: pressure scaling more than 1%, mu: 0.989205 0.989205 0.989205
+
+Step 6950  Warning: pressure scaling more than 1%, mu: 0.988827 0.988827 0.988827
+
+Step 7700  Warning: pressure scaling more than 1%, mu: 1.01051 1.01051 1.01051
+
+Step 8600  Warning: pressure scaling more than 1%, mu: 0.98957 0.98957 0.98957
+
+Step 9500  Warning: pressure scaling more than 1%, mu: 0.986658 0.986658 0.986658
+
+Step 9550  Warning: pressure scaling more than 1%, mu: 1.01618 1.01618 1.01618
+
+Step 9600  Warning: pressure scaling more than 1%, mu: 0.986454 0.986454 0.986454
+
+Step 9650  Warning: pressure scaling more than 1%, mu: 1.01326 1.01326 1.01326
+
+Step 9700  Warning: pressure scaling more than 1%, mu: 0.989478 0.989478 0.989478
+
+Step 9750  Warning: pressure scaling more than 1%, mu: 1.018 1.018 1.018
+
+Step 9800  Warning: pressure scaling more than 1%, mu: 0.985487 0.985487 0.985487
+
+Step 9850  Warning: pressure scaling more than 1%, mu: 1.01518 1.01518 1.01518
+
+Step 9900  Warning: pressure scaling more than 1%, mu: 0.98153 0.98153 0.98153
+
+Step 9950  Warning: pressure scaling more than 1%, mu: 1.01486 1.01486 1.01486
+
+Step 10000  Warning: pressure scaling more than 1%, mu: 0.984885 0.984885 0.984885
+
+Step 10050  Warning: pressure scaling more than 1%, mu: 1.01731 1.01731 1.01731
+
+Step 10100  Warning: pressure scaling more than 1%, mu: 0.984098 0.984098 0.984098
+
+Step 10150  Warning: pressure scaling more than 1%, mu: 1.01778 1.01778 1.01778
+
+Step 10200  Warning: pressure scaling more than 1%, mu: 0.983866 0.983866 0.983866
+
+Step 10250  Warning: pressure scaling more than 1%, mu: 1.01637 1.01637 1.01637
+
+Step 10300  Warning: pressure scaling more than 1%, mu: 0.983612 0.983612 0.983612
+
+Step 10350  Warning: pressure scaling more than 1%, mu: 1.01696 1.01696 1.01696
+
+Step 10400  Warning: pressure scaling more than 1%, mu: 0.988894 0.988894 0.988894
+
+Step 10450  Warning: pressure scaling more than 1%, mu: 1.01219 1.01219 1.01219
+
+Step 10500  Warning: pressure scaling more than 1%, mu: 0.984497 0.984497 0.984497
+
+Step 10550  Warning: pressure scaling more than 1%, mu: 1.01623 1.01623 1.01623
+
+Step 10600  Warning: pressure scaling more than 1%, mu: 0.98965 0.98965 0.98965
+
+Step 10800  Warning: pressure scaling more than 1%, mu: 0.98937 0.98937 0.98937
+
+Step 11200  Warning: pressure scaling more than 1%, mu: 0.987415 0.987415 0.987415
+
+Step 12500  Warning: pressure scaling more than 1%, mu: 1.01135 1.01135 1.01135
+
+Step 14550  Warning: pressure scaling more than 1%, mu: 0.987958 0.987958 0.987958
+
+Step 14600  Warning: pressure scaling more than 1%, mu: 1.01033 1.01033 1.01033
+
+Step 15300  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+
+Step 15450  Warning: pressure scaling more than 1%, mu: 0.985409 0.985409 0.985409
+
+Step 15650  Warning: pressure scaling more than 1%, mu: 0.989191 0.989191 0.989191
+
+Step 15900  Warning: pressure scaling more than 1%, mu: 1.01196 1.01196 1.01196
+
+Step 16050  Warning: pressure scaling more than 1%, mu: 0.985652 0.985652 0.985652
+
+Step 16100  Warning: pressure scaling more than 1%, mu: 1.01673 1.01673 1.01673
+
+Step 16150  Warning: pressure scaling more than 1%, mu: 0.988211 0.988211 0.988211
+
+Step 16200  Warning: pressure scaling more than 1%, mu: 1.01379 1.01379 1.01379
+
+Step 16250  Warning: pressure scaling more than 1%, mu: 0.987743 0.987743 0.987743
+
+Step 16350  Warning: pressure scaling more than 1%, mu: 0.989944 0.989944 0.989944
+
+Step 16400  Warning: pressure scaling more than 1%, mu: 1.01415 1.01415 1.01415
+
+Step 16450  Warning: pressure scaling more than 1%, mu: 0.987565 0.987565 0.987565
+
+Step 16500  Warning: pressure scaling more than 1%, mu: 1.01599 1.01599 1.01599
+
+Step 16550  Warning: pressure scaling more than 1%, mu: 0.986079 0.986079 0.986079
+
+Step 16600  Warning: pressure scaling more than 1%, mu: 1.01124 1.01124 1.01124
+
+Step 16800  Warning: pressure scaling more than 1%, mu: 1.01306 1.01306 1.01306
+
+Step 16850  Warning: pressure scaling more than 1%, mu: 0.986407 0.986407 0.986407
+
+Step 16900  Warning: pressure scaling more than 1%, mu: 1.01815 1.01815 1.01815
+
+Step 16950  Warning: pressure scaling more than 1%, mu: 0.989426 0.989426 0.989426
+
+Step 17000  Warning: pressure scaling more than 1%, mu: 1.01263 1.01263 1.01263
+
+Step 17050  Warning: pressure scaling more than 1%, mu: 0.982868 0.982868 0.982868
+
+Step 17150  Warning: pressure scaling more than 1%, mu: 0.989169 0.989169 0.989169
+
+Step 17200  Warning: pressure scaling more than 1%, mu: 1.01144 1.01144 1.01144
+
+Step 17650  Warning: pressure scaling more than 1%, mu: 1.01301 1.01301 1.01301
+
+Step 17700  Warning: pressure scaling more than 1%, mu: 0.989917 0.989917 0.989917
+
+Step 17800  Warning: pressure scaling more than 1%, mu: 0.985767 0.985767 0.985767
+
+Step 18100  Warning: pressure scaling more than 1%, mu: 0.988254 0.988254 0.988254
+
+Step 18400  Warning: pressure scaling more than 1%, mu: 0.988692 0.988692 0.988692
+
+Step 18450  Warning: pressure scaling more than 1%, mu: 1.01068 1.01068 1.01068
+
+Step 18500  Warning: pressure scaling more than 1%, mu: 0.984906 0.984906 0.984906
+
+Step 18550  Warning: pressure scaling more than 1%, mu: 1.01084 1.01084 1.01084
+
+Step 18750  Warning: pressure scaling more than 1%, mu: 1.01386 1.01386 1.01386
+
+Step 18800  Warning: pressure scaling more than 1%, mu: 0.986392 0.986392 0.986392
+
+Step 18850  Warning: pressure scaling more than 1%, mu: 1.01494 1.01494 1.01494
+
+Step 18900  Warning: pressure scaling more than 1%, mu: 0.986167 0.986167 0.986167
+
+Step 18950  Warning: pressure scaling more than 1%, mu: 1.01574 1.01574 1.01574
+
+Step 19000  Warning: pressure scaling more than 1%, mu: 0.989563 0.989563 0.989563
+
+Step 19150  Warning: pressure scaling more than 1%, mu: 1.01216 1.01216 1.01216
+
+Step 21000  Warning: pressure scaling more than 1%, mu: 0.989791 0.989791 0.989791
+
+Step 30000  Warning: pressure scaling more than 1%, mu: 1.01006 1.01006 1.01006
+
+Step 30150  Warning: pressure scaling more than 1%, mu: 0.989064 0.989064 0.989064
+
+Step 30250  Warning: pressure scaling more than 1%, mu: 0.989848 0.989848 0.989848
+
+Step 30650  Warning: pressure scaling more than 1%, mu: 0.987822 0.987822 0.987822
+
+Step 30750  Warning: pressure scaling more than 1%, mu: 0.986371 0.986371 0.986371
+
+Step 30800  Warning: pressure scaling more than 1%, mu: 1.01225 1.01225 1.01225
+
+Step 30850  Warning: pressure scaling more than 1%, mu: 0.989101 0.989101 0.989101
+
+Step 30900  Warning: pressure scaling more than 1%, mu: 1.01553 1.01553 1.01553
+
+Step 30950  Warning: pressure scaling more than 1%, mu: 0.98483 0.98483 0.98483
+
+Step 31000  Warning: pressure scaling more than 1%, mu: 1.01305 1.01305 1.01305
+
+Step 31100  Warning: pressure scaling more than 1%, mu: 1.01112 1.01112 1.01112
+
+Step 31150  Warning: pressure scaling more than 1%, mu: 0.987823 0.987823 0.987823
+
+Step 31200  Warning: pressure scaling more than 1%, mu: 1.01597 1.01597 1.01597
+
+Step 31250  Warning: pressure scaling more than 1%, mu: 0.986199 0.986199 0.986199
+
+Step 31300  Warning: pressure scaling more than 1%, mu: 1.01321 1.01321 1.01321
+
+Step 31350  Warning: pressure scaling more than 1%, mu: 0.985454 0.985454 0.985454
+
+Step 31400  Warning: pressure scaling more than 1%, mu: 1.02209 1.02209 1.02209
+
+Step 31450  Warning: pressure scaling more than 1%, mu: 0.979815 0.979815 0.979815
+
+Step 31500  Warning: pressure scaling more than 1%, mu: 1.02159 1.02159 1.02159
+
+Step 31550  Warning: pressure scaling more than 1%, mu: 0.984976 0.984976 0.984976
+
+Step 31600  Warning: pressure scaling more than 1%, mu: 1.01169 1.01169 1.01169
+
+Step 31650  Warning: pressure scaling more than 1%, mu: 0.982457 0.982457 0.982457
+
+Step 31700  Warning: pressure scaling more than 1%, mu: 1.01587 1.01587 1.01587
+
+Step 31750  Warning: pressure scaling more than 1%, mu: 0.987957 0.987957 0.987957
+
+Step 31800  Warning: pressure scaling more than 1%, mu: 1.01873 1.01873 1.01873
+
+Step 31850  Warning: pressure scaling more than 1%, mu: 0.985287 0.985287 0.985287
+
+Step 31900  Warning: pressure scaling more than 1%, mu: 1.01358 1.01358 1.01358
+
+Step 31950  Warning: pressure scaling more than 1%, mu: 0.98627 0.98627 0.98627
+
+Step 32100  Warning: pressure scaling more than 1%, mu: 1.01057 1.01057 1.01057
+
+Step 32250  Warning: pressure scaling more than 1%, mu: 0.989701 0.989701 0.989701
+
+Step 32350  Warning: pressure scaling more than 1%, mu: 0.989652 0.989652 0.989652
+
+Step 32500  Warning: pressure scaling more than 1%, mu: 1.01508 1.01508 1.01508
+
+Step 32900  Warning: pressure scaling more than 1%, mu: 1.01015 1.01015 1.01015
+
+Step 33950  Warning: pressure scaling more than 1%, mu: 0.989649 0.989649 0.989649
+
+Step 34000  Warning: pressure scaling more than 1%, mu: 1.01504 1.01504 1.01504
+
+Step 35900  Warning: pressure scaling more than 1%, mu: 1.01006 1.01006 1.01006
+
+Step 37650  Warning: pressure scaling more than 1%, mu: 0.986091 0.986091 0.986091
+
+Step 39750  Warning: pressure scaling more than 1%, mu: 1.01091 1.01091 1.01091
+
+Step 40800  Warning: pressure scaling more than 1%, mu: 0.989844 0.989844 0.989844
+
+Step 41250  Warning: pressure scaling more than 1%, mu: 1.01101 1.01101 1.01101
+
+Step 42200  Warning: pressure scaling more than 1%, mu: 0.987608 0.987608 0.987608
+
+Step 42250  Warning: pressure scaling more than 1%, mu: 1.01085 1.01085 1.01085
+
+Step 42300  Warning: pressure scaling more than 1%, mu: 0.98958 0.98958 0.98958
+
+Step 42350  Warning: pressure scaling more than 1%, mu: 1.01165 1.01165 1.01165
+
+Step 43350  Warning: pressure scaling more than 1%, mu: 0.988369 0.988369 0.988369
+
+Step 43450  Warning: pressure scaling more than 1%, mu: 0.988529 0.988529 0.988529
+
+Step 43500  Warning: pressure scaling more than 1%, mu: 1.01205 1.01205 1.01205
+
+Step 43550  Warning: pressure scaling more than 1%, mu: 0.989175 0.989175 0.989175
+
+Step 43600  Warning: pressure scaling more than 1%, mu: 1.01421 1.01421 1.01421
+
+Step 43650  Warning: pressure scaling more than 1%, mu: 0.987083 0.987083 0.987083
+
+Step 43700  Warning: pressure scaling more than 1%, mu: 1.01616 1.01616 1.01616
+
+Step 43750  Warning: pressure scaling more than 1%, mu: 0.982817 0.982817 0.982817
+
+Step 43800  Warning: pressure scaling more than 1%, mu: 1.01372 1.01372 1.01372
+
+Step 43850  Warning: pressure scaling more than 1%, mu: 0.984641 0.984641 0.984641
+
+Step 43900  Warning: pressure scaling more than 1%, mu: 1.01871 1.01871 1.01871
+
+Step 43950  Warning: pressure scaling more than 1%, mu: 0.986769 0.986769 0.986769
+
+Step 44000  Warning: pressure scaling more than 1%, mu: 1.01749 1.01749 1.01749
+
+Step 44050  Warning: pressure scaling more than 1%, mu: 0.979975 0.979975 0.979975
+
+Step 44100  Warning: pressure scaling more than 1%, mu: 1.01826 1.01826 1.01826
+
+Step 44150  Warning: pressure scaling more than 1%, mu: 0.983237 0.983237 0.983237
+
+Step 44200  Warning: pressure scaling more than 1%, mu: 1.01358 1.01358 1.01358
+
+Step 44300  Warning: pressure scaling more than 1%, mu: 1.01136 1.01136 1.01136
+
+Step 44350  Warning: pressure scaling more than 1%, mu: 0.98881 0.98881 0.98881
+
+Step 44600  Warning: pressure scaling more than 1%, mu: 1.01405 1.01405 1.01405
+
+Step 44700  Warning: pressure scaling more than 1%, mu: 1.0113 1.0113 1.0113
+
+Step 44750  Warning: pressure scaling more than 1%, mu: 0.98667 0.98667 0.98667
+
+Step 45000  Warning: pressure scaling more than 1%, mu: 1.01028 1.01028 1.01028
+
+Step 47000  Warning: pressure scaling more than 1%, mu: 1.01157 1.01157 1.01157
+
+Step 50200  Warning: pressure scaling more than 1%, mu: 1.01223 1.01223 1.01223
+
+Step 50300  Warning: pressure scaling more than 1%, mu: 1.01164 1.01164 1.01164
+
+Step 50450  Warning: pressure scaling more than 1%, mu: 0.988292 0.988292 0.988292
+
+Step 50850  Warning: pressure scaling more than 1%, mu: 0.984178 0.984178 0.984178
+
+Step 50900  Warning: pressure scaling more than 1%, mu: 1.01108 1.01108 1.01108
+
+Step 51250  Warning: pressure scaling more than 1%, mu: 0.988806 0.988806 0.988806
+
+Step 51350  Warning: pressure scaling more than 1%, mu: 0.988544 0.988544 0.988544
+
+Step 51600  Warning: pressure scaling more than 1%, mu: 1.01242 1.01242 1.01242
+
+Step 51650  Warning: pressure scaling more than 1%, mu: 0.98989 0.98989 0.98989
+
+Step 52050  Warning: pressure scaling more than 1%, mu: 0.986155 0.986155 0.986155
+
+Step 52300  Warning: pressure scaling more than 1%, mu: 1.0127 1.0127 1.0127
+
+Step 53000  Warning: pressure scaling more than 1%, mu: 1.01025 1.01025 1.01025
+
+Step 53250  Warning: pressure scaling more than 1%, mu: 0.987024 0.987024 0.987024
+
+Step 53300  Warning: pressure scaling more than 1%, mu: 1.01318 1.01318 1.01318
+
+Step 53350  Warning: pressure scaling more than 1%, mu: 0.987598 0.987598 0.987598
+
+Step 53400  Warning: pressure scaling more than 1%, mu: 1.01321 1.01321 1.01321
+
+Step 53800  Warning: pressure scaling more than 1%, mu: 1.01269 1.01269 1.01269
+
+Step 53850  Warning: pressure scaling more than 1%, mu: 0.985735 0.985735 0.985735
+
+Step 53900  Warning: pressure scaling more than 1%, mu: 1.01405 1.01405 1.01405
+
+Step 53950  Warning: pressure scaling more than 1%, mu: 0.989445 0.989445 0.989445
+
+Step 54350  Warning: pressure scaling more than 1%, mu: 0.988005 0.988005 0.988005
+
+Step 54400  Warning: pressure scaling more than 1%, mu: 1.01501 1.01501 1.01501
+
+Step 54800  Warning: pressure scaling more than 1%, mu: 1.01196 1.01196 1.01196
+
+Step 54900  Warning: pressure scaling more than 1%, mu: 1.01043 1.01043 1.01043
+
+Step 55850  Warning: pressure scaling more than 1%, mu: 0.988085 0.988085 0.988085
+
+Step 56000  Warning: pressure scaling more than 1%, mu: 1.01134 1.01134 1.01134
+
+Step 56100  Warning: pressure scaling more than 1%, mu: 1.01645 1.01645 1.01645
+
+Step 56150  Warning: pressure scaling more than 1%, mu: 0.984993 0.984993 0.984993
+
+Step 56200  Warning: pressure scaling more than 1%, mu: 1.01036 1.01036 1.01036
+
+Step 56300  Warning: pressure scaling more than 1%, mu: 1.01007 1.01007 1.01007
+
+Step 56500  Warning: pressure scaling more than 1%, mu: 1.01006 1.01006 1.01006
+
+Step 56550  Warning: pressure scaling more than 1%, mu: 0.987437 0.987437 0.987437
+
+Step 56600  Warning: pressure scaling more than 1%, mu: 1.01107 1.01107 1.01107
+
+Step 56900  Warning: pressure scaling more than 1%, mu: 1.01062 1.01062 1.01062
+
+Step 58750  Warning: pressure scaling more than 1%, mu: 0.989239 0.989239 0.989239
+
+Step 61700  Warning: pressure scaling more than 1%, mu: 0.988132 0.988132 0.988132
+
+Step 62400  Warning: pressure scaling more than 1%, mu: 0.987914 0.987914 0.987914
+
+Step 62500  Warning: pressure scaling more than 1%, mu: 0.988457 0.988457 0.988457
+
+Step 62650  Warning: pressure scaling more than 1%, mu: 1.01123 1.01123 1.01123
+
+Step 62800  Warning: pressure scaling more than 1%, mu: 0.988763 0.988763 0.988763
+
+Step 63050  Warning: pressure scaling more than 1%, mu: 1.01085 1.01085 1.01085
+
+Step 63200  Warning: pressure scaling more than 1%, mu: 0.986654 0.986654 0.986654
+
+Step 64600  Warning: pressure scaling more than 1%, mu: 0.987596 0.987596 0.987596
+
+Step 64650  Warning: pressure scaling more than 1%, mu: 1.01047 1.01047 1.01047
+
+Step 68150  Warning: pressure scaling more than 1%, mu: 1.01225 1.01225 1.01225
+
+Step 68250  Warning: pressure scaling more than 1%, mu: 1.01016 1.01016 1.01016
+
+Step 68300  Warning: pressure scaling more than 1%, mu: 0.989831 0.989831 0.989831
+
+Step 68400  Warning: pressure scaling more than 1%, mu: 0.989014 0.989014 0.989014
+
+Step 68450  Warning: pressure scaling more than 1%, mu: 1.01227 1.01227 1.01227
+
+Step 68500  Warning: pressure scaling more than 1%, mu: 0.988089 0.988089 0.988089
+
+Step 68550  Warning: pressure scaling more than 1%, mu: 1.01684 1.01684 1.01684
+
+Step 68650  Warning: pressure scaling more than 1%, mu: 1.01064 1.01064 1.01064
+
+Step 68800  Warning: pressure scaling more than 1%, mu: 0.989142 0.989142 0.989142
+
+Step 69600  Warning: pressure scaling more than 1%, mu: 1.01192 1.01192 1.01192
+
+Step 69650  Warning: pressure scaling more than 1%, mu: 0.98826 0.98826 0.98826
+
+Step 69700  Warning: pressure scaling more than 1%, mu: 1.0158 1.0158 1.0158
+
+Step 69750  Warning: pressure scaling more than 1%, mu: 0.987939 0.987939 0.987939
+
+Step 69800  Warning: pressure scaling more than 1%, mu: 1.0104 1.0104 1.0104
+
+Step 70050  Warning: pressure scaling more than 1%, mu: 0.989988 0.989988 0.989988
+
+Step 70150  Warning: pressure scaling more than 1%, mu: 0.988098 0.988098 0.988098
+
+Step 70850  Warning: pressure scaling more than 1%, mu: 0.988774 0.988774 0.988774
+
+Step 71250  Warning: pressure scaling more than 1%, mu: 0.989578 0.989578 0.989578
+
+Step 71300  Warning: pressure scaling more than 1%, mu: 1.01342 1.01342 1.01342
+
+Step 74700  Warning: pressure scaling more than 1%, mu: 1.01109 1.01109 1.01109
+
+Step 75100  Warning: pressure scaling more than 1%, mu: 1.01081 1.01081 1.01081
+
+Step 75200  Warning: pressure scaling more than 1%, mu: 1.01051 1.01051 1.01051
+
+Step 75250  Warning: pressure scaling more than 1%, mu: 0.98625 0.98625 0.98625
+
+Step 75450  Warning: pressure scaling more than 1%, mu: 0.989981 0.989981 0.989981
+
+Step 76150  Warning: pressure scaling more than 1%, mu: 0.989006 0.989006 0.989006
+
+Step 76200  Warning: pressure scaling more than 1%, mu: 1.01108 1.01108 1.01108
+
+Step 76250  Warning: pressure scaling more than 1%, mu: 0.989389 0.989389 0.989389
+
+Step 76300  Warning: pressure scaling more than 1%, mu: 1.01052 1.01052 1.01052
+
+Step 76400  Warning: pressure scaling more than 1%, mu: 1.01318 1.01318 1.01318
+
+Step 76500  Warning: pressure scaling more than 1%, mu: 1.01385 1.01385 1.01385
+
+Step 76900  Warning: pressure scaling more than 1%, mu: 1.01167 1.01167 1.01167
+
+Step 77600  Warning: pressure scaling more than 1%, mu: 1.01249 1.01249 1.01249
+
+Step 78450  Warning: pressure scaling more than 1%, mu: 0.989867 0.989867 0.989867
+
+Step 79450  Warning: pressure scaling more than 1%, mu: 1.01128 1.01128 1.01128
+
+Step 80100  Warning: pressure scaling more than 1%, mu: 0.989439 0.989439 0.989439
+
+Step 81050  Warning: pressure scaling more than 1%, mu: 1.01004 1.01004 1.01004
+
+Step 82700  Warning: pressure scaling more than 1%, mu: 1.01024 1.01024 1.01024
+
+Step 84600  Warning: pressure scaling more than 1%, mu: 0.988576 0.988576 0.988576
+
+Step 85650  Warning: pressure scaling more than 1%, mu: 0.989735 0.989735 0.989735
+
+Step 85700  Warning: pressure scaling more than 1%, mu: 1.01296 1.01296 1.01296
+
+Step 87100  Warning: pressure scaling more than 1%, mu: 1.01165 1.01165 1.01165
+
+Step 90450  Warning: pressure scaling more than 1%, mu: 0.988584 0.988584 0.988584
+
+Step 90500  Warning: pressure scaling more than 1%, mu: 1.01261 1.01261 1.01261
+
+Step 90550  Warning: pressure scaling more than 1%, mu: 0.984309 0.984309 0.984309
+
+Step 90600  Warning: pressure scaling more than 1%, mu: 1.01747 1.01747 1.01747
+
+Step 90700  Warning: pressure scaling more than 1%, mu: 1.01098 1.01098 1.01098
+
+Step 96000  Warning: pressure scaling more than 1%, mu: 1.01145 1.01145 1.01145
+
+Step 96250  Warning: pressure scaling more than 1%, mu: 0.989295 0.989295 0.989295
+
+Step 96500  Warning: pressure scaling more than 1%, mu: 1.01174 1.01174 1.01174
+
+Step 96800  Warning: pressure scaling more than 1%, mu: 1.01174 1.01174 1.01174
+
+Step 97050  Warning: pressure scaling more than 1%, mu: 0.989569 0.989569 0.989569
+
+Step 97300  Warning: pressure scaling more than 1%, mu: 1.01376 1.01376 1.01376
+
+Step 97350  Warning: pressure scaling more than 1%, mu: 0.987927 0.987927 0.987927
+
+Step 97400  Warning: pressure scaling more than 1%, mu: 1.01349 1.01349 1.01349
+
+Step 97450  Warning: pressure scaling more than 1%, mu: 0.98674 0.98674 0.98674
+
+Step 98100  Warning: pressure scaling more than 1%, mu: 1.01112 1.01112 1.01112
+
+Step 99200  Warning: pressure scaling more than 1%, mu: 1.01092 1.01092 1.01092
+
+Step 101650  Warning: pressure scaling more than 1%, mu: 0.989835 0.989835 0.989835
+
+Step 102800  Warning: pressure scaling more than 1%, mu: 0.98957 0.98957 0.98957
+
+Step 102850  Warning: pressure scaling more than 1%, mu: 1.01702 1.01702 1.01702
+
+Step 102900  Warning: pressure scaling more than 1%, mu: 0.986839 0.986839 0.986839
+
+Step 102950  Warning: pressure scaling more than 1%, mu: 1.01195 1.01195 1.01195
+
+Step 103000  Warning: pressure scaling more than 1%, mu: 0.986584 0.986584 0.986584
+
+Step 103050  Warning: pressure scaling more than 1%, mu: 1.01206 1.01206 1.01206
+
+Step 103100  Warning: pressure scaling more than 1%, mu: 0.985682 0.985682 0.985682
+
+Step 103150  Warning: pressure scaling more than 1%, mu: 1.01354 1.01354 1.01354
+
+Step 103200  Warning: pressure scaling more than 1%, mu: 0.987453 0.987453 0.987453
+
+Step 103250  Warning: pressure scaling more than 1%, mu: 1.0114 1.0114 1.0114
+
+Step 103350  Warning: pressure scaling more than 1%, mu: 1.01147 1.01147 1.01147
+
+Step 104000  Warning: pressure scaling more than 1%, mu: 1.01216 1.01216 1.01216
+
+Step 104100  Warning: pressure scaling more than 1%, mu: 1.01114 1.01114 1.01114
+
+Step 104400  Warning: pressure scaling more than 1%, mu: 1.01546 1.01546 1.01546
+
+Step 104650  Warning: pressure scaling more than 1%, mu: 0.985742 0.985742 0.985742
+
+Step 105150  Warning: pressure scaling more than 1%, mu: 1.01106 1.01106 1.01106
+
+Step 105500  Warning: pressure scaling more than 1%, mu: 1.01028 1.01028 1.01028
+
+Step 106700  Warning: pressure scaling more than 1%, mu: 0.989637 0.989637 0.989637
+
+Step 108600  Warning: pressure scaling more than 1%, mu: 0.985176 0.985176 0.985176
+
+Step 108650  Warning: pressure scaling more than 1%, mu: 1.01355 1.01355 1.01355
+
+Step 108700  Warning: pressure scaling more than 1%, mu: 0.986786 0.986786 0.986786
+
+Step 108750  Warning: pressure scaling more than 1%, mu: 1.01672 1.01672 1.01672
+
+Step 109050  Warning: pressure scaling more than 1%, mu: 1.01178 1.01178 1.01178
+
+Step 109100  Warning: pressure scaling more than 1%, mu: 0.989483 0.989483 0.989483
+
+Step 109150  Warning: pressure scaling more than 1%, mu: 1.01454 1.01454 1.01454
+
+Step 109300  Warning: pressure scaling more than 1%, mu: 0.989191 0.989191 0.989191
+
+Step 109350  Warning: pressure scaling more than 1%, mu: 1.0114 1.0114 1.0114
+
+Step 109400  Warning: pressure scaling more than 1%, mu: 0.986763 0.986763 0.986763
+
+Step 109500  Warning: pressure scaling more than 1%, mu: 0.988226 0.988226 0.988226
+
+Step 109550  Warning: pressure scaling more than 1%, mu: 1.0111 1.0111 1.0111
+
+Step 109750  Warning: pressure scaling more than 1%, mu: 1.01028 1.01028 1.01028
+
+Step 109800  Warning: pressure scaling more than 1%, mu: 0.988931 0.988931 0.988931
+
+Step 111650  Warning: pressure scaling more than 1%, mu: 0.989958 0.989958 0.989958
+
+Step 111700  Warning: pressure scaling more than 1%, mu: 1.01035 1.01035 1.01035
+
+Step 111800  Warning: pressure scaling more than 1%, mu: 1.01077 1.01077 1.01077
+
+Step 112550  Warning: pressure scaling more than 1%, mu: 1.01063 1.01063 1.01063
+
+Step 116450  Warning: pressure scaling more than 1%, mu: 1.01352 1.01352 1.01352
+
+Step 121600  Warning: pressure scaling more than 1%, mu: 1.01101 1.01101 1.01101
+
+Step 121650  Warning: pressure scaling more than 1%, mu: 0.98669 0.98669 0.98669
+
+Step 121700  Warning: pressure scaling more than 1%, mu: 1.01191 1.01191 1.01191
+
+Step 121900  Warning: pressure scaling more than 1%, mu: 1.01034 1.01034 1.01034
+
+Step 121950  Warning: pressure scaling more than 1%, mu: 0.987476 0.987476 0.987476
+
+Step 122100  Warning: pressure scaling more than 1%, mu: 1.01171 1.01171 1.01171
+
+Step 123350  Warning: pressure scaling more than 1%, mu: 0.988373 0.988373 0.988373
+
+Step 123600  Warning: pressure scaling more than 1%, mu: 1.01173 1.01173 1.01173
+
+Step 123650  Warning: pressure scaling more than 1%, mu: 0.989536 0.989536 0.989536
+
+Step 123750  Warning: pressure scaling more than 1%, mu: 0.989258 0.989258 0.989258
+
+Step 124000  Warning: pressure scaling more than 1%, mu: 1.01045 1.01045 1.01045
+
+Step 127650  Warning: pressure scaling more than 1%, mu: 0.987851 0.987851 0.987851
+
+Step 128050  Warning: pressure scaling more than 1%, mu: 0.988356 0.988356 0.988356
+
+Step 128250  Warning: pressure scaling more than 1%, mu: 0.989852 0.989852 0.989852
+
+Step 128300  Warning: pressure scaling more than 1%, mu: 1.01036 1.01036 1.01036
+
+Step 128350  Warning: pressure scaling more than 1%, mu: 0.98761 0.98761 0.98761
+
+Step 133350  Warning: pressure scaling more than 1%, mu: 1.01287 1.01287 1.01287
+
+Step 135650  Warning: pressure scaling more than 1%, mu: 0.987626 0.987626 0.987626
+
+Step 135700  Warning: pressure scaling more than 1%, mu: 1.01152 1.01152 1.01152
+
+Step 136100  Warning: pressure scaling more than 1%, mu: 1.0102 1.0102 1.0102
+
+Step 137900  Warning: pressure scaling more than 1%, mu: 0.988825 0.988825 0.988825
+
+Step 139800  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+
+Step 145100  Warning: pressure scaling more than 1%, mu: 1.01096 1.01096 1.01096
+
+Step 146150  Warning: pressure scaling more than 1%, mu: 0.98483 0.98483 0.98483
+
+Step 146700  Warning: pressure scaling more than 1%, mu: 1.01141 1.01141 1.01141
+
+Step 146750  Warning: pressure scaling more than 1%, mu: 0.988852 0.988852 0.988852
+
+Step 148000  Warning: pressure scaling more than 1%, mu: 1.01078 1.01078 1.01078
+
+Step 148050  Warning: pressure scaling more than 1%, mu: 0.989391 0.989391 0.989391
+
+Step 148200  Warning: pressure scaling more than 1%, mu: 1.01255 1.01255 1.01255
+
+Step 148250  Warning: pressure scaling more than 1%, mu: 0.988263 0.988263 0.988263
+
+Step 148300  Warning: pressure scaling more than 1%, mu: 1.0138 1.0138 1.0138
+
+Step 148350  Warning: pressure scaling more than 1%, mu: 0.980982 0.980982 0.980982
+
+Step 148400  Warning: pressure scaling more than 1%, mu: 1.01542 1.01542 1.01542
+
+Step 148500  Warning: pressure scaling more than 1%, mu: 1.01185 1.01185 1.01185
+
+Step 148600  Warning: pressure scaling more than 1%, mu: 1.01579 1.01579 1.01579
+
+Step 148650  Warning: pressure scaling more than 1%, mu: 0.987976 0.987976 0.987976
+
+Step 148950  Warning: pressure scaling more than 1%, mu: 0.985623 0.985623 0.985623
+
+Step 149000  Warning: pressure scaling more than 1%, mu: 1.01476 1.01476 1.01476
+
+Step 149100  Warning: pressure scaling more than 1%, mu: 1.01091 1.01091 1.01091
+
+Step 149250  Warning: pressure scaling more than 1%, mu: 0.988997 0.988997 0.988997
+
+Step 149400  Warning: pressure scaling more than 1%, mu: 1.0206 1.0206 1.0206
+
+Step 149500  Warning: pressure scaling more than 1%, mu: 1.01572 1.01572 1.01572
+
+Step 149650  Warning: pressure scaling more than 1%, mu: 0.988036 0.988036 0.988036
+
+Step 150800  Warning: pressure scaling more than 1%, mu: 0.988339 0.988339 0.988339
+
+Step 150900  Warning: pressure scaling more than 1%, mu: 0.986779 0.986779 0.986779
+
+Step 150950  Warning: pressure scaling more than 1%, mu: 1.01309 1.01309 1.01309
+
+Step 151750  Warning: pressure scaling more than 1%, mu: 1.01033 1.01033 1.01033
+
+Step 151800  Warning: pressure scaling more than 1%, mu: 0.986258 0.986258 0.986258
+
+Step 151900  Warning: pressure scaling more than 1%, mu: 0.989413 0.989413 0.989413
+
+Step 152200  Warning: pressure scaling more than 1%, mu: 0.987495 0.987495 0.987495
+
+Step 152300  Warning: pressure scaling more than 1%, mu: 0.989975 0.989975 0.989975
+
+Step 156350  Warning: pressure scaling more than 1%, mu: 1.01224 1.01224 1.01224
+
+Step 156400  Warning: pressure scaling more than 1%, mu: 0.98645 0.98645 0.98645
+
+Step 156450  Warning: pressure scaling more than 1%, mu: 1.01382 1.01382 1.01382
+
+Step 156500  Warning: pressure scaling more than 1%, mu: 0.984985 0.984985 0.984985
+
+Step 156600  Warning: pressure scaling more than 1%, mu: 0.988582 0.988582 0.988582
+
+Step 156750  Warning: pressure scaling more than 1%, mu: 1.01429 1.01429 1.01429
+
+Step 156800  Warning: pressure scaling more than 1%, mu: 0.986083 0.986083 0.986083
+
+Step 156850  Warning: pressure scaling more than 1%, mu: 1.01429 1.01429 1.01429
+
+Step 157000  Warning: pressure scaling more than 1%, mu: 0.9893 0.9893 0.9893
+
+Step 157050  Warning: pressure scaling more than 1%, mu: 1.01636 1.01636 1.01636
+
+Step 157100  Warning: pressure scaling more than 1%, mu: 0.986822 0.986822 0.986822
+
+Step 157150  Warning: pressure scaling more than 1%, mu: 1.01789 1.01789 1.01789
+
+Step 157200  Warning: pressure scaling more than 1%, mu: 0.985897 0.985897 0.985897
+
+Step 157450  Warning: pressure scaling more than 1%, mu: 1.01075 1.01075 1.01075
+
+Step 157550  Warning: pressure scaling more than 1%, mu: 1.01334 1.01334 1.01334
+
+Step 161050  Warning: pressure scaling more than 1%, mu: 1.01251 1.01251 1.01251
+
+Step 163700  Warning: pressure scaling more than 1%, mu: 1.01229 1.01229 1.01229
+
+Step 164100  Warning: pressure scaling more than 1%, mu: 1.01073 1.01073 1.01073
+
+Step 164700  Warning: pressure scaling more than 1%, mu: 0.987542 0.987542 0.987542
+
+Step 164850  Warning: pressure scaling more than 1%, mu: 1.01326 1.01326 1.01326
+
+Step 165650  Warning: pressure scaling more than 1%, mu: 1.01257 1.01257 1.01257
+
+Step 165800  Warning: pressure scaling more than 1%, mu: 0.988875 0.988875 0.988875
+
+Step 170550  Warning: pressure scaling more than 1%, mu: 1.01261 1.01261 1.01261
+
+Step 171850  Warning: pressure scaling more than 1%, mu: 1.0123 1.0123 1.0123
+
+Step 171900  Warning: pressure scaling more than 1%, mu: 0.989325 0.989325 0.989325
+
+Step 171950  Warning: pressure scaling more than 1%, mu: 1.01268 1.01268 1.01268
+
+Step 172200  Warning: pressure scaling more than 1%, mu: 0.985415 0.985415 0.985415
+
+Step 172250  Warning: pressure scaling more than 1%, mu: 1.0155 1.0155 1.0155
+
+Step 172300  Warning: pressure scaling more than 1%, mu: 0.989141 0.989141 0.989141
+
+Step 172350  Warning: pressure scaling more than 1%, mu: 1.01426 1.01426 1.01426
+
+Step 172450  Warning: pressure scaling more than 1%, mu: 1.01425 1.01425 1.01425
+
+Step 172500  Warning: pressure scaling more than 1%, mu: 0.981823 0.981823 0.981823
+
+Step 172550  Warning: pressure scaling more than 1%, mu: 1.01309 1.01309 1.01309
+
+Step 172600  Warning: pressure scaling more than 1%, mu: 0.982167 0.982167 0.982167
+
+Step 172650  Warning: pressure scaling more than 1%, mu: 1.01487 1.01487 1.01487
+
+Step 172700  Warning: pressure scaling more than 1%, mu: 0.989857 0.989857 0.989857
+
+Step 172750  Warning: pressure scaling more than 1%, mu: 1.01421 1.01421 1.01421
+
+Step 172900  Warning: pressure scaling more than 1%, mu: 0.983839 0.983839 0.983839
+
+Step 172950  Warning: pressure scaling more than 1%, mu: 1.01798 1.01798 1.01798
+
+Step 173000  Warning: pressure scaling more than 1%, mu: 0.984173 0.984173 0.984173
+
+Step 173050  Warning: pressure scaling more than 1%, mu: 1.01403 1.01403 1.01403
+
+Step 173100  Warning: pressure scaling more than 1%, mu: 0.987519 0.987519 0.987519
+
+Step 173150  Warning: pressure scaling more than 1%, mu: 1.01312 1.01312 1.01312
+
+Step 176600  Warning: pressure scaling more than 1%, mu: 1.01042 1.01042 1.01042
+
+Step 177100  Warning: pressure scaling more than 1%, mu: 1.0108 1.0108 1.0108
+
+Step 177350  Warning: pressure scaling more than 1%, mu: 0.986508 0.986508 0.986508
+
+Step 181800  Warning: pressure scaling more than 1%, mu: 1.01035 1.01035 1.01035
+
+Step 181850  Warning: pressure scaling more than 1%, mu: 0.989325 0.989325 0.989325
+
+Step 181900  Warning: pressure scaling more than 1%, mu: 1.01619 1.01619 1.01619
+
+Step 182200  Warning: pressure scaling more than 1%, mu: 1.01061 1.01061 1.01061
+
+Step 183950  Warning: pressure scaling more than 1%, mu: 0.988224 0.988224 0.988224
+
+Step 184650  Warning: pressure scaling more than 1%, mu: 0.98952 0.98952 0.98952
+
+Step 185850  Warning: pressure scaling more than 1%, mu: 1.01116 1.01116 1.01116
+
+Step 186400  Warning: pressure scaling more than 1%, mu: 0.98918 0.98918 0.98918
+
+Step 186550  Warning: pressure scaling more than 1%, mu: 1.01837 1.01837 1.01837
+
+Step 186700  Warning: pressure scaling more than 1%, mu: 0.989736 0.989736 0.989736
+
+Step 186800  Warning: pressure scaling more than 1%, mu: 0.986219 0.986219 0.986219
+
+Step 186850  Warning: pressure scaling more than 1%, mu: 1.01328 1.01328 1.01328
+
+Step 187500  Warning: pressure scaling more than 1%, mu: 0.98821 0.98821 0.98821
+
+Step 190300  Warning: pressure scaling more than 1%, mu: 0.989152 0.989152 0.989152
+
+Step 190450  Warning: pressure scaling more than 1%, mu: 1.01106 1.01106 1.01106
+
+Step 190750  Warning: pressure scaling more than 1%, mu: 1.01004 1.01004 1.01004
+
+Step 198700  Warning: pressure scaling more than 1%, mu: 1.01122 1.01122 1.01122
+
+Step 198850  Warning: pressure scaling more than 1%, mu: 0.988696 0.988696 0.988696
+
+Step 198950  Warning: pressure scaling more than 1%, mu: 0.984955 0.984955 0.984955
+
+Step 199000  Warning: pressure scaling more than 1%, mu: 1.01074 1.01074 1.01074
+
+Step 199100  Warning: pressure scaling more than 1%, mu: 1.01304 1.01304 1.01304
+
+Step 199200  Warning: pressure scaling more than 1%, mu: 1.01049 1.01049 1.01049
+
+Step 199350  Warning: pressure scaling more than 1%, mu: 0.988525 0.988525 0.988525
+
+Step 199400  Warning: pressure scaling more than 1%, mu: 1.0149 1.0149 1.0149
+
+Step 199450  Warning: pressure scaling more than 1%, mu: 0.986618 0.986618 0.986618
+
+Step 199500  Warning: pressure scaling more than 1%, mu: 1.01675 1.01675 1.01675
+
+Step 202750  Warning: pressure scaling more than 1%, mu: 1.01008 1.01008 1.01008
+
+Step 203750  Warning: pressure scaling more than 1%, mu: 1.01347 1.01347 1.01347
+
+Step 204650  Warning: pressure scaling more than 1%, mu: 1.01027 1.01027 1.01027
+
+Step 204700  Warning: pressure scaling more than 1%, mu: 0.989486 0.989486 0.989486
+
+Step 206850  Warning: pressure scaling more than 1%, mu: 1.01157 1.01157 1.01157
+
+Step 208100  Warning: pressure scaling more than 1%, mu: 1.0152 1.0152 1.0152
+
+Step 208150  Warning: pressure scaling more than 1%, mu: 0.989936 0.989936 0.989936
+
+Step 208400  Warning: pressure scaling more than 1%, mu: 1.01054 1.01054 1.01054
+
+Step 208550  Warning: pressure scaling more than 1%, mu: 0.987362 0.987362 0.987362
+
+Step 208700  Warning: pressure scaling more than 1%, mu: 1.01287 1.01287 1.01287
+
+Step 208800  Warning: pressure scaling more than 1%, mu: 1.01374 1.01374 1.01374
+
+Step 209750  Warning: pressure scaling more than 1%, mu: 0.988211 0.988211 0.988211
+
+Step 211550  Warning: pressure scaling more than 1%, mu: 0.985821 0.985821 0.985821
+
+Step 211800  Warning: pressure scaling more than 1%, mu: 1.01343 1.01343 1.01343
+
+Step 211850  Warning: pressure scaling more than 1%, mu: 0.989523 0.989523 0.989523
+
+Step 211950  Warning: pressure scaling more than 1%, mu: 0.984401 0.984401 0.984401
+
+Step 212450  Warning: pressure scaling more than 1%, mu: 0.984873 0.984873 0.984873
+
+Step 212500  Warning: pressure scaling more than 1%, mu: 1.01568 1.01568 1.01568
+
+Step 215200  Warning: pressure scaling more than 1%, mu: 1.01075 1.01075 1.01075
+
+Step 217150  Warning: pressure scaling more than 1%, mu: 1.01182 1.01182 1.01182
+
+Step 217350  Warning: pressure scaling more than 1%, mu: 1.01005 1.01005 1.01005
+
+Step 217400  Warning: pressure scaling more than 1%, mu: 0.985602 0.985602 0.985602
+
+Step 217450  Warning: pressure scaling more than 1%, mu: 1.01183 1.01183 1.01183
+
+Step 217500  Warning: pressure scaling more than 1%, mu: 0.986745 0.986745 0.986745
+
+Step 217550  Warning: pressure scaling more than 1%, mu: 1.01786 1.01786 1.01786
+
+Step 217600  Warning: pressure scaling more than 1%, mu: 0.989617 0.989617 0.989617
+
+Step 217650  Warning: pressure scaling more than 1%, mu: 1.01296 1.01296 1.01296
+
+Step 217700  Warning: pressure scaling more than 1%, mu: 0.988325 0.988325 0.988325
+
+Step 217750  Warning: pressure scaling more than 1%, mu: 1.01064 1.01064 1.01064
+
+Step 217800  Warning: pressure scaling more than 1%, mu: 0.988289 0.988289 0.988289
+
+Step 224450  Warning: pressure scaling more than 1%, mu: 1.01207 1.01207 1.01207
+
+Step 224500  Warning: pressure scaling more than 1%, mu: 0.988108 0.988108 0.988108
+
+Step 224550  Warning: pressure scaling more than 1%, mu: 1.01451 1.01451 1.01451
+
+Step 224600  Warning: pressure scaling more than 1%, mu: 0.986698 0.986698 0.986698
+
+Step 224700  Warning: pressure scaling more than 1%, mu: 0.987865 0.987865 0.987865
+
+Step 225900  Warning: pressure scaling more than 1%, mu: 1.01031 1.01031 1.01031
+
+Step 227100  Warning: pressure scaling more than 1%, mu: 0.989185 0.989185 0.989185
+
+Step 227150  Warning: pressure scaling more than 1%, mu: 1.0102 1.0102 1.0102
+
+Step 227400  Warning: pressure scaling more than 1%, mu: 0.988861 0.988861 0.988861
+
+Step 227550  Warning: pressure scaling more than 1%, mu: 1.01034 1.01034 1.01034
+
+Step 227800  Warning: pressure scaling more than 1%, mu: 0.987728 0.987728 0.987728
+
+Step 227850  Warning: pressure scaling more than 1%, mu: 1.01011 1.01011 1.01011
+
+Step 227950  Warning: pressure scaling more than 1%, mu: 1.01028 1.01028 1.01028
+
+Step 229300  Warning: pressure scaling more than 1%, mu: 0.989222 0.989222 0.989222
+
+Step 230550  Warning: pressure scaling more than 1%, mu: 0.988552 0.988552 0.988552
+
+Step 232400  Warning: pressure scaling more than 1%, mu: 1.01093 1.01093 1.01093
+
+Step 232800  Warning: pressure scaling more than 1%, mu: 1.01126 1.01126 1.01126
+
+Step 235900  Warning: pressure scaling more than 1%, mu: 0.98982 0.98982 0.98982
+
+Step 237550  Warning: pressure scaling more than 1%, mu: 1.01169 1.01169 1.01169
+
+Step 237650  Warning: pressure scaling more than 1%, mu: 1.01354 1.01354 1.01354
+
+Step 237700  Warning: pressure scaling more than 1%, mu: 0.989126 0.989126 0.989126
+
+Step 237750  Warning: pressure scaling more than 1%, mu: 1.01054 1.01054 1.01054
+
+Step 237800  Warning: pressure scaling more than 1%, mu: 0.983919 0.983919 0.983919
+
+Step 237850  Warning: pressure scaling more than 1%, mu: 1.01024 1.01024 1.01024
+
+Step 238250  Warning: pressure scaling more than 1%, mu: 1.01111 1.01111 1.01111
+
+Step 238350  Warning: pressure scaling more than 1%, mu: 1.01275 1.01275 1.01275
+
+Step 238400  Warning: pressure scaling more than 1%, mu: 0.986411 0.986411 0.986411
+
+Step 239100  Warning: pressure scaling more than 1%, mu: 1.01001 1.01001 1.01001
+
+Step 241300  Warning: pressure scaling more than 1%, mu: 0.98713 0.98713 0.98713
+
+Step 242400  Warning: pressure scaling more than 1%, mu: 0.986846 0.986846 0.986846
+
+Step 242450  Warning: pressure scaling more than 1%, mu: 1.01055 1.01055 1.01055
+
+Step 242850  Warning: pressure scaling more than 1%, mu: 1.01289 1.01289 1.01289
+
+Step 242900  Warning: pressure scaling more than 1%, mu: 0.989654 0.989654 0.989654
+
+Step 242950  Warning: pressure scaling more than 1%, mu: 1.01168 1.01168 1.01168
+
+Step 243100  Warning: pressure scaling more than 1%, mu: 0.987154 0.987154 0.987154
+
+Step 243150  Warning: pressure scaling more than 1%, mu: 1.01228 1.01228 1.01228
+
+Step 243200  Warning: pressure scaling more than 1%, mu: 0.987484 0.987484 0.987484
+
+Step 243250  Warning: pressure scaling more than 1%, mu: 1.01182 1.01182 1.01182
+
+Step 243300  Warning: pressure scaling more than 1%, mu: 0.986005 0.986005 0.986005
+
+Step 243350  Warning: pressure scaling more than 1%, mu: 1.01855 1.01855 1.01855
+
+Step 243400  Warning: pressure scaling more than 1%, mu: 0.982459 0.982459 0.982459
+
+Step 243450  Warning: pressure scaling more than 1%, mu: 1.01836 1.01836 1.01836
+
+Step 243500  Warning: pressure scaling more than 1%, mu: 0.985794 0.985794 0.985794
+
+Step 243550  Warning: pressure scaling more than 1%, mu: 1.01076 1.01076 1.01076
+
+Step 243650  Warning: pressure scaling more than 1%, mu: 1.01124 1.01124 1.01124
+
+Step 243700  Warning: pressure scaling more than 1%, mu: 0.98701 0.98701 0.98701
+
+Step 243750  Warning: pressure scaling more than 1%, mu: 1.01075 1.01075 1.01075
+
+Step 243800  Warning: pressure scaling more than 1%, mu: 0.989722 0.989722 0.989722
+
+Step 243950  Warning: pressure scaling more than 1%, mu: 1.01311 1.01311 1.01311
+
+Step 244000  Warning: pressure scaling more than 1%, mu: 0.989464 0.989464 0.989464
+
+Step 244050  Warning: pressure scaling more than 1%, mu: 1.01443 1.01443 1.01443
+
+Step 244100  Warning: pressure scaling more than 1%, mu: 0.986315 0.986315 0.986315
+
+Step 244200  Warning: pressure scaling more than 1%, mu: 0.987902 0.987902 0.987902
+
+Step 244350  Warning: pressure scaling more than 1%, mu: 1.01365 1.01365 1.01365
+
+Step 244450  Warning: pressure scaling more than 1%, mu: 1.01591 1.01591 1.01591
+
+Step 244500  Warning: pressure scaling more than 1%, mu: 0.983684 0.983684 0.983684
+
+Step 244600  Warning: pressure scaling more than 1%, mu: 0.989522 0.989522 0.989522
+
+Step 244650  Warning: pressure scaling more than 1%, mu: 1.01213 1.01213 1.01213
+
+Step 244750  Warning: pressure scaling more than 1%, mu: 1.01915 1.01915 1.01915
+
+Step 244800  Warning: pressure scaling more than 1%, mu: 0.985675 0.985675 0.985675
+
+Step 251650  Warning: pressure scaling more than 1%, mu: 0.987332 0.987332 0.987332
+
+Step 251700  Warning: pressure scaling more than 1%, mu: 1.01074 1.01074 1.01074
+
+Step 252400  Warning: pressure scaling more than 1%, mu: 1.01 1.01 1.01
+
+Step 252950  Warning: pressure scaling more than 1%, mu: 1.01228 1.01228 1.01228
+
+Step 253200  Warning: pressure scaling more than 1%, mu: 0.984679 0.984679 0.984679
+
+Step 253250  Warning: pressure scaling more than 1%, mu: 1.01532 1.01532 1.01532
+
+Step 253300  Warning: pressure scaling more than 1%, mu: 0.987703 0.987703 0.987703
+
+Step 253500  Warning: pressure scaling more than 1%, mu: 0.985198 0.985198 0.985198
+
+Step 253600  Warning: pressure scaling more than 1%, mu: 0.985078 0.985078 0.985078
+
+Step 253650  Warning: pressure scaling more than 1%, mu: 1.01581 1.01581 1.01581
+
+Step 253750  Warning: pressure scaling more than 1%, mu: 1.01115 1.01115 1.01115
+
+Step 253850  Warning: pressure scaling more than 1%, mu: 1.01307 1.01307 1.01307
+
+Step 253900  Warning: pressure scaling more than 1%, mu: 0.986206 0.986206 0.986206
+
+Step 254000  Warning: pressure scaling more than 1%, mu: 0.984993 0.984993 0.984993
+
+Step 254050  Warning: pressure scaling more than 1%, mu: 1.01424 1.01424 1.01424
+
+Step 254100  Warning: pressure scaling more than 1%, mu: 0.987193 0.987193 0.987193
+
+Step 254150  Warning: pressure scaling more than 1%, mu: 1.01514 1.01514 1.01514
+
+Step 254200  Warning: pressure scaling more than 1%, mu: 0.987734 0.987734 0.987734
+
+Step 254250  Warning: pressure scaling more than 1%, mu: 1.01774 1.01774 1.01774
+
+Step 254300  Warning: pressure scaling more than 1%, mu: 0.984009 0.984009 0.984009
+
+Step 254350  Warning: pressure scaling more than 1%, mu: 1.0109 1.0109 1.0109
+
+Step 258550  Warning: pressure scaling more than 1%, mu: 1.01007 1.01007 1.01007
+
+Step 258750  Warning: pressure scaling more than 1%, mu: 1.01208 1.01208 1.01208
+
+Step 258800  Warning: pressure scaling more than 1%, mu: 0.988941 0.988941 0.988941
+
+Step 259200  Warning: pressure scaling more than 1%, mu: 0.988595 0.988595 0.988595
+
+Step 261900  Warning: pressure scaling more than 1%, mu: 1.0134 1.0134 1.0134
+
+Step 262000  Warning: pressure scaling more than 1%, mu: 1.01017 1.01017 1.01017
+
+Step 262050  Warning: pressure scaling more than 1%, mu: 0.986997 0.986997 0.986997
+
+Step 262300  Warning: pressure scaling more than 1%, mu: 1.01057 1.01057 1.01057
+
+Step 262350  Warning: pressure scaling more than 1%, mu: 0.988233 0.988233 0.988233
+
+Step 262750  Warning: pressure scaling more than 1%, mu: 0.98695 0.98695 0.98695
+
+Step 263900  Warning: pressure scaling more than 1%, mu: 1.01064 1.01064 1.01064
+
+Step 264850  Warning: pressure scaling more than 1%, mu: 0.98899 0.98899 0.98899
+
+Step 265000  Warning: pressure scaling more than 1%, mu: 1.01156 1.01156 1.01156
+
+Step 265150  Warning: pressure scaling more than 1%, mu: 0.989719 0.989719 0.989719
+
+Step 266450  Warning: pressure scaling more than 1%, mu: 1.01127 1.01127 1.01127
+
+Step 266550  Warning: pressure scaling more than 1%, mu: 1.01143 1.01143 1.01143
+
+Step 266700  Warning: pressure scaling more than 1%, mu: 0.989609 0.989609 0.989609
+
+Step 266950  Warning: pressure scaling more than 1%, mu: 1.01265 1.01265 1.01265
+
+Step 268900  Warning: pressure scaling more than 1%, mu: 0.987544 0.987544 0.987544
+
+Step 269050  Warning: pressure scaling more than 1%, mu: 1.01144 1.01144 1.01144
+
+Step 269100  Warning: pressure scaling more than 1%, mu: 0.987557 0.987557 0.987557
+
+Step 269200  Warning: pressure scaling more than 1%, mu: 0.98917 0.98917 0.98917
+
+Step 269350  Warning: pressure scaling more than 1%, mu: 1.01201 1.01201 1.01201
+
+Step 269900  Warning: pressure scaling more than 1%, mu: 0.989086 0.989086 0.989086
+
+Step 270050  Warning: pressure scaling more than 1%, mu: 1.01078 1.01078 1.01078
+
+Step 270150  Warning: pressure scaling more than 1%, mu: 1.01341 1.01341 1.01341
+
+Step 270200  Warning: pressure scaling more than 1%, mu: 0.986544 0.986544 0.986544
+
+Step 270900  Warning: pressure scaling more than 1%, mu: 0.988311 0.988311 0.988311
+
+Step 272550  Warning: pressure scaling more than 1%, mu: 0.989831 0.989831 0.989831
+
+Step 272750  Warning: pressure scaling more than 1%, mu: 0.989691 0.989691 0.989691
+
+Step 272800  Warning: pressure scaling more than 1%, mu: 1.01136 1.01136 1.01136
+
+Step 272850  Warning: pressure scaling more than 1%, mu: 0.985474 0.985474 0.985474
+
+Step 273000  Warning: pressure scaling more than 1%, mu: 1.01037 1.01037 1.01037
+
+Step 275100  Warning: pressure scaling more than 1%, mu: 1.01128 1.01128 1.01128
+
+Step 275700  Warning: pressure scaling more than 1%, mu: 0.989307 0.989307 0.989307
+
+Step 275950  Warning: pressure scaling more than 1%, mu: 1.01059 1.01059 1.01059
+
+Step 276100  Warning: pressure scaling more than 1%, mu: 0.986635 0.986635 0.986635
+
+Step 276500  Warning: pressure scaling more than 1%, mu: 0.989471 0.989471 0.989471
+
+Step 276550  Warning: pressure scaling more than 1%, mu: 1.01101 1.01101 1.01101
+
+Step 276600  Warning: pressure scaling more than 1%, mu: 0.987914 0.987914 0.987914
+
+Step 276650  Warning: pressure scaling more than 1%, mu: 1.01332 1.01332 1.01332
+
+Step 276700  Warning: pressure scaling more than 1%, mu: 0.987325 0.987325 0.987325
+
+Step 276750  Warning: pressure scaling more than 1%, mu: 1.01898 1.01898 1.01898
+
+Step 276800  Warning: pressure scaling more than 1%, mu: 0.98486 0.98486 0.98486
+
+Step 276850  Warning: pressure scaling more than 1%, mu: 1.01276 1.01276 1.01276
+
+Step 276900  Warning: pressure scaling more than 1%, mu: 0.983941 0.983941 0.983941
+
+Step 277000  Warning: pressure scaling more than 1%, mu: 0.988997 0.988997 0.988997
+
+Step 277050  Warning: pressure scaling more than 1%, mu: 1.01857 1.01857 1.01857
+
+Step 277100  Warning: pressure scaling more than 1%, mu: 0.988356 0.988356 0.988356
+
+Step 277150  Warning: pressure scaling more than 1%, mu: 1.01609 1.01609 1.01609
+
+Step 277200  Warning: pressure scaling more than 1%, mu: 0.982425 0.982425 0.982425
+
+Step 277250  Warning: pressure scaling more than 1%, mu: 1.01304 1.01304 1.01304
+
+Step 277300  Warning: pressure scaling more than 1%, mu: 0.98513 0.98513 0.98513
+
+Step 277550  Warning: pressure scaling more than 1%, mu: 1.01063 1.01063 1.01063
+
+Step 277600  Warning: pressure scaling more than 1%, mu: 0.987485 0.987485 0.987485
+
+Step 277700  Warning: pressure scaling more than 1%, mu: 0.986754 0.986754 0.986754
+
+Step 277850  Warning: pressure scaling more than 1%, mu: 1.01037 1.01037 1.01037
+
+Step 281050  Warning: pressure scaling more than 1%, mu: 0.985722 0.985722 0.985722
+
+Step 281100  Warning: pressure scaling more than 1%, mu: 1.0176 1.0176 1.0176
+
+Step 281200  Warning: pressure scaling more than 1%, mu: 1.01165 1.01165 1.01165
+
+Step 281350  Warning: pressure scaling more than 1%, mu: 0.989932 0.989932 0.989932
+
+Step 281500  Warning: pressure scaling more than 1%, mu: 1.01059 1.01059 1.01059
+
+Step 281550  Warning: pressure scaling more than 1%, mu: 0.987178 0.987178 0.987178
+
+Step 281600  Warning: pressure scaling more than 1%, mu: 1.01142 1.01142 1.01142
+
+Step 281650  Warning: pressure scaling more than 1%, mu: 0.989903 0.989903 0.989903
+
+Step 281950  Warning: pressure scaling more than 1%, mu: 0.987768 0.987768 0.987768
+
+Step 282000  Warning: pressure scaling more than 1%, mu: 1.01607 1.01607 1.01607
+
+Step 282050  Warning: pressure scaling more than 1%, mu: 0.988976 0.988976 0.988976
+
+Step 282100  Warning: pressure scaling more than 1%, mu: 1.01025 1.01025 1.01025
+
+Step 282250  Warning: pressure scaling more than 1%, mu: 0.98902 0.98902 0.98902
+
+Step 282300  Warning: pressure scaling more than 1%, mu: 1.01289 1.01289 1.01289
+
+Step 282350  Warning: pressure scaling more than 1%, mu: 0.986019 0.986019 0.986019
+
+Step 282400  Warning: pressure scaling more than 1%, mu: 1.01954 1.01954 1.01954
+
+Step 282450  Warning: pressure scaling more than 1%, mu: 0.986838 0.986838 0.986838
+
+Step 282500  Warning: pressure scaling more than 1%, mu: 1.01348 1.01348 1.01348
+
+Step 282550  Warning: pressure scaling more than 1%, mu: 0.985455 0.985455 0.985455
+
+Step 282650  Warning: pressure scaling more than 1%, mu: 0.988889 0.988889 0.988889
+
+Step 282700  Warning: pressure scaling more than 1%, mu: 1.01459 1.01459 1.01459
+
+Step 282800  Warning: pressure scaling more than 1%, mu: 1.01106 1.01106 1.01106
+
+Step 282850  Warning: pressure scaling more than 1%, mu: 0.989266 0.989266 0.989266
+
+Step 282900  Warning: pressure scaling more than 1%, mu: 1.01088 1.01088 1.01088
+
+Step 282950  Warning: pressure scaling more than 1%, mu: 0.988352 0.988352 0.988352
+
+Step 283000  Warning: pressure scaling more than 1%, mu: 1.01369 1.01369 1.01369
+
+Step 283050  Warning: pressure scaling more than 1%, mu: 0.989809 0.989809 0.989809
+
+Step 283100  Warning: pressure scaling more than 1%, mu: 1.01151 1.01151 1.01151
+
+Step 283200  Warning: pressure scaling more than 1%, mu: 1.01136 1.01136 1.01136
+
+Step 283350  Warning: pressure scaling more than 1%, mu: 0.986986 0.986986 0.986986
+
+Step 283400  Warning: pressure scaling more than 1%, mu: 1.01137 1.01137 1.01137
+
+Step 283600  Warning: pressure scaling more than 1%, mu: 1.01358 1.01358 1.01358
+
+Step 283700  Warning: pressure scaling more than 1%, mu: 1.01292 1.01292 1.01292
+
+Step 283750  Warning: pressure scaling more than 1%, mu: 0.984156 0.984156 0.984156
+
+Step 283800  Warning: pressure scaling more than 1%, mu: 1.0104 1.0104 1.0104
+
+Step 283850  Warning: pressure scaling more than 1%, mu: 0.986714 0.986714 0.986714
+
+Step 289650  Warning: pressure scaling more than 1%, mu: 1.01097 1.01097 1.01097
+
+Step 289700  Warning: pressure scaling more than 1%, mu: 0.987678 0.987678 0.987678
+
+Step 289750  Warning: pressure scaling more than 1%, mu: 1.01763 1.01763 1.01763
+
+Step 289800  Warning: pressure scaling more than 1%, mu: 0.98726 0.98726 0.98726
+
+Step 290000  Warning: pressure scaling more than 1%, mu: 0.98988 0.98988 0.98988
+
+Step 290050  Warning: pressure scaling more than 1%, mu: 1.01394 1.01394 1.01394
+
+Step 290100  Warning: pressure scaling more than 1%, mu: 0.988306 0.988306 0.988306
+
+Step 295100  Warning: pressure scaling more than 1%, mu: 0.988191 0.988191 0.988191
+
+Step 295500  Warning: pressure scaling more than 1%, mu: 0.989328 0.989328 0.989328
+
+Step 297550  Warning: pressure scaling more than 1%, mu: 1.01231 1.01231 1.01231
+
+Step 297600  Warning: pressure scaling more than 1%, mu: 0.986081 0.986081 0.986081
+
+Step 297650  Warning: pressure scaling more than 1%, mu: 1.01345 1.01345 1.01345
+
+Step 297700  Warning: pressure scaling more than 1%, mu: 0.988623 0.988623 0.988623
+
+Step 297850  Warning: pressure scaling more than 1%, mu: 1.01118 1.01118 1.01118
+
+Step 298000  Warning: pressure scaling more than 1%, mu: 0.98883 0.98883 0.98883
+
+Step 298050  Warning: pressure scaling more than 1%, mu: 1.01081 1.01081 1.01081
+
+Step 302000  Warning: pressure scaling more than 1%, mu: 1.01049 1.01049 1.01049
+
+Step 302500  Warning: pressure scaling more than 1%, mu: 1.0113 1.0113 1.0113
+
+Step 305050  Warning: pressure scaling more than 1%, mu: 0.987844 0.987844 0.987844
+
+Step 305100  Warning: pressure scaling more than 1%, mu: 1.01232 1.01232 1.01232
+
+Step 305200  Warning: pressure scaling more than 1%, mu: 1.01187 1.01187 1.01187
+
+Step 305250  Warning: pressure scaling more than 1%, mu: 0.986046 0.986046 0.986046
+
+Step 305300  Warning: pressure scaling more than 1%, mu: 1.01563 1.01563 1.01563
+
+Step 305400  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+
+Step 305450  Warning: pressure scaling more than 1%, mu: 0.988699 0.988699 0.988699
+
+Step 305550  Warning: pressure scaling more than 1%, mu: 0.984992 0.984992 0.984992
+
+Step 305600  Warning: pressure scaling more than 1%, mu: 1.01214 1.01214 1.01214
+
+Step 305650  Warning: pressure scaling more than 1%, mu: 0.98786 0.98786 0.98786
+
+Step 305700  Warning: pressure scaling more than 1%, mu: 1.01048 1.01048 1.01048
+
+Step 312600  Warning: pressure scaling more than 1%, mu: 0.9898 0.9898 0.9898
+
+Step 313050  Warning: pressure scaling more than 1%, mu: 1.01388 1.01388 1.01388
+
+Step 313100  Warning: pressure scaling more than 1%, mu: 0.98301 0.98301 0.98301
+
+Step 313150  Warning: pressure scaling more than 1%, mu: 1.01607 1.01607 1.01607
+
+Step 313200  Warning: pressure scaling more than 1%, mu: 0.983474 0.983474 0.983474
+
+Step 313250  Warning: pressure scaling more than 1%, mu: 1.01141 1.01141 1.01141
+
+Step 313300  Warning: pressure scaling more than 1%, mu: 0.988856 0.988856 0.988856
+
+Step 313350  Warning: pressure scaling more than 1%, mu: 1.01059 1.01059 1.01059
+
+Step 313450  Warning: pressure scaling more than 1%, mu: 1.0135 1.0135 1.0135
+
+Step 313500  Warning: pressure scaling more than 1%, mu: 0.987329 0.987329 0.987329
+
+Step 313550  Warning: pressure scaling more than 1%, mu: 1.01418 1.01418 1.01418
+
+Step 313600  Warning: pressure scaling more than 1%, mu: 0.985238 0.985238 0.985238
+
+Step 313650  Warning: pressure scaling more than 1%, mu: 1.01437 1.01437 1.01437
+
+Step 313700  Warning: pressure scaling more than 1%, mu: 0.988693 0.988693 0.988693
+
+Step 313750  Warning: pressure scaling more than 1%, mu: 1.01082 1.01082 1.01082
+
+Step 313950  Warning: pressure scaling more than 1%, mu: 1.01003 1.01003 1.01003
+
+Step 314050  Warning: pressure scaling more than 1%, mu: 1.01281 1.01281 1.01281
+
+Step 314100  Warning: pressure scaling more than 1%, mu: 0.986874 0.986874 0.986874
+
+Step 314150  Warning: pressure scaling more than 1%, mu: 1.01037 1.01037 1.01037
+
+Step 314250  Warning: pressure scaling more than 1%, mu: 1.01048 1.01048 1.01048
+
+Step 314350  Warning: pressure scaling more than 1%, mu: 1.01253 1.01253 1.01253
+
+Step 314500  Warning: pressure scaling more than 1%, mu: 0.987851 0.987851 0.987851
+
+Step 314650  Warning: pressure scaling more than 1%, mu: 1.01436 1.01436 1.01436
+
+Step 314700  Warning: pressure scaling more than 1%, mu: 0.987926 0.987926 0.987926
+
+Step 314750  Warning: pressure scaling more than 1%, mu: 1.01086 1.01086 1.01086
+
+Step 315300  Warning: pressure scaling more than 1%, mu: 0.989127 0.989127 0.989127
+
+Step 315700  Warning: pressure scaling more than 1%, mu: 0.98732 0.98732 0.98732
+
+Step 315750  Warning: pressure scaling more than 1%, mu: 1.01372 1.01372 1.01372
+
+Step 315850  Warning: pressure scaling more than 1%, mu: 1.01051 1.01051 1.01051
+
+Step 316400  Warning: pressure scaling more than 1%, mu: 0.988071 0.988071 0.988071
+
+Step 317900  Warning: pressure scaling more than 1%, mu: 0.98956 0.98956 0.98956
+
+Step 318000  Warning: pressure scaling more than 1%, mu: 0.987334 0.987334 0.987334
+
+Step 318050  Warning: pressure scaling more than 1%, mu: 1.0107 1.0107 1.0107
+
+Step 318550  Warning: pressure scaling more than 1%, mu: 1.01142 1.01142 1.01142
+
+Step 321400  Warning: pressure scaling more than 1%, mu: 1.01637 1.01637 1.01637
+
+Step 321450  Warning: pressure scaling more than 1%, mu: 0.985535 0.985535 0.985535
+
+Step 321500  Warning: pressure scaling more than 1%, mu: 1.01346 1.01346 1.01346
+
+Step 325600  Warning: pressure scaling more than 1%, mu: 0.987396 0.987396 0.987396
+
+Step 325650  Warning: pressure scaling more than 1%, mu: 1.01025 1.01025 1.01025
+
+Step 325850  Warning: pressure scaling more than 1%, mu: 1.01503 1.01503 1.01503
+
+Step 325900  Warning: pressure scaling more than 1%, mu: 0.989853 0.989853 0.989853
+
+Step 325950  Warning: pressure scaling more than 1%, mu: 1.01002 1.01002 1.01002
+
+Step 326000  Warning: pressure scaling more than 1%, mu: 0.985546 0.985546 0.985546
+
+Step 326050  Warning: pressure scaling more than 1%, mu: 1.01322 1.01322 1.01322
+
+Step 326250  Warning: pressure scaling more than 1%, mu: 1.01123 1.01123 1.01123
+
+Step 326300  Warning: pressure scaling more than 1%, mu: 0.989053 0.989053 0.989053
+
+Step 326400  Warning: pressure scaling more than 1%, mu: 0.989863 0.989863 0.989863
+
+Step 327000  Warning: pressure scaling more than 1%, mu: 1.01399 1.01399 1.01399
+
+Step 327050  Warning: pressure scaling more than 1%, mu: 0.984428 0.984428 0.984428
+
+Step 327100  Warning: pressure scaling more than 1%, mu: 1.01652 1.01652 1.01652
+
+Step 327200  Warning: pressure scaling more than 1%, mu: 1.01341 1.01341 1.01341
+
+Step 327250  Warning: pressure scaling more than 1%, mu: 0.987574 0.987574 0.987574
+
+Step 327350  Warning: pressure scaling more than 1%, mu: 0.985464 0.985464 0.985464
+
+Step 327500  Warning: pressure scaling more than 1%, mu: 1.01593 1.01593 1.01593
+
+Step 327550  Warning: pressure scaling more than 1%, mu: 0.9877 0.9877 0.9877
+
+Step 327600  Warning: pressure scaling more than 1%, mu: 1.01175 1.01175 1.01175
+
+Step 328050  Warning: pressure scaling more than 1%, mu: 0.989719 0.989719 0.989719
+
+Step 330000  Warning: pressure scaling more than 1%, mu: 1.01378 1.01378 1.01378
+
+Step 330050  Warning: pressure scaling more than 1%, mu: 0.989056 0.989056 0.989056
+
+Step 330400  Warning: pressure scaling more than 1%, mu: 1.01147 1.01147 1.01147
+
+Step 330700  Warning: pressure scaling more than 1%, mu: 1.01406 1.01406 1.01406
+
+Step 335100  Warning: pressure scaling more than 1%, mu: 0.98895 0.98895 0.98895
+
+Step 335400  Warning: pressure scaling more than 1%, mu: 0.989833 0.989833 0.989833
+
+Step 335450  Warning: pressure scaling more than 1%, mu: 1.01234 1.01234 1.01234
+
+Step 335700  Warning: pressure scaling more than 1%, mu: 0.989236 0.989236 0.989236
+
+Step 335900  Warning: pressure scaling more than 1%, mu: 0.989652 0.989652 0.989652
+
+Step 335950  Warning: pressure scaling more than 1%, mu: 1.01217 1.01217 1.01217
+
+Step 336200  Warning: pressure scaling more than 1%, mu: 0.983993 0.983993 0.983993
+
+Step 336350  Warning: pressure scaling more than 1%, mu: 1.01063 1.01063 1.01063
+
+Step 336600  Warning: pressure scaling more than 1%, mu: 0.988825 0.988825 0.988825
+
+Step 341350  Warning: pressure scaling more than 1%, mu: 1.01381 1.01381 1.01381
+
+Step 341400  Warning: pressure scaling more than 1%, mu: 0.988064 0.988064 0.988064
+
+Step 341500  Warning: pressure scaling more than 1%, mu: 0.987446 0.987446 0.987446
+
+Step 341650  Warning: pressure scaling more than 1%, mu: 1.01189 1.01189 1.01189
+
+Step 341700  Warning: pressure scaling more than 1%, mu: 0.988224 0.988224 0.988224
+
+Step 341750  Warning: pressure scaling more than 1%, mu: 1.01734 1.01734 1.01734
+
+Step 341800  Warning: pressure scaling more than 1%, mu: 0.985359 0.985359 0.985359
+
+Step 341850  Warning: pressure scaling more than 1%, mu: 1.01329 1.01329 1.01329
+
+Step 341900  Warning: pressure scaling more than 1%, mu: 0.987782 0.987782 0.987782
+
+Step 341950  Warning: pressure scaling more than 1%, mu: 1.01097 1.01097 1.01097
+
+Step 342000  Warning: pressure scaling more than 1%, mu: 0.98766 0.98766 0.98766
+
+Step 342050  Warning: pressure scaling more than 1%, mu: 1.01313 1.01313 1.01313
+
+Step 342100  Warning: pressure scaling more than 1%, mu: 0.985291 0.985291 0.985291
+
+Step 342150  Warning: pressure scaling more than 1%, mu: 1.0188 1.0188 1.0188
+
+Step 342200  Warning: pressure scaling more than 1%, mu: 0.98553 0.98553 0.98553
+
+Step 342250  Warning: pressure scaling more than 1%, mu: 1.01955 1.01955 1.01955
+
+Step 342300  Warning: pressure scaling more than 1%, mu: 0.983337 0.983337 0.983337
+
+Step 342350  Warning: pressure scaling more than 1%, mu: 1.01573 1.01573 1.01573
+
+Step 342400  Warning: pressure scaling more than 1%, mu: 0.988125 0.988125 0.988125
+
+Step 342450  Warning: pressure scaling more than 1%, mu: 1.01016 1.01016 1.01016
+
+Step 342500  Warning: pressure scaling more than 1%, mu: 0.986685 0.986685 0.986685
+
+Step 342550  Warning: pressure scaling more than 1%, mu: 1.01476 1.01476 1.01476
+
+Step 342600  Warning: pressure scaling more than 1%, mu: 0.989303 0.989303 0.989303
+
+Step 342650  Warning: pressure scaling more than 1%, mu: 1.01173 1.01173 1.01173
+
+Step 344400  Warning: pressure scaling more than 1%, mu: 0.987478 0.987478 0.987478
+
+Step 344450  Warning: pressure scaling more than 1%, mu: 1.01084 1.01084 1.01084
+
+Step 346900  Warning: pressure scaling more than 1%, mu: 1.01048 1.01048 1.01048
+
+Step 348550  Warning: pressure scaling more than 1%, mu: 0.988236 0.988236 0.988236
+
+Step 348600  Warning: pressure scaling more than 1%, mu: 1.0119 1.0119 1.0119
+
+Step 348700  Warning: pressure scaling more than 1%, mu: 1.01293 1.01293 1.01293
+
+Step 348850  Warning: pressure scaling more than 1%, mu: 0.984701 0.984701 0.984701
+
+Step 348900  Warning: pressure scaling more than 1%, mu: 1.01116 1.01116 1.01116
+
+Step 349000  Warning: pressure scaling more than 1%, mu: 1.0132 1.0132 1.0132
+
+Step 349100  Warning: pressure scaling more than 1%, mu: 1.01143 1.01143 1.01143
+
+Step 349150  Warning: pressure scaling more than 1%, mu: 0.986518 0.986518 0.986518
+
+Step 349250  Warning: pressure scaling more than 1%, mu: 0.987825 0.987825 0.987825
+
+Step 349300  Warning: pressure scaling more than 1%, mu: 1.01954 1.01954 1.01954
+
+Step 349350  Warning: pressure scaling more than 1%, mu: 0.982998 0.982998 0.982998
+
+Step 349400  Warning: pressure scaling more than 1%, mu: 1.02028 1.02028 1.02028
+
+Step 349450  Warning: pressure scaling more than 1%, mu: 0.981795 0.981795 0.981795
+
+Step 349500  Warning: pressure scaling more than 1%, mu: 1.01914 1.01914 1.01914
+
+Step 349550  Warning: pressure scaling more than 1%, mu: 0.983854 0.983854 0.983854
+
+Step 349600  Warning: pressure scaling more than 1%, mu: 1.01251 1.01251 1.01251
+
+Step 349650  Warning: pressure scaling more than 1%, mu: 0.989562 0.989562 0.989562
+
+Step 349700  Warning: pressure scaling more than 1%, mu: 1.01476 1.01476 1.01476
+
+Step 349750  Warning: pressure scaling more than 1%, mu: 0.986384 0.986384 0.986384
+
+Step 349800  Warning: pressure scaling more than 1%, mu: 1.01199 1.01199 1.01199
+
+Step 349850  Warning: pressure scaling more than 1%, mu: 0.988083 0.988083 0.988083
+
+Step 350200  Warning: pressure scaling more than 1%, mu: 1.01143 1.01143 1.01143
+
+Step 350250  Warning: pressure scaling more than 1%, mu: 0.989686 0.989686 0.989686
+
+Step 350400  Warning: pressure scaling more than 1%, mu: 1.01018 1.01018 1.01018
+
+Step 350450  Warning: pressure scaling more than 1%, mu: 0.989017 0.989017 0.989017
+
+Step 350500  Warning: pressure scaling more than 1%, mu: 1.01062 1.01062 1.01062
+
+Step 350550  Warning: pressure scaling more than 1%, mu: 0.989802 0.989802 0.989802
+
+Step 355400  Warning: pressure scaling more than 1%, mu: 1.01023 1.01023 1.01023
+
+Step 356750  Warning: pressure scaling more than 1%, mu: 1.01006 1.01006 1.01006
+
+Step 357650  Warning: pressure scaling more than 1%, mu: 1.01247 1.01247 1.01247
+
+Step 357750  Warning: pressure scaling more than 1%, mu: 1.01027 1.01027 1.01027
+
+Step 358150  Warning: pressure scaling more than 1%, mu: 1.01038 1.01038 1.01038
+
+Step 358650  Warning: pressure scaling more than 1%, mu: 1.0143 1.0143 1.0143
+
+Step 358700  Warning: pressure scaling more than 1%, mu: 0.986359 0.986359 0.986359
+
+Step 358750  Warning: pressure scaling more than 1%, mu: 1.01611 1.01611 1.01611
+
+Step 358800  Warning: pressure scaling more than 1%, mu: 0.986412 0.986412 0.986412
+
+Step 358850  Warning: pressure scaling more than 1%, mu: 1.01268 1.01268 1.01268
+
+Step 358900  Warning: pressure scaling more than 1%, mu: 0.988971 0.988971 0.988971
+
+Step 359000  Warning: pressure scaling more than 1%, mu: 0.989116 0.989116 0.989116
+
+Step 359050  Warning: pressure scaling more than 1%, mu: 1.01629 1.01629 1.01629
+
+Step 359100  Warning: pressure scaling more than 1%, mu: 0.988231 0.988231 0.988231
+
+Step 359150  Warning: pressure scaling more than 1%, mu: 1.01438 1.01438 1.01438
+
+Step 359200  Warning: pressure scaling more than 1%, mu: 0.985621 0.985621 0.985621
+
+Step 359250  Warning: pressure scaling more than 1%, mu: 1.01238 1.01238 1.01238
+
+Step 359300  Warning: pressure scaling more than 1%, mu: 0.988648 0.988648 0.988648
+
+Step 359350  Warning: pressure scaling more than 1%, mu: 1.01644 1.01644 1.01644
+
+Step 359400  Warning: pressure scaling more than 1%, mu: 0.984948 0.984948 0.984948
+
+Step 359450  Warning: pressure scaling more than 1%, mu: 1.01679 1.01679 1.01679
+
+Step 359500  Warning: pressure scaling more than 1%, mu: 0.986714 0.986714 0.986714
+
+Step 359600  Warning: pressure scaling more than 1%, mu: 0.985779 0.985779 0.985779
+
+Step 359750  Warning: pressure scaling more than 1%, mu: 1.01196 1.01196 1.01196
+
+Step 360800  Warning: pressure scaling more than 1%, mu: 0.989262 0.989262 0.989262
+
+Step 360850  Warning: pressure scaling more than 1%, mu: 1.01215 1.01215 1.01215
+
+Step 363850  Warning: pressure scaling more than 1%, mu: 0.988378 0.988378 0.988378
+
+Step 363900  Warning: pressure scaling more than 1%, mu: 1.01255 1.01255 1.01255
+
+Step 363950  Warning: pressure scaling more than 1%, mu: 0.98947 0.98947 0.98947
+
+Step 366200  Warning: pressure scaling more than 1%, mu: 0.987543 0.987543 0.987543
+
+Step 368600  Warning: pressure scaling more than 1%, mu: 0.98969 0.98969 0.98969
+
+Step 369550  Warning: pressure scaling more than 1%, mu: 1.0114 1.0114 1.0114
+
+Step 369600  Warning: pressure scaling more than 1%, mu: 0.988975 0.988975 0.988975
+
+Step 369650  Warning: pressure scaling more than 1%, mu: 1.01984 1.01984 1.01984
+
+Step 369700  Warning: pressure scaling more than 1%, mu: 0.989258 0.989258 0.989258
+
+Step 370950  Warning: pressure scaling more than 1%, mu: 1.01166 1.01166 1.01166
+
+Step 371150  Warning: pressure scaling more than 1%, mu: 1.01372 1.01372 1.01372
+
+Step 372950  Warning: pressure scaling more than 1%, mu: 0.989967 0.989967 0.989967
+
+Step 373050  Warning: pressure scaling more than 1%, mu: 0.98636 0.98636 0.98636
+
+Step 373200  Warning: pressure scaling more than 1%, mu: 1.01598 1.01598 1.01598
+
+Step 373350  Warning: pressure scaling more than 1%, mu: 0.985891 0.985891 0.985891
+
+Step 373400  Warning: pressure scaling more than 1%, mu: 1.01039 1.01039 1.01039
+
+Step 373450  Warning: pressure scaling more than 1%, mu: 0.986537 0.986537 0.986537
+
+Step 373500  Warning: pressure scaling more than 1%, mu: 1.01682 1.01682 1.01682
+
+Step 373550  Warning: pressure scaling more than 1%, mu: 0.989156 0.989156 0.989156
+
+Step 373600  Warning: pressure scaling more than 1%, mu: 1.0153 1.0153 1.0153
+
+Step 373650  Warning: pressure scaling more than 1%, mu: 0.983647 0.983647 0.983647
+
+Step 373700  Warning: pressure scaling more than 1%, mu: 1.01403 1.01403 1.01403
+
+Step 373750  Warning: pressure scaling more than 1%, mu: 0.983505 0.983505 0.983505
+
+Step 374200  Warning: pressure scaling more than 1%, mu: 1.01189 1.01189 1.01189
+
+Step 375350  Warning: pressure scaling more than 1%, mu: 1.01126 1.01126 1.01126
+
+Step 377550  Warning: pressure scaling more than 1%, mu: 1.01271 1.01271 1.01271
+
+Step 377900  Warning: pressure scaling more than 1%, mu: 0.98961 0.98961 0.98961
+
+Step 377950  Warning: pressure scaling more than 1%, mu: 1.01208 1.01208 1.01208
+
+Step 378000  Warning: pressure scaling more than 1%, mu: 0.989156 0.989156 0.989156
+
+Step 378400  Warning: pressure scaling more than 1%, mu: 0.989715 0.989715 0.989715
+
+Step 378450  Warning: pressure scaling more than 1%, mu: 1.01069 1.01069 1.01069
+
+Step 378800  Warning: pressure scaling more than 1%, mu: 0.989624 0.989624 0.989624
+
+Step 378850  Warning: pressure scaling more than 1%, mu: 1.012 1.012 1.012
+
+Step 378900  Warning: pressure scaling more than 1%, mu: 0.986256 0.986256 0.986256
+
+Step 379450  Warning: pressure scaling more than 1%, mu: 1.01354 1.01354 1.01354
+
+Step 379550  Warning: pressure scaling more than 1%, mu: 1.01131 1.01131 1.01131
+
+Step 383800  Warning: pressure scaling more than 1%, mu: 0.989161 0.989161 0.989161
+
+Step 384400  Warning: pressure scaling more than 1%, mu: 1.01035 1.01035 1.01035
+
+Step 384450  Warning: pressure scaling more than 1%, mu: 0.988826 0.988826 0.988826
+
+Step 385450  Warning: pressure scaling more than 1%, mu: 0.988478 0.988478 0.988478
+
+Step 392950  Warning: pressure scaling more than 1%, mu: 1.01267 1.01267 1.01267
+
+Step 393000  Warning: pressure scaling more than 1%, mu: 0.987946 0.987946 0.987946
+
+Step 393050  Warning: pressure scaling more than 1%, mu: 1.01182 1.01182 1.01182
+
+Step 394950  Warning: pressure scaling more than 1%, mu: 1.01202 1.01202 1.01202
+
+Step 396900  Warning: pressure scaling more than 1%, mu: 1.01039 1.01039 1.01039
+
+Step 397650  Warning: pressure scaling more than 1%, mu: 1.01179 1.01179 1.01179
+
+Step 400050  Warning: pressure scaling more than 1%, mu: 0.989386 0.989386 0.989386
+
+Step 400200  Warning: pressure scaling more than 1%, mu: 1.0113 1.0113 1.0113
+
+Step 400250  Warning: pressure scaling more than 1%, mu: 0.989663 0.989663 0.989663
+
+Step 401900  Warning: pressure scaling more than 1%, mu: 1.01189 1.01189 1.01189
+
+Step 402050  Warning: pressure scaling more than 1%, mu: 0.987122 0.987122 0.987122
+
+Step 402450  Warning: pressure scaling more than 1%, mu: 0.986767 0.986767 0.986767
+
+Step 402500  Warning: pressure scaling more than 1%, mu: 1.01339 1.01339 1.01339
+
+Step 402850  Warning: pressure scaling more than 1%, mu: 0.989161 0.989161 0.989161
+
+Step 403000  Warning: pressure scaling more than 1%, mu: 1.01021 1.01021 1.01021
+
+Step 403100  Warning: pressure scaling more than 1%, mu: 1.01265 1.01265 1.01265
+
+Step 408850  Warning: pressure scaling more than 1%, mu: 0.986467 0.986467 0.986467
+
+Step 411900  Warning: pressure scaling more than 1%, mu: 1.01116 1.01116 1.01116
+
+Step 412450  Warning: pressure scaling more than 1%, mu: 0.989926 0.989926 0.989926
+
+Step 412700  Warning: pressure scaling more than 1%, mu: 1.01247 1.01247 1.01247
+
+Step 412800  Warning: pressure scaling more than 1%, mu: 1.0128 1.0128 1.0128
+
+Step 412850  Warning: pressure scaling more than 1%, mu: 0.982467 0.982467 0.982467
+
+Step 412900  Warning: pressure scaling more than 1%, mu: 1.015 1.015 1.015
+
+Step 412950  Warning: pressure scaling more than 1%, mu: 0.987294 0.987294 0.987294
+
+Step 413050  Warning: pressure scaling more than 1%, mu: 0.988363 0.988363 0.988363
+
+Step 413100  Warning: pressure scaling more than 1%, mu: 1.0162 1.0162 1.0162
+
+Step 413200  Warning: pressure scaling more than 1%, mu: 1.01253 1.01253 1.01253
+
+Step 413250  Warning: pressure scaling more than 1%, mu: 0.985181 0.985181 0.985181
+
+Step 413350  Warning: pressure scaling more than 1%, mu: 0.988498 0.988498 0.988498
+
+Step 413400  Warning: pressure scaling more than 1%, mu: 1.01009 1.01009 1.01009
+
+Step 413450  Warning: pressure scaling more than 1%, mu: 0.989174 0.989174 0.989174
+
+Step 413500  Warning: pressure scaling more than 1%, mu: 1.01296 1.01296 1.01296
+
+Step 413650  Warning: pressure scaling more than 1%, mu: 0.987421 0.987421 0.987421
+
+Step 414400  Warning: pressure scaling more than 1%, mu: 1.01354 1.01354 1.01354
+
+Step 415800  Warning: pressure scaling more than 1%, mu: 1.01317 1.01317 1.01317
+
+Step 416700  Warning: pressure scaling more than 1%, mu: 1.01047 1.01047 1.01047
+
+Step 417100  Warning: pressure scaling more than 1%, mu: 1.01033 1.01033 1.01033
+
+Step 417150  Warning: pressure scaling more than 1%, mu: 0.987709 0.987709 0.987709
+
+Step 417200  Warning: pressure scaling more than 1%, mu: 1.01031 1.01031 1.01031
+
+Step 417300  Warning: pressure scaling more than 1%, mu: 1.01209 1.01209 1.01209
+
+Step 417350  Warning: pressure scaling more than 1%, mu: 0.988899 0.988899 0.988899
+
+Step 417700  Warning: pressure scaling more than 1%, mu: 1.01164 1.01164 1.01164
+
+Step 418500  Warning: pressure scaling more than 1%, mu: 1.0104 1.0104 1.0104
+
+Step 418650  Warning: pressure scaling more than 1%, mu: 0.989227 0.989227 0.989227
+
+Step 418750  Warning: pressure scaling more than 1%, mu: 0.988467 0.988467 0.988467
+
+Step 423900  Warning: pressure scaling more than 1%, mu: 1.0167 1.0167 1.0167
+
+Step 423950  Warning: pressure scaling more than 1%, mu: 0.989844 0.989844 0.989844
+
+Step 424000  Warning: pressure scaling more than 1%, mu: 1.01096 1.01096 1.01096
+
+Step 427600  Warning: pressure scaling more than 1%, mu: 1.01047 1.01047 1.01047
+
+Step 427850  Warning: pressure scaling more than 1%, mu: 0.988036 0.988036 0.988036
+
+Step 428000  Warning: pressure scaling more than 1%, mu: 1.01081 1.01081 1.01081
+
+Step 428350  Warning: pressure scaling more than 1%, mu: 0.989123 0.989123 0.989123
+
+Step 428700  Warning: pressure scaling more than 1%, mu: 1.01077 1.01077 1.01077
+
+Step 428800  Warning: pressure scaling more than 1%, mu: 1.01017 1.01017 1.01017
+
+Step 428850  Warning: pressure scaling more than 1%, mu: 0.985585 0.985585 0.985585
+
+Step 428950  Warning: pressure scaling more than 1%, mu: 0.98989 0.98989 0.98989
+
+Step 429000  Warning: pressure scaling more than 1%, mu: 1.01007 1.01007 1.01007
+
+Step 429700  Warning: pressure scaling more than 1%, mu: 1.01024 1.01024 1.01024
+
+Step 429750  Warning: pressure scaling more than 1%, mu: 0.989241 0.989241 0.989241
+
+Step 429900  Warning: pressure scaling more than 1%, mu: 1.01053 1.01053 1.01053
+
+Step 429950  Warning: pressure scaling more than 1%, mu: 0.989842 0.989842 0.989842
+
+Step 431150  Warning: pressure scaling more than 1%, mu: 0.988414 0.988414 0.988414
+
+Step 434650  Warning: pressure scaling more than 1%, mu: 1.01114 1.01114 1.01114
+
+Step 435100  Warning: pressure scaling more than 1%, mu: 0.989901 0.989901 0.989901
+
+Step 435800  Warning: pressure scaling more than 1%, mu: 0.988534 0.988534 0.988534
+
+Step 439550  Warning: pressure scaling more than 1%, mu: 1.01115 1.01115 1.01115
+
+Step 439800  Warning: pressure scaling more than 1%, mu: 0.989708 0.989708 0.989708
+
+Step 440200  Warning: pressure scaling more than 1%, mu: 0.98767 0.98767 0.98767
+
+Step 443400  Warning: pressure scaling more than 1%, mu: 1.01012 1.01012 1.01012
+
+Step 443450  Warning: pressure scaling more than 1%, mu: 0.989587 0.989587 0.989587
+
+Step 444050  Warning: pressure scaling more than 1%, mu: 0.987567 0.987567 0.987567
+
+Step 444200  Warning: pressure scaling more than 1%, mu: 1.01079 1.01079 1.01079
+
+Step 446200  Warning: pressure scaling more than 1%, mu: 1.01271 1.01271 1.01271
+
+Step 446300  Warning: pressure scaling more than 1%, mu: 1.0124 1.0124 1.0124
+
+Step 446450  Warning: pressure scaling more than 1%, mu: 0.987542 0.987542 0.987542
+
+Step 446500  Warning: pressure scaling more than 1%, mu: 1.01393 1.01393 1.01393
+
+Step 446550  Warning: pressure scaling more than 1%, mu: 0.987883 0.987883 0.987883
+
+Step 446600  Warning: pressure scaling more than 1%, mu: 1.013 1.013 1.013
+
+Step 446700  Warning: pressure scaling more than 1%, mu: 1.01135 1.01135 1.01135
+
+Step 447100  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+
+Step 450400  Warning: pressure scaling more than 1%, mu: 0.98678 0.98678 0.98678
+
+Step 456800  Warning: pressure scaling more than 1%, mu: 0.987677 0.987677 0.987677
+
+Step 457050  Warning: pressure scaling more than 1%, mu: 1.01048 1.01048 1.01048
+
+Step 457100  Warning: pressure scaling more than 1%, mu: 0.989085 0.989085 0.989085
+
+Step 457200  Warning: pressure scaling more than 1%, mu: 0.989451 0.989451 0.989451
+
+Step 457300  Warning: pressure scaling more than 1%, mu: 0.989915 0.989915 0.989915
+
+Step 457350  Warning: pressure scaling more than 1%, mu: 1.01149 1.01149 1.01149
+
+Step 458850  Warning: pressure scaling more than 1%, mu: 0.989081 0.989081 0.989081
+
+Step 459900  Warning: pressure scaling more than 1%, mu: 1.01038 1.01038 1.01038
+
+Step 460200  Warning: pressure scaling more than 1%, mu: 1.01825 1.01825 1.01825
+
+Step 460350  Warning: pressure scaling more than 1%, mu: 0.988747 0.988747 0.988747
+
+Step 460450  Warning: pressure scaling more than 1%, mu: 0.988449 0.988449 0.988449
+
+Step 460600  Warning: pressure scaling more than 1%, mu: 1.01328 1.01328 1.01328
+
+Step 460650  Warning: pressure scaling more than 1%, mu: 0.989854 0.989854 0.989854
+
+Step 460750  Warning: pressure scaling more than 1%, mu: 0.985677 0.985677 0.985677
+
+Step 460850  Warning: pressure scaling more than 1%, mu: 0.989169 0.989169 0.989169
+
+Step 461050  Warning: pressure scaling more than 1%, mu: 0.986167 0.986167 0.986167
+
+Step 461100  Warning: pressure scaling more than 1%, mu: 1.01137 1.01137 1.01137
+
+Step 461150  Warning: pressure scaling more than 1%, mu: 0.988374 0.988374 0.988374
+
+Step 464250  Warning: pressure scaling more than 1%, mu: 1.0122 1.0122 1.0122
+
+Step 464500  Warning: pressure scaling more than 1%, mu: 0.988457 0.988457 0.988457
+
+Step 464600  Warning: pressure scaling more than 1%, mu: 0.9896 0.9896 0.9896
+
+Step 464650  Warning: pressure scaling more than 1%, mu: 1.01625 1.01625 1.01625
+
+Step 464700  Warning: pressure scaling more than 1%, mu: 0.988627 0.988627 0.988627
+
+Step 464750  Warning: pressure scaling more than 1%, mu: 1.01565 1.01565 1.01565
+
+Step 464800  Warning: pressure scaling more than 1%, mu: 0.986881 0.986881 0.986881
+
+Step 465150  Warning: pressure scaling more than 1%, mu: 1.01407 1.01407 1.01407
+
+Step 467400  Warning: pressure scaling more than 1%, mu: 1.0115 1.0115 1.0115
+
+Step 468150  Warning: pressure scaling more than 1%, mu: 1.01172 1.01172 1.01172
+
+Step 470650  Warning: pressure scaling more than 1%, mu: 1.0112 1.0112 1.0112
+
+Step 471300  Warning: pressure scaling more than 1%, mu: 0.986349 0.986349 0.986349
+
+Step 472750  Warning: pressure scaling more than 1%, mu: 0.989146 0.989146 0.989146
+
+Step 472800  Warning: pressure scaling more than 1%, mu: 1.01349 1.01349 1.01349
+
+Step 472900  Warning: pressure scaling more than 1%, mu: 1.01017 1.01017 1.01017
+
+Step 472950  Warning: pressure scaling more than 1%, mu: 0.988794 0.988794 0.988794
+
+Step 473300  Warning: pressure scaling more than 1%, mu: 1.01166 1.01166 1.01166
+
+Step 474650  Warning: pressure scaling more than 1%, mu: 1.01015 1.01015 1.01015
+
+Step 474750  Warning: pressure scaling more than 1%, mu: 1.01555 1.01555 1.01555
+
+Step 474800  Warning: pressure scaling more than 1%, mu: 0.989993 0.989993 0.989993
+
+Step 475000  Warning: pressure scaling more than 1%, mu: 0.989322 0.989322 0.989322
+
+Step 475150  Warning: pressure scaling more than 1%, mu: 1.01232 1.01232 1.01232
+
+Step 475200  Warning: pressure scaling more than 1%, mu: 0.988972 0.988972 0.988972
+
+Step 475250  Warning: pressure scaling more than 1%, mu: 1.01119 1.01119 1.01119
+
+Step 475300  Warning: pressure scaling more than 1%, mu: 0.985774 0.985774 0.985774
+
+Step 475350  Warning: pressure scaling more than 1%, mu: 1.01277 1.01277 1.01277
+
+Step 475400  Warning: pressure scaling more than 1%, mu: 0.989197 0.989197 0.989197
+
+Step 475450  Warning: pressure scaling more than 1%, mu: 1.01109 1.01109 1.01109
+
+Step 475600  Warning: pressure scaling more than 1%, mu: 0.985875 0.985875 0.985875
+
+Step 475650  Warning: pressure scaling more than 1%, mu: 1.01176 1.01176 1.01176
+
+Step 475700  Warning: pressure scaling more than 1%, mu: 0.983447 0.983447 0.983447
+
+Step 475750  Warning: pressure scaling more than 1%, mu: 1.02323 1.02323 1.02323
+
+Step 475800  Warning: pressure scaling more than 1%, mu: 0.983941 0.983941 0.983941
+
+Step 475850  Warning: pressure scaling more than 1%, mu: 1.01376 1.01376 1.01376
+
+Step 475950  Warning: pressure scaling more than 1%, mu: 1.01142 1.01142 1.01142
+
+Step 476050  Warning: pressure scaling more than 1%, mu: 1.01257 1.01257 1.01257
+
+Step 476100  Warning: pressure scaling more than 1%, mu: 0.984684 0.984684 0.984684
+
+Step 476150  Warning: pressure scaling more than 1%, mu: 1.01397 1.01397 1.01397
+
+Step 476200  Warning: pressure scaling more than 1%, mu: 0.989028 0.989028 0.989028
+
+Step 476250  Warning: pressure scaling more than 1%, mu: 1.0163 1.0163 1.0163
+
+Step 476300  Warning: pressure scaling more than 1%, mu: 0.987061 0.987061 0.987061
+
+Step 476350  Warning: pressure scaling more than 1%, mu: 1.01477 1.01477 1.01477
+
+Step 476400  Warning: pressure scaling more than 1%, mu: 0.985032 0.985032 0.985032
+
+Step 476800  Warning: pressure scaling more than 1%, mu: 0.987451 0.987451 0.987451
+
+Step 476850  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+
+Step 479600  Warning: pressure scaling more than 1%, mu: 1.01057 1.01057 1.01057
+
+Step 483100  Warning: pressure scaling more than 1%, mu: 1.01029 1.01029 1.01029
+
+Step 484600  Warning: pressure scaling more than 1%, mu: 1.01122 1.01122 1.01122
+
+Step 484650  Warning: pressure scaling more than 1%, mu: 0.987943 0.987943 0.987943
+
+Step 484700  Warning: pressure scaling more than 1%, mu: 1.01223 1.01223 1.01223
+
+Step 484750  Warning: pressure scaling more than 1%, mu: 0.989724 0.989724 0.989724
+
+Step 486450  Warning: pressure scaling more than 1%, mu: 0.989408 0.989408 0.989408
+
+Step 486550  Warning: pressure scaling more than 1%, mu: 0.986659 0.986659 0.986659
+
+Step 486600  Warning: pressure scaling more than 1%, mu: 1.01049 1.01049 1.01049
+
+Step 486850  Warning: pressure scaling more than 1%, mu: 0.989892 0.989892 0.989892
+
+Step 486900  Warning: pressure scaling more than 1%, mu: 1.01072 1.01072 1.01072
+
+Step 486950  Warning: pressure scaling more than 1%, mu: 0.98526 0.98526 0.98526
+
+Step 487250  Warning: pressure scaling more than 1%, mu: 0.984819 0.984819 0.984819
+
+Step 487400  Warning: pressure scaling more than 1%, mu: 1.01357 1.01357 1.01357
+
+Step 487450  Warning: pressure scaling more than 1%, mu: 0.988879 0.988879 0.988879
+
+Step 487500  Warning: pressure scaling more than 1%, mu: 1.01121 1.01121 1.01121
+
+Step 487800  Warning: pressure scaling more than 1%, mu: 1.01167 1.01167 1.01167
+
+Step 487850  Warning: pressure scaling more than 1%, mu: 0.985033 0.985033 0.985033
+
+Step 487900  Warning: pressure scaling more than 1%, mu: 1.0134 1.0134 1.0134
+
+Step 487950  Warning: pressure scaling more than 1%, mu: 0.985262 0.985262 0.985262
+
+Step 488000  Warning: pressure scaling more than 1%, mu: 1.01417 1.01417 1.01417
+
+Step 488050  Warning: pressure scaling more than 1%, mu: 0.988555 0.988555 0.988555
+
+Step 488100  Warning: pressure scaling more than 1%, mu: 1.01666 1.01666 1.01666
+
+Step 488250  Warning: pressure scaling more than 1%, mu: 0.989296 0.989296 0.989296
+
+Step 488400  Warning: pressure scaling more than 1%, mu: 1.01402 1.01402 1.01402
+
+Step 488500  Warning: pressure scaling more than 1%, mu: 1.01539 1.01539 1.01539
+
+Step 488550  Warning: pressure scaling more than 1%, mu: 0.98995 0.98995 0.98995
+
+Step 488900  Warning: pressure scaling more than 1%, mu: 1.01063 1.01063 1.01063
+
+Step 492200  Warning: pressure scaling more than 1%, mu: 0.986475 0.986475 0.986475
+
+Step 492250  Warning: pressure scaling more than 1%, mu: 1.01351 1.01351 1.01351
+
+Step 492350  Warning: pressure scaling more than 1%, mu: 1.01418 1.01418 1.01418
+
+Step 492400  Warning: pressure scaling more than 1%, mu: 0.9891 0.9891 0.9891
+
+Step 492500  Warning: pressure scaling more than 1%, mu: 0.988957 0.988957 0.988957
+
+Step 492600  Warning: pressure scaling more than 1%, mu: 0.989393 0.989393 0.989393
+
+Step 492650  Warning: pressure scaling more than 1%, mu: 1.01478 1.01478 1.01478
+
+Step 492700  Warning: pressure scaling more than 1%, mu: 0.985713 0.985713 0.985713
+
+Step 492750  Warning: pressure scaling more than 1%, mu: 1.01857 1.01857 1.01857
+
+Step 492800  Warning: pressure scaling more than 1%, mu: 0.987237 0.987237 0.987237
+
+Step 492850  Warning: pressure scaling more than 1%, mu: 1.01062 1.01062 1.01062
+
+Step 493000  Warning: pressure scaling more than 1%, mu: 0.987229 0.987229 0.987229
+
+Step 493050  Warning: pressure scaling more than 1%, mu: 1.01397 1.01397 1.01397
+
+Step 493100  Warning: pressure scaling more than 1%, mu: 0.987815 0.987815 0.987815
+
+Step 493150  Warning: pressure scaling more than 1%, mu: 1.01484 1.01484 1.01484
+
+Step 493200  Warning: pressure scaling more than 1%, mu: 0.987233 0.987233 0.987233
+
+Step 493450  Warning: pressure scaling more than 1%, mu: 1.01248 1.01248 1.01248
+
+Step 493500  Warning: pressure scaling more than 1%, mu: 0.987642 0.987642 0.987642
+
+Step 493550  Warning: pressure scaling more than 1%, mu: 1.01734 1.01734 1.01734
+
+Step 493600  Warning: pressure scaling more than 1%, mu: 0.986806 0.986806 0.986806
+
+Step 493650  Warning: pressure scaling more than 1%, mu: 1.01035 1.01035 1.01035
+
+Step 493700  Warning: pressure scaling more than 1%, mu: 0.989269 0.989269 0.989269
+
+Step 495650  Warning: pressure scaling more than 1%, mu: 0.986223 0.986223 0.986223
+
+Writing final coordinates.
+
+NOTE: 3 % of the run time was spent in domain decomposition,
+      15 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      683.093      683.094      100.0
+                 (ns/day)    (hour/ns)
+Performance:      126.484        0.190
+
+GROMACS reminds you: "Everybody Wants to Be Naked and Famous" (Tricky)
+
