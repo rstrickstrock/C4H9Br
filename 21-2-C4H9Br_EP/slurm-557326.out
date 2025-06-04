@@ -2,7 +2,7 @@
 
 Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
 Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
-Working dir:  /work/rstric2s/current_sim/Application/21-2-C4H9Br
+Working dir:  /work/rstric2s/current_sim/Application/21-2-C4H9Br_EP
 Command line:
   gmx grompp -f 04_prod.mdp -c 13_npt.gro -t 13_npt.trr -p topol.top -o 14_prod.tpr
 
@@ -14,15 +14,15 @@ NOTE 1 [file 04_prod.mdp]:
   < 0
 
 Generating 1-4 interactions: fudge = 0.5
-Number of degrees of freedom in T-Coupling group Other is 4188.00
+Number of degrees of freedom in T-Coupling group Other is 4254.00
 trr version: GMX_trn_file (single precision)
 Reading frame       0 time    0.000   Reading frame       1 time   20.000   Reading frame       2 time   40.000   Reading frame       3 time   60.000   Reading frame       4 time   80.000   Reading frame       5 time  100.000   Reading frame       6 time  120.000   Reading frame       7 time  140.000   Reading frame       8 time  160.000   Reading frame       9 time  180.000   Reading frame      10 time  200.000   Reading frame      11 time  220.000   Reading frame      12 time  240.000   Reading frame      13 time  260.000   Reading frame      14 time  280.000   Reading frame      15 time  300.000   Reading frame      16 time  320.000   Reading frame      17 time  340.000   Reading frame      18 time  360.000   Reading frame      19 time  380.000   Reading frame      20 time  400.000   Reading frame      30 time  600.000   Reading frame      40 time  800.000   Reading frame      50 time 1000.000   Last frame         50 time 1000.000   
 
 There was 1 NOTE
 
-GROMACS reminds you: "Let's Go Hang Out In a Mall" (LIVE)
+GROMACS reminds you: "The researcher's art is first of all to find himself a good boss." (Andre Lwoff)
 
-Setting the LD random seed to -1208664098
+Setting the LD random seed to -964821443
 
 Generated 331705 of the 331705 non-bonded parameter combinations
 
@@ -31,11 +31,13 @@ Generated 331705 of the 331705 1-4 parameter combinations
 Excluding 3 bonded neighbours molecule type 'Other'
 
 turning H bonds into constraints...
+
+Cleaning up constraints and constant bonded interactions with virtual sites
 Analysing residue names:
-There are:   127      Other residues
+There are:   129      Other residues
 Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
 
-The largest distance between excluded atoms is 0.438 nm between atom 925 and 933
+The largest distance between excluded atoms is 0.453 nm between atom 316 and 324
 
 Reading Coordinates, Velocities and Box size from old trajectory
 
@@ -45,16 +47,16 @@ Using frame at t = 1000 ps
 
 Starting time for run is 0 ps
 Calculating fourier grid dimensions for X Y Z
-Using a fourier grid of 20x20x20, spacing 0.139 0.139 0.139
+Using a fourier grid of 20x20x20, spacing 0.144 0.144 0.144
 
 Estimate for the relative computational load of the PME mesh part: 0.23
 
-This run will generate roughly 112 Mb of data
+This run will generate roughly 121 Mb of data
                       :-) GROMACS - gmx mdrun, 2024.1 (-:
 
 Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
 Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
-Working dir:  /work/rstric2s/current_sim/Application/21-2-C4H9Br
+Working dir:  /work/rstric2s/current_sim/Application/21-2-C4H9Br_EP
 Command line:
   gmx mdrun -deffnm 14_prod
 
@@ -66,12 +68,44 @@ Using 1 MPI thread
 
 Non-default thread affinity set, disabling internal thread affinity
 
-Using 1 OpenMP thread 
+Using 2 OpenMP threads 
 
 starting mdrun '2-BROMOBUTANE'
 2500000 steps,   5000.0 ps.
 
+Step 1 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 11 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 21 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 31 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 41 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 51 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 61 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 71 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 81 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
 Step 91 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 101 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 111 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 121 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 131 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 141 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 151 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+
+Step 161 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
 Step 171 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
@@ -261,35 +295,35 @@ Step 1091 Pressure scaling more than 1%. This may mean your system is not yet eq
 
 Step 1101 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1111 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31391 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1121 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31401 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1131 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31411 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1141 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31421 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1151 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31431 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1161 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31441 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1171 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31451 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1181 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31461 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1191 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31471 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1201 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31481 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1211 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31491 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1221 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31501 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1231 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31511 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1241 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31521 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 1251 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
+Step 31531 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
 Step 31541 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
@@ -443,143 +477,127 @@ Step 32281 Pressure scaling more than 1%. This may mean your system is not yet e
 
 Step 32291 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
 
-Step 32301 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32311 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32321 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32331 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32341 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32351 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32361 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32371 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32381 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32391 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32401 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32411 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32421 Pressure scaling more than 1%. This may mean your system is not yet equilibrated. Use of Parrinello-Rahman pressure coupling during equilibration can lead to simulation instability, and is discouraged.
-
-Step 32422, time 64.844 (ps)  LINCS WARNING
+Step 32292, time 64.584 (ps)  LINCS WARNING
 relative constraint deviation after LINCS:
-rms 0.071928, max 1.458979 (between atoms 930 and 929)
+rms 0.000170, max 0.003680 (between atoms 178 and 177)
 bonds that rotated more than 30 degrees:
  atom 1 atom 2  angle  previous, current, constraint length
-    983    981   90.0    0.0866   0.1247      0.1090
-    984    981   49.9    0.0866   0.1143      0.1090
-   1168   1167   90.0    0.0866   0.1143      0.1090
-    769    767   90.0    0.0866   0.1255      0.1090
-   1262   1261   49.4    0.0866   0.1096      0.1090
-    840    837   79.4    0.0866   0.1092      0.1090
-     58     57   90.0    0.0866   0.1298      0.1090
-    574    571   90.0    0.0866   0.1390      0.1090
-    534    533   83.9    0.0866   0.1095      0.1090
-    166    165   35.5    0.0866   0.1090      0.1090
-    504    501   35.3    0.0866   0.1090      0.1090
-   1626   1625   45.0    0.0866   0.1091      0.1090
-   1722   1719   58.0    0.0866   0.1091      0.1090
-    578    575   90.0    0.0866   0.1224      0.1090
-   1021   1019   90.0    0.0866   0.2076      0.1090
-    432    431   31.7    0.0866   0.1093      0.1090
-   1388   1387   37.5    0.0866   0.1090      0.1090
-   1147   1145   90.0    0.0866   0.1804      0.1090
-   1460   1457   38.2    0.0866   0.1089      0.1090
-    455    453   90.0    0.0866   0.1271      0.1090
-    157    155   90.0    0.0866   0.2206      0.1090
-   1120   1117   52.6    0.0866   0.1093      0.1090
-    816    813   90.0    0.0866   0.1215      0.1090
-    930    929   90.0    0.0866   0.2680      0.1090
-   1179   1177   90.0    0.0866   0.2280      0.1090
-   1180   1177   90.0    0.0866   0.1194      0.1090
-    885    883   90.0    0.0866   0.1345      0.1090
-    854    851   31.1    0.0866   0.1090      0.1090
-   1301   1299   90.0    0.0866   0.1204      0.1090
-   1302   1299   31.7    0.0866   0.1119      0.1090
-Wrote pdb files with previous and current coordinates
+    693    691   50.6    0.0885   0.1090      0.1090
+    180    177   39.7    0.0885   0.1089      0.1090
+   1063   1062   48.3    0.0885   0.1091      0.1090
+   1248   1246   38.7    0.0885   0.1092      0.1090
+    763    762   30.8    0.0885   0.1090      0.1090
+    587    586   31.2    0.0885   0.1090      0.1090
 
-Step 32423, time 64.846 (ps)  LINCS WARNING
+Step 32293, time 64.586 (ps)  LINCS WARNING
 relative constraint deviation after LINCS:
-rms 5089.544434, max 118933.843750 (between atoms 161 and 159)
+rms 0.006486, max 0.163324 (between atoms 1063 and 1062)
 bonds that rotated more than 30 degrees:
  atom 1 atom 2  angle  previous, current, constraint length
-    982    981   55.3    0.1082   0.1136      0.1090
-    983    981  148.5    0.1247 847.5908      0.1090
-    984    981   90.0    0.1143   0.7549      0.1090
-    986    985   90.0    0.1090   0.3356      0.1090
-   1172   1170   90.0    0.1090   0.1567      0.1090
-   1174   1173   90.0    0.1090   0.4556      0.1090
-   1175   1173   90.0    0.1090   0.4563      0.1090
-   1176   1173   90.0    0.1090   0.4103      0.1090
-   1168   1167   90.0    0.1143   1.3445      0.1090
-    769    767  170.7    0.1255 2045.7620      0.1090
-   1262   1261   90.0    0.1096   0.1758      0.1090
-   1266   1265   90.0    0.1090   0.2207      0.1090
-    392    389   90.0    0.1090   0.1738      0.1090
-   1207   1205   56.1    0.1090   0.1089      0.1090
-    265    263   33.3    0.1090   0.1090      0.1090
-    292    291   35.7    0.1090   0.1090      0.1090
-    832    831   90.0    0.1090   0.8476      0.1090
-    833    831   90.0    0.1090   0.9203      0.1090
-    840    837  169.3    0.1092  43.5248      0.1090
-     58     57   90.0    0.1298   0.6351      0.1090
-     60     57   51.7    0.1123   0.1145      0.1090
-     62     61   47.8    0.1090   0.1090      0.1090
-   1766   1765   38.2    0.1090   0.1043      0.1090
-   1767   1765   90.0    0.1090   0.5932      0.1090
-   1768   1765   38.4    0.1090   0.1044      0.1090
-   1426   1425   30.7    0.1090   0.1090      0.1090
-    574    571   90.0    0.1390   1.5034      0.1090
-    534    533  119.4    0.1095   6.9901      0.1090
-    535    533   69.2    0.1102   0.1045      0.1090
-    536    533   67.3    0.1113   0.1046      0.1090
-    504    501   57.3    0.1090   0.1089      0.1090
-    500    498   90.0    0.1090   0.1258      0.1090
-   1626   1625   90.0    0.1091   0.1138      0.1090
-   1721   1719   34.6    0.1087   0.1048      0.1090
-   1722   1719   90.0    0.1091   0.5819      0.1090
-   1654   1653   35.5    0.1090   0.1091      0.1090
-   1230   1229   44.6    0.1090   0.1091      0.1090
-    542    540   90.0    0.1090   0.9411      0.1090
-   1630   1629   90.0    0.1090   0.1412      0.1090
-    578    575  140.8    0.1224  13.2671      0.1090
-   1021   1019   90.0    0.2076   0.6650      0.1090
-   1388   1387   90.0    0.1090   0.3288      0.1090
-   1392   1391   90.0    0.1090   0.3508      0.1090
-    108    106   45.7    0.1090   0.1090      0.1090
-   1147   1145  103.8    0.1804 115.2979      0.1090
-    161    159  135.6    0.1090 12963.8984      0.1090
-    461    459   33.5    0.1090   0.1089      0.1090
-    450    449   77.7    0.1090   8.3890      0.1090
-    455    453  111.0    0.1271   8.4011      0.1090
-    157    155   39.6    0.2206 12963.5361      0.1090
-   1116   1114   90.0    0.1090   0.1869      0.1090
-   1120   1117   90.0    0.1093   0.1396      0.1090
-    816    813   54.8    0.1215   0.1090      0.1090
-   1295   1293   43.0    0.1090   0.1090      0.1090
-    930    929   90.0    0.2680   0.1980      0.1090
-    580    579   90.0    0.1090   0.2950      0.1090
-   1186   1184   90.0    0.1090   1.0263      0.1090
-   1183   1181   48.9    0.1090   0.1090      0.1090
-   1178   1177   78.4    0.1076   0.1178      0.1090
-   1179   1177   52.6    0.2280   0.1079      0.1090
-   1180   1177  138.5    0.1194   9.2975      0.1090
-    479    477   53.2    0.1090   0.1093      0.1090
-    885    883  140.4    0.1345 1706.9982      0.1090
-   1140   1139  107.7    0.1090   6.0743      0.1090
-   1141   1139   83.4    0.1089   5.8180      0.1090
-    766    764   42.9    0.1090 2048.7009      0.1090
-    888    887   90.0    0.1090   0.1467      0.1090
-    889    887   45.1    0.1090 1706.1455      0.1090
-    926    925   90.0    0.1090   0.1676      0.1090
-   1301   1299   57.2    0.1204   0.1087      0.1090
+    693    691   33.5    0.1090   0.1090      0.1090
+   1063   1062   90.0    0.1091   0.1268      0.1090
+   1248   1246   70.8    0.1092   0.1089      0.1090
+   1251   1250   90.0    0.1090   0.1241      0.1090
+    964    961   90.0    0.1090   0.1142      0.1090
+
+Step 32294, time 64.588 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000418, max 0.008083 (between atoms 1065 and 1062)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1063   1062   73.7    0.1268   0.1088      0.1090
+   1248   1246   43.3    0.1089   0.1086      0.1090
+   1251   1250   70.0    0.1241   0.1090      0.1090
+    964    961   64.7    0.1142   0.1088      0.1090
+
+Step 32295, time 64.59 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.005746, max 0.195458 (between atoms 1063 and 1062)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1063   1062   90.0    0.1088   0.1303      0.1090
+   1248   1246   50.7    0.1086   0.1088      0.1090
+   1251   1250   76.2    0.1090   0.1089      0.1090
+    964    961   65.5    0.1088   0.1089      0.1090
+
+Step 32296, time 64.592 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.035548, max 1.158656 (between atoms 1251 and 1250)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1063   1062   90.0    0.1303   0.1474      0.1090
+   1249   1246   30.9    0.1093   0.1092      0.1090
+   1251   1250   90.0    0.1089   0.2353      0.1090
+    964    961   56.6    0.1089   0.1096      0.1090
 Wrote pdb files with previous and current coordinates
-/var/spool/slurmd/job557166/slurm_script: Zeile 9: 1772573 Speicherzugriffsfehler  (Speicherabzug geschrieben) gmx mdrun -deffnm 14_prod
+
+Step 32297, time 64.594 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.008285, max 0.261132 (between atoms 1063 and 1062)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1063   1062   90.0    0.1474   0.1375      0.1090
+   1249   1246   31.3    0.1092   0.1089      0.1090
+   1251   1250   90.0    0.2353   0.1206      0.1090
+    964    961   64.8    0.1096   0.1091      0.1090
+
+Step 32298, time 64.596 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.055407, max 1.434582 (between atoms 603 and 601)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1063   1062   90.0    0.1375   0.1654      0.1090
+   1247   1246   31.1    0.1095   0.1094      0.1090
+   1251   1250   90.0    0.1206   0.2288      0.1090
+    963    961   34.8    0.1087   0.1093      0.1090
+    964    961   90.0    0.1091   0.1277      0.1090
+    603    601   90.0    0.1090   0.2654      0.1090
+Wrote pdb files with previous and current coordinates
+
+Step 32299, time 64.598 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 300.335449, max 7237.494629 (between atoms 606 and 605)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1063   1062   90.0    0.1654   0.1348      0.1090
+   1247   1246   35.4    0.1094   0.1093      0.1090
+   1251   1250   90.0    0.2288   0.1164      0.1090
+    606    605   80.5    0.1090 788.9959      0.1090
+    963    961   38.4    0.1093   0.1099      0.1090
+    964    961   65.1    0.1277   0.1086      0.1090
+    603    601   47.8    0.2654 788.7034      0.1090
+    604    601   40.1    0.1085   0.1138      0.1090
+Wrote pdb files with previous and current coordinates
+
+WARNING: Listed nonbonded interaction between particles 603 and 607
+at distance 2.194 which is larger than the table limit 2.100 nm.
+
+This is likely either a 1,4 interaction, or a listed interaction inside
+a smaller molecule you are decoupling during a free energy calculation.
+Since interactions at distances beyond the table cannot be computed,
+they are skipped until they are inside the table limit again. You will
+only see this message once, even if it occurs for several interactions.
+
+IMPORTANT: This should not happen in a stable simulation, so there is
+probably something wrong with your system. Only change the table-extension
+distance in the mdp file if you are really sure that is the reason.
+
+
+
+Step 32300, time 64.6 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 307.645813, max 7577.995117 (between atoms 603 and 601)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+    407    406   52.1    0.1090   3.4559      0.1090
+    409    406   95.6    0.1090   2.6837      0.1090
+   1247   1246   40.5    0.1093   0.1092      0.1090
+   1251   1250   90.0    0.1164   0.2231      0.1090
+   1063   1062   90.0    0.1348   0.1688      0.1090
+    964    961   90.0    0.1086   0.1158      0.1090
+    602    601   59.2    0.1108   0.1183      0.1090
+    603    601   80.1    2.0301 826.1104      0.1090
+    604    601   90.0    0.1138   0.1250      0.1090
+    606    605   69.1    1.8184 789.5559      0.1090
+Wrote pdb files with previous and current coordinates
+/var/spool/slurmd/job557326/slurm_script: Zeile 9: 2132423 Speicherzugriffsfehler  (Speicherabzug geschrieben) gmx mdrun -deffnm 14_prod

@@ -1,4 +1,4 @@
-# This file was created Tue Jun  3 09:57:41 2025
+# This file was created Wed Jun  4 09:46:06 2025
 # Created by:
 #                      :-) GROMACS - gmx energy, 2024.1 (-:
 # 
@@ -9,7 +9,7 @@
 #   gmx energy -f 14_prod.edr -o 14_temperature.xvg
 # gmx energy is part of G R O M A C S:
 #
-# GROwing Monsters And Cloning Shrimps
+# Gallium Rubidium Oxygen Manganese Argon Carbon Silicon
 #
 @    title "GROMACS Energies"
 @    xaxis  label "Time (ps)"

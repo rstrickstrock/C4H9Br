@@ -1,15 +1,15 @@
-# This file was created Tue Jun  3 09:58:56 2025
+# This file was created Wed Jun  4 09:44:11 2025
 # Created by:
 #                      :-) GROMACS - gmx energy, 2024.1 (-:
 # 
 # Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
 # Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
-# Working dir:  /work/rstric2s/current_sim/Application/2-C4H9Br
+# Working dir:  /work/rstric2s/current_sim/Application/01-2-C4H9Br
 # Command line:
 #   gmx energy -f 14_prod.edr -o 14_temperature.xvg
 # gmx energy is part of G R O M A C S:
 #
-# S  C  A  M  O  R  G
+# Giant Rising Ordinary Mutants for A Clerical Setup
 #
 @    title "GROMACS Energies"
 @    xaxis  label "Time (ps)"
