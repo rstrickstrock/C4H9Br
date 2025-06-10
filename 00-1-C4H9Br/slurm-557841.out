@@ -1,0 +1,209 @@
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/00-1-C4H9Br
+Command line:
+  gmx grompp -f 03_npt.mdp -c 12_nvt.gro -t 12_nvt.trr -p topol.top -o 13_npt.tpr
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file 03_npt.mdp]:
+  verlet-buffer-pressure-tolerance is ignored when verlet-buffer-tolerance
+  < 0
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group Other is 8181.00
+trr version: GMX_trn_file (single precision)
+Reading frame       0 time    0.000   Reading frame       1 time   20.000   Reading frame       2 time   40.000   Reading frame       3 time   60.000   Reading frame       4 time   80.000   Reading frame       5 time  100.000   Last frame          5 time  100.000   
+
+There was 1 NOTE
+
+GROMACS reminds you: "Ubiquitin's just a rock" (Berk Hess)
+
+Setting the LD random seed to -436211747
+
+Generated 331705 of the 331705 non-bonded parameter combinations
+
+Generated 331705 of the 331705 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Other'
+
+turning H bonds into constraints...
+Analysing residue names:
+There are:   248      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+The largest distance between excluded atoms is 0.443 nm between atom 299 and 308
+
+Reading Coordinates, Velocities and Box size from old trajectory
+
+Will read whole trajectory
+
+Using frame at t = 100 ps
+
+Starting time for run is 0 ps
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 24x24x24, spacing 0.146 0.146 0.146
+
+Estimate for the relative computational load of the PME mesh part: 0.24
+
+This run will generate roughly 5 Mb of data
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/00-1-C4H9Br
+Command line:
+  gmx mdrun -deffnm 13_npt
+
+Reading file 13_npt.tpr, VERSION 2024.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+starting mdrun '1-Bromobutane'
+500000 steps,   1000.0 ps.
+
+Step 4650  Warning: pressure scaling more than 1%, mu: 1.01079 1.01079 1.01079
+
+Step 33050  Warning: pressure scaling more than 1%, mu: 1.0105 1.0105 1.0105
+
+Step 51600  Warning: pressure scaling more than 1%, mu: 1.01029 1.01029 1.01029
+
+Step 63300  Warning: pressure scaling more than 1%, mu: 1.0105 1.0105 1.0105
+
+Step 96000  Warning: pressure scaling more than 1%, mu: 1.01046 1.01046 1.01046
+
+Step 111500  Warning: pressure scaling more than 1%, mu: 0.989901 0.989901 0.989901
+
+Step 124900  Warning: pressure scaling more than 1%, mu: 0.988816 0.988816 0.988816
+
+Step 125200  Warning: pressure scaling more than 1%, mu: 0.989704 0.989704 0.989704
+
+Step 125250  Warning: pressure scaling more than 1%, mu: 1.01077 1.01077 1.01077
+
+Step 131300  Warning: pressure scaling more than 1%, mu: 1.01009 1.01009 1.01009
+
+Step 140850  Warning: pressure scaling more than 1%, mu: 1.01157 1.01157 1.01157
+
+Step 141150  Warning: pressure scaling more than 1%, mu: 1.01012 1.01012 1.01012
+
+Step 145400  Warning: pressure scaling more than 1%, mu: 0.989952 0.989952 0.989952
+
+Step 145450  Warning: pressure scaling more than 1%, mu: 1.01157 1.01157 1.01157
+
+Step 145850  Warning: pressure scaling more than 1%, mu: 1.01103 1.01103 1.01103
+
+Step 165650  Warning: pressure scaling more than 1%, mu: 1.01053 1.01053 1.01053
+
+Step 178650  Warning: pressure scaling more than 1%, mu: 1.01267 1.01267 1.01267
+
+Step 178700  Warning: pressure scaling more than 1%, mu: 0.987476 0.987476 0.987476
+
+Step 178750  Warning: pressure scaling more than 1%, mu: 1.0137 1.0137 1.0137
+
+Step 178800  Warning: pressure scaling more than 1%, mu: 0.98909 0.98909 0.98909
+
+Step 179100  Warning: pressure scaling more than 1%, mu: 0.989828 0.989828 0.989828
+
+Step 182700  Warning: pressure scaling more than 1%, mu: 1.01075 1.01075 1.01075
+
+Step 202800  Warning: pressure scaling more than 1%, mu: 0.989842 0.989842 0.989842
+
+Step 208550  Warning: pressure scaling more than 1%, mu: 1.01175 1.01175 1.01175
+
+Step 208800  Warning: pressure scaling more than 1%, mu: 0.989378 0.989378 0.989378
+
+Step 208950  Warning: pressure scaling more than 1%, mu: 1.01085 1.01085 1.01085
+
+Step 210000  Warning: pressure scaling more than 1%, mu: 0.98716 0.98716 0.98716
+
+Step 210050  Warning: pressure scaling more than 1%, mu: 1.01016 1.01016 1.01016
+
+Step 220100  Warning: pressure scaling more than 1%, mu: 0.98755 0.98755 0.98755
+
+Step 220150  Warning: pressure scaling more than 1%, mu: 1.01035 1.01035 1.01035
+
+Step 220500  Warning: pressure scaling more than 1%, mu: 0.986887 0.986887 0.986887
+
+Step 220550  Warning: pressure scaling more than 1%, mu: 1.01083 1.01083 1.01083
+
+Step 242100  Warning: pressure scaling more than 1%, mu: 0.987861 0.987861 0.987861
+
+Step 258050  Warning: pressure scaling more than 1%, mu: 1.01065 1.01065 1.01065
+
+Step 258150  Warning: pressure scaling more than 1%, mu: 1.01168 1.01168 1.01168
+
+Step 258550  Warning: pressure scaling more than 1%, mu: 1.0111 1.0111 1.0111
+
+Step 302550  Warning: pressure scaling more than 1%, mu: 1.01041 1.01041 1.01041
+
+Step 309950  Warning: pressure scaling more than 1%, mu: 1.01076 1.01076 1.01076
+
+Step 344700  Warning: pressure scaling more than 1%, mu: 0.989844 0.989844 0.989844
+
+Step 348800  Warning: pressure scaling more than 1%, mu: 1.01059 1.01059 1.01059
+
+Step 349200  Warning: pressure scaling more than 1%, mu: 1.01117 1.01117 1.01117
+
+Step 373700  Warning: pressure scaling more than 1%, mu: 1.01003 1.01003 1.01003
+
+Step 373750  Warning: pressure scaling more than 1%, mu: 0.986733 0.986733 0.986733
+
+Step 373800  Warning: pressure scaling more than 1%, mu: 1.01097 1.01097 1.01097
+
+Step 373850  Warning: pressure scaling more than 1%, mu: 0.989314 0.989314 0.989314
+
+Step 381100  Warning: pressure scaling more than 1%, mu: 1.01068 1.01068 1.01068
+
+Step 381500  Warning: pressure scaling more than 1%, mu: 1.01031 1.01031 1.01031
+
+Step 397250  Warning: pressure scaling more than 1%, mu: 1.01026 1.01026 1.01026
+
+Step 400050  Warning: pressure scaling more than 1%, mu: 1.012 1.012 1.012
+
+Step 402450  Warning: pressure scaling more than 1%, mu: 0.989745 0.989745 0.989745
+
+Step 402500  Warning: pressure scaling more than 1%, mu: 1.01258 1.01258 1.01258
+
+Step 416350  Warning: pressure scaling more than 1%, mu: 1.01095 1.01095 1.01095
+
+Step 442900  Warning: pressure scaling more than 1%, mu: 0.988916 0.988916 0.988916
+
+Step 443450  Warning: pressure scaling more than 1%, mu: 1.01042 1.01042 1.01042
+
+Step 443850  Warning: pressure scaling more than 1%, mu: 1.01253 1.01253 1.01253
+
+Step 450700  Warning: pressure scaling more than 1%, mu: 1.01004 1.01004 1.01004
+
+Step 452650  Warning: pressure scaling more than 1%, mu: 0.989911 0.989911 0.989911
+
+Step 457400  Warning: pressure scaling more than 1%, mu: 0.989708 0.989708 0.989708
+
+Step 473950  Warning: pressure scaling more than 1%, mu: 1.01074 1.01074 1.01074
+
+Step 477550  Warning: pressure scaling more than 1%, mu: 1.01025 1.01025 1.01025
+
+Step 477650  Warning: pressure scaling more than 1%, mu: 1.01212 1.01212 1.01212
+
+Step 477700  Warning: pressure scaling more than 1%, mu: 0.987246 0.987246 0.987246
+
+Step 477750  Warning: pressure scaling more than 1%, mu: 1.01042 1.01042 1.01042
+
+Step 490050  Warning: pressure scaling more than 1%, mu: 1.01022 1.01022 1.01022
+
+Writing final coordinates.
+
+NOTE: 3 % of the run time was spent in domain decomposition,
+      14 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     1233.305     1233.305      100.0
+                 (ns/day)    (hour/ns)
+Performance:       70.056        0.343
+
+GROMACS reminds you: "A university faculty is 500 egotists with a common parking problem." (Keith Sullivan)
+

@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --mem 1G
 #SBATCH --time=24:00:00
-#SBATCH --job-name=1Cnpt
+#SBATCH --job-name=1CXnpt
 
 gmx grompp -f 03_npt.mdp -c 12_nvt.gro -t 12_nvt.trr -p topol.top -o 13_npt.tpr
 gmx mdrun -deffnm 13_npt

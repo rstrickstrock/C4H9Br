@@ -1,0 +1,58 @@
+# This file was created Tue Jun 10 14:21:35 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2024.1 (-:
+# 
+# Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+# Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+# Working dir:  /work/rstric2s/current_sim/Application/00-1-C4H9Br
+# Command line:
+#   gmx energy -f 11_emin.edr -o 11_potential
+# gmx energy is part of G R O M A C S:
+#
+# Good ROcking Metal Altar for Chronical Sinners
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  119700.445312
+    1.000000  90017.718750
+    2.000000  60643.281250
+    3.000000  36624.117188
+    4.000000  24316.105469
+    5.000000  16806.199219
+    7.000000  14675.728516
+    8.000000  14412.889648
+    9.000000  13628.857422
+   11.000000  11233.455078
+   12.000000  11146.723633
+   13.000000  10027.929688
+   15.000000  8974.152344
+   17.000000  8657.693359
+   18.000000  8187.005371
+   20.000000  7811.312500
+   21.000000  7478.157227
+   22.000000  7123.289551
+   23.000000  7082.455078
+   24.000000  6679.187500
+   26.000000  6272.008301
+   27.000000  6139.016113
+   28.000000  5861.063965
+   29.000000  5839.542480
+   30.000000  5765.143555
+   31.000000  5760.758789
+   33.000000  4930.764648
+   35.000000  4731.386719
+   36.000000  4566.092285
+   37.000000  4464.707031
+   38.000000  4346.911133
+   39.000000  4311.684570
+   40.000000  4240.918945
+   42.000000  3789.670410

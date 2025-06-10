@@ -63,23 +63,23 @@
     C4    Br1
 
 ; 1-bromobutane with extra point charge
-[ 1BE4 ]
+[ 1BX4 ]
  [ atoms ]
-    C1    opls_135    -0.18    0
-    H11    opls_140    0.06    1
-    H12    opls_140    0.06    2
-    H13    opls_140    0.06    3
-    C2    opls_136    -0.12    4
-    H21    opls_140    0.06    5
-    H22    opls_140    0.06    6
-    C3    opls_136    -0.12    7
-    H31    opls_140    0.06    8
-    H32    opls_140    0.06    9
-    C4    opls_135    0.08    10
-    H41    opls_140    0.06    11
-    H42    opls_140    0.06    12
-    Br1 opls_730  -0.22 13
-    DUM MW        0.02  14
+    C1     opls_135    -0.043355   0
+    H11    opls_140    0.009566    1
+    H12    opls_140    0.009566    2
+    H13    opls_140    0.009566    3
+    C2     opls_136    0.058820    4
+    H21    opls_140    -0.009806   5
+    H22    opls_140    -0.009806   6
+    C3     opls_136    0.044318    7
+    H31    opls_140    0.007456    8
+    H32    opls_140    0.007456    9
+    C4     opls_135    0.051557    10
+    H41    opls_140    0.067628    11
+    H42    opls_140    0.067628    12
+    Br1    opls_730    -0.341823   13
+    DUM    MW          0.071228    14
  [ bonds ]
     C1    C2
     C1    H11
@@ -88,13 +88,13 @@
     C2    H21
     C2    H21
     C2    C3
-    C3  H31
-    C3  H32
-    C3  C4
-    C4  H41
-    C4  H42
-    C4  Br1
-    Br1 DUM
+    C3    H31
+    C3    H32
+    C3    C4
+    C4    H41
+    C4    H42
+    C4    Br1
+    Br1   DUM
 
 [ 2BC4 ]
  [ atoms ]
