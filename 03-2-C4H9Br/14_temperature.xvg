@@ -1,4 +1,4 @@
-# This file was created Tue Jun  3 09:54:30 2025
+# This file was created Wed Jun  4 09:48:52 2025
 # Created by:
 #                      :-) GROMACS - gmx energy, 2024.1 (-:
 # 
@@ -9,7 +9,7 @@
 #   gmx energy -f 14_prod.edr -o 14_temperature.xvg
 # gmx energy is part of G R O M A C S:
 #
-# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+# Glycine aRginine prOline Methionine Alanine Cystine Serine
 #
 @    title "GROMACS Energies"
 @    xaxis  label "Time (ps)"

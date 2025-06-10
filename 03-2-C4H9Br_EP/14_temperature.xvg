@@ -1,4 +1,4 @@
-# This file was created Tue Jun  3 09:55:21 2025
+# This file was created Wed Jun  4 09:49:26 2025
 # Created by:
 #                      :-) GROMACS - gmx energy, 2024.1 (-:
 # 
@@ -9,7 +9,7 @@
 #   gmx energy -f 14_prod.edr -o 14_temperature.xvg
 # gmx energy is part of G R O M A C S:
 #
-# GRowing Old MAkes el Chrono Sweat
+# GROtesk MACabre and Sinister
 #
 @    title "GROMACS Energies"
 @    xaxis  label "Time (ps)"

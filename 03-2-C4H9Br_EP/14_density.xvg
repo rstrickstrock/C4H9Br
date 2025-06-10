@@ -1,4 +1,4 @@
-# This file was created Tue Jun  3 09:55:34 2025
+# This file was created Wed Jun  4 09:52:28 2025
 # Created by:
 #                      :-) GROMACS - gmx energy, 2024.1 (-:
 # 
@@ -6,10 +6,10 @@
 # Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
 # Working dir:  /work/rstric2s/current_sim/Application/03-2-C4H9Br_EP
 # Command line:
-#   gmx energy -f 14_prod.edr -o 14_density
+#   gmx energy -f 14_prod.edr -o 14_density.xvg
 # gmx energy is part of G R O M A C S:
 #
-# Georgetown Riga Oslo Madrid Amsterdam Chisinau Stockholm
+# GROtesk MACabre and Sinister
 #
 @    title "GROMACS Energies"
 @    xaxis  label "Time (ps)"
