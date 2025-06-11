@@ -2,7 +2,7 @@
 ;	File 'topol.top' was generated
 ;	By user: rstric2s (3126)
 ;	On host: wr0.wr.inf.h-brs.de
-;	At date: Tue Jun 10 15:01:34 2025
+;	At date: Wed Jun 11 09:14:45 2025
 ;
 ;	This is a standalone topology file
 ;
@@ -13,7 +13,7 @@
 ;	Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
 ;	Working dir:  /work/rstric2s/current_sim/Application/00-1-C4H9Br_X
 ;	Command line:
-;	  gmx pdb2gmx -f 00_1_bromobutane_x_mp2_acct.pdb -o 00_1-bromobutane-x.gro
+;	  gmx pdb2gmx -f 00_1_bromobutane_x_mp2_acct.pdb -o 00_1-bromobutane-ep.gro
 ;	Force field was read from current directory or a relative path - path added.
 ;
 
@@ -27,25 +27,25 @@ Other               3
 [ atoms ]
 ;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
 ; residue   1 1BX4 rtp 1BX4 q  0.0
-     1   opls_135      1   1BX4     C1      1  -0.043355     12.011
-     2   opls_140      1   1BX4    H11      2   0.009566      1.008
-     3   opls_140      1   1BX4    H12      3   0.009566      1.008
-     4   opls_140      1   1BX4    H13      4   0.009566      1.008
-     5   opls_136      1   1BX4     C2      5    0.05882     12.011
-     6   opls_140      1   1BX4    H21      6  -0.009806      1.008
-     7   opls_140      1   1BX4    H22      7  -0.009806      1.008
-     8   opls_136      1   1BX4     C3      8   0.044318     12.011
-     9   opls_140      1   1BX4    H31      9   0.007456      1.008
-    10   opls_140      1   1BX4    H32     10   0.007456      1.008
+     1   opls_135      1   1BX4     C1      1  -0.042445     12.011
+     2   opls_140      1   1BX4    H11      2   0.010192      1.008
+     3   opls_140      1   1BX4    H12      3   0.010192      1.008
+     4   opls_140      1   1BX4    H13      4   0.010192      1.008
+     5   opls_136      1   1BX4     C2      5   0.048228     12.011
+     6   opls_140      1   1BX4    H21      6  -0.005025      1.008
+     7   opls_140      1   1BX4    H22      7  -0.005025      1.008
+     8   opls_136      1   1BX4     C3      8   0.027006     12.011
+     9   opls_140      1   1BX4    H31      9   0.014441      1.008
+    10   opls_140      1   1BX4    H32     10   0.014441      1.008
     11   opls_135      1   1BX4     C4     11   0.051557     12.011
-    12   opls_140      1   1BX4    H41     12   0.067628      1.008
-    13   opls_140      1   1BX4    H42     13   0.067628      1.008
+    12   opls_140      1   1BX4    H41     12   0.071247      1.008
+    13   opls_140      1   1BX4    H42     13   0.071247      1.008
     14   opls_730      1   1BX4    Br1     14  -0.341823     79.904
-    15         MW      1   1BX4    DUM     15   0.071228          0   ; qtot 0
+    15         MW      1   1BX4    DUM     15   0.065575          0   ; qtot 0
 
 [ virtual_sites2 ]
 ; site from  atom1  atom2  func  a
-  15     14     11    2     0.16
+  15     14     11    2     0.2
 
 [ bonds ]
 ;  ai    aj funct            c0            c1            c2            c3
@@ -156,4 +156,4 @@ Other               3
 
 [ molecules ]
 ; Compound        #mols
-Other               226
+Other               209
