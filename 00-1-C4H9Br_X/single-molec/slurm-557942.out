@@ -18,9 +18,9 @@ NOTE 1 [file 01_emin.mdp]:
 
 There was 1 NOTE
 
-GROMACS reminds you: "If I have not seen as far as others, it is because giants were standing on my shoulders." (Hal Abelson)
+GROMACS reminds you: "Do you know what cations don't like? Dog-ions. Do you know what they like? Pie." (Tom Cheatham)
 
-Setting the LD random seed to -338693313
+Setting the LD random seed to -9054249
 
 Generated 331705 of the 331705 non-bonded parameter combinations
 
@@ -58,12 +58,23 @@ Steepest Descents:
    Tolerance (Fmax)   =  1.00000e+03
    Number of steps    =        50000
 
+Energy minimization has stopped, but the forces have not converged to the
+requested precision Fmax < 1000 (which may not be possible for your system).
+It stopped because the algorithm tried to make a new step whose size was too
+small, or there was no change in the energy since last step. Either way, we
+regard the minimization as converged to within the available machine
+precision, given your starting configuration and EM parameters.
+
+Double precision normally gives you higher accuracy, but this is often not
+needed for preparing to run molecular dynamics.
+
 writing lowest energy coordinates.
 
-Steepest Descents converged to Fmax < 1000 in 4 steps
-Potential Energy  =  4.9675900e+01
-Maximum force     =  3.0004453e+02 on atom 8
-Norm of force     =  1.5387157e+02
+Steepest Descents converged to machine precision in 22 steps,
+but did not reach the requested Fmax < 1000.
+Potential Energy  = -5.0130449e+03
+Maximum force     =  3.1056060e+06 on atom 14
+Norm of force     =  1.1337358e+06
 
-GROMACS reminds you: "If I have not seen as far as others, it is because giants were standing on my shoulders." (Hal Abelson)
+GROMACS reminds you: "Do you know what cations don't like? Dog-ions. Do you know what they like? Pie." (Tom Cheatham)
 
