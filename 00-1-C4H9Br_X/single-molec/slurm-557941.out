@@ -1,0 +1,69 @@
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/00-1-C4H9Br_X/single-molec
+Command line:
+  gmx grompp -f 01_emin.mdp -c 00_box_1-bromobutane-ep.gro -p topol.top -o 11_emin.tpr
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group rest is 39.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 1 [file 01_emin.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+There was 1 NOTE
+
+GROMACS reminds you: "If I have not seen as far as others, it is because giants were standing on my shoulders." (Hal Abelson)
+
+Setting the LD random seed to -338693313
+
+Generated 331705 of the 331705 non-bonded parameter combinations
+
+Generated 331705 of the 331705 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Other'
+
+Cleaning up constraints and constant bonded interactions with virtual sites
+Analysing residue names:
+There are:     1      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+This run will generate roughly 0 Mb of data
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/00-1-C4H9Br_X/single-molec
+Command line:
+  gmx mdrun -deffnm 11_emin
+
+Reading file 11_emin.tpr, VERSION 2024.1 (single precision)
+
+NOTE: Parallelization is limited by the small number of atoms,
+      only starting 1 thread-MPI ranks.
+      You can use the -nt and/or -ntmpi option to optimize the number of threads.
+
+Update groups can not be used for this system because an incompatible virtual site type is used
+
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+03
+   Number of steps    =        50000
+
+writing lowest energy coordinates.
+
+Steepest Descents converged to Fmax < 1000 in 4 steps
+Potential Energy  =  4.9675900e+01
+Maximum force     =  3.0004453e+02 on atom 8
+Norm of force     =  1.5387157e+02
+
+GROMACS reminds you: "If I have not seen as far as others, it is because giants were standing on my shoulders." (Hal Abelson)
+
