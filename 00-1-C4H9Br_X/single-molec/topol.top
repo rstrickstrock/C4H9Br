@@ -45,7 +45,7 @@ Other               3
 
 [ virtual_sites2 ]
 ; site from  atom1  atom2  func  a
-  15     11     14    2     -0.2
+  15     14     11    2     -0.15
 
 [ bonds ]
 ;  ai    aj funct            c0            c1            c2            c3
