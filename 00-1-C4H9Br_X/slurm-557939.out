@@ -1,0 +1,285 @@
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/00-1-C4H9Br_X
+Command line:
+  gmx grompp -f 03_npt.mdp -c 12_nvt.gro -t 12_nvt.trr -p topol.top -o 13_npt.tpr
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file 03_npt.mdp]:
+  verlet-buffer-pressure-tolerance is ignored when verlet-buffer-tolerance
+  < 0
+
+Generating 1-4 interactions: fudge = 0.5
+Number of degrees of freedom in T-Coupling group Other is 6894.00
+trr version: GMX_trn_file (single precision)
+Reading frame       0 time    0.000   Reading frame       1 time   20.000   Reading frame       2 time   40.000   Reading frame       3 time   60.000   Reading frame       4 time   80.000   Reading frame       5 time  100.000   Last frame          5 time  100.000   
+
+There was 1 NOTE
+
+GROMACS reminds you: "Fly to the Court of England and Unfold" (Macbeth, Act 3, Scene 6, William Shakespeare)
+
+Setting the LD random seed to -2654897
+
+Generated 331705 of the 331705 non-bonded parameter combinations
+
+Generated 331705 of the 331705 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Other'
+
+turning H bonds into constraints...
+
+Cleaning up constraints and constant bonded interactions with virtual sites
+Analysing residue names:
+There are:   209      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+The largest distance between excluded atoms is 0.438 nm between atom 335 and 344
+
+Reading Coordinates, Velocities and Box size from old trajectory
+
+Will read whole trajectory
+
+Using frame at t = 100 ps
+
+Starting time for run is 0 ps
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 24x24x24, spacing 0.149 0.149 0.149
+
+Estimate for the relative computational load of the PME mesh part: 0.26
+
+This run will generate roughly 4 Mb of data
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+Working dir:  /work/rstric2s/current_sim/Application/00-1-C4H9Br_X
+Command line:
+  gmx mdrun -deffnm 13_npt
+
+Reading file 13_npt.tpr, VERSION 2024.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because an incompatible virtual site type is used
+
+Using 1 MPI thread
+Using 1 OpenMP thread 
+
+starting mdrun '1-Bromobutane-x'
+500000 steps,   1000.0 ps.
+
+Step 10850  Warning: pressure scaling more than 1%, mu: 1.01128 1.01128 1.01128
+
+Step 10900  Warning: pressure scaling more than 1%, mu: 0.985526 0.985526 0.985526
+
+Step 10950  Warning: pressure scaling more than 1%, mu: 1.01447 1.01447 1.01447
+
+Step 11000  Warning: pressure scaling more than 1%, mu: 0.989802 0.989802 0.989802
+
+Step 11050  Warning: pressure scaling more than 1%, mu: 1.01018 1.01018 1.01018
+
+Step 11100  Warning: pressure scaling more than 1%, mu: 0.989553 0.989553 0.989553
+
+Step 11150  Warning: pressure scaling more than 1%, mu: 1.01006 1.01006 1.01006
+
+Step 11200  Warning: pressure scaling more than 1%, mu: 0.988546 0.988546 0.988546
+
+Step 11250  Warning: pressure scaling more than 1%, mu: 1.01386 1.01386 1.01386
+
+Step 11300  Warning: pressure scaling more than 1%, mu: 0.9862 0.9862 0.9862
+
+Step 11350  Warning: pressure scaling more than 1%, mu: 1.01093 1.01093 1.01093
+
+Step 11400  Warning: pressure scaling more than 1%, mu: 0.986617 0.986617 0.986617
+
+Step 11450  Warning: pressure scaling more than 1%, mu: 1.01416 1.01416 1.01416
+
+Step 11500  Warning: pressure scaling more than 1%, mu: 0.985317 0.985317 0.985317
+
+Step 11550  Warning: pressure scaling more than 1%, mu: 1.01145 1.01145 1.01145
+
+Step 11600  Warning: pressure scaling more than 1%, mu: 0.982425 0.982425 0.982425
+
+Step 11650  Warning: pressure scaling more than 1%, mu: 1.01983 1.01983 1.01983
+
+Step 11700  Warning: pressure scaling more than 1%, mu: 0.981234 0.981234 0.981234
+
+Step 11750  Warning: pressure scaling more than 1%, mu: 1.02255 1.02255 1.02255
+
+Step 11800  Warning: pressure scaling more than 1%, mu: 0.970536 0.970536 0.970536
+
+Step 11850  Warning: pressure scaling more than 1%, mu: 1.02585 1.02585 1.02585
+
+Step 11900  Warning: pressure scaling more than 1%, mu: 0.982522 0.982522 0.982522
+
+Step 11950  Warning: pressure scaling more than 1%, mu: 1.01727 1.01727 1.01727
+
+Step 12000  Warning: pressure scaling more than 1%, mu: 0.984186 0.984186 0.984186
+
+Step 12050  Warning: pressure scaling more than 1%, mu: 1.0173 1.0173 1.0173
+
+Step 12100  Warning: pressure scaling more than 1%, mu: 0.975416 0.975416 0.975416
+
+Step 12150  Warning: pressure scaling more than 1%, mu: 1.03406 1.03406 1.03406
+
+Step 12200  Warning: pressure scaling more than 1%, mu: 0.967655 0.967655 0.967655
+
+Step 12250  Warning: pressure scaling more than 1%, mu: 1.02653 1.02653 1.02653
+
+Step 12300  Warning: pressure scaling more than 1%, mu: 0.979466 0.979466 0.979466
+
+Step 12350  Warning: pressure scaling more than 1%, mu: 1.01408 1.01408 1.01408
+
+Step 12400  Warning: pressure scaling more than 1%, mu: 0.985647 0.985647 0.985647
+
+Step 12450  Warning: pressure scaling more than 1%, mu: 1.01498 1.01498 1.01498
+
+Step 12500  Warning: pressure scaling more than 1%, mu: 0.976907 0.976907 0.976907
+
+Step 12550  Warning: pressure scaling more than 1%, mu: 1.03131 1.03131 1.03131
+
+Step 12600  Warning: pressure scaling more than 1%, mu: 0.962292 0.962292 0.962292
+
+Step 12650  Warning: pressure scaling more than 1%, mu: 1.03624 1.03624 1.03624
+
+Step 12656, time 25.312 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000016, max 0.000445 (between atoms 1527 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   30.7    0.1092   0.1090      0.1090
+
+Step 12657, time 25.314 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000125, max 0.004139 (between atoms 1528 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   34.3    0.1090   0.1086      0.1090
+
+Step 12660, time 25.32 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000020, max 0.000751 (between atoms 1528 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   33.8    0.1090   0.1090      0.1090
+
+Step 12661, time 25.322 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000016, max 0.000448 (between atoms 1524 and 1523)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   43.4    0.1090   0.1090      0.1090
+
+Step 12662, time 25.324 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000125, max 0.004995 (between atoms 1528 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   39.4    0.1090   0.1092      0.1090
+
+Step 12663, time 25.326 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000109, max 0.003170 (between atoms 1528 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1525   1523   30.4    0.1090   0.1090      0.1090
+
+Step 12664, time 25.328 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000152, max 0.005414 (between atoms 1527 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1528   1526   35.3    0.1087   0.1086      0.1090
+
+Step 12665, time 25.33 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000271, max 0.008861 (between atoms 1528 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   40.2    0.1096   0.1098      0.1090
+   1528   1526   32.1    0.1086   0.1080      0.1090
+
+Step 12666, time 25.332 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000186, max 0.007147 (between atoms 1528 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   43.0    0.1098   0.1094      0.1090
+
+Step 12667, time 25.334 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000083, max 0.003156 (between atoms 1528 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   36.5    0.1094   0.1091      0.1090
+
+Step 12668, time 25.336 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000115, max 0.004005 (between atoms 1525 and 1523)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1524   1523   38.1    0.1091   0.1089      0.1090
+
+Step 12669, time 25.338 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000190, max 0.005109 (between atoms 1527 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1524   1523   39.4    0.1089   0.1093      0.1090
+   1528   1526   30.6    0.1088   0.1085      0.1090
+
+Step 12670, time 25.34 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000065, max 0.001765 (between atoms 1524 and 1523)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   30.6    0.1084   0.1089      0.1090
+
+Step 12671, time 25.342 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000043, max 0.001831 (between atoms 1528 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   38.0    0.1089   0.1090      0.1090
+
+Step 12672, time 25.344 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000124, max 0.003436 (between atoms 1524 and 1523)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   34.5    0.1090   0.1093      0.1090
+   1524   1523   34.6    0.1090   0.1086      0.1090
+
+Step 12673, time 25.346 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000119, max 0.003807 (between atoms 1524 and 1523)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1524   1523   34.1    0.1086   0.1086      0.1090
+
+Step 12674, time 25.348 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000083, max 0.002797 (between atoms 1527 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1525   1523   34.6    0.1087   0.1092      0.1090
+
+Step 12675, time 25.35 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000131, max 0.003210 (between atoms 1525 and 1523)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1525   1523   38.1    0.1092   0.1093      0.1090
+
+Step 12676, time 25.352 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 6.319689, max 194.337936 (between atoms 1527 and 1526)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+   1527   1526   92.2    0.1093  21.2918      0.1090
+   1524   1523   91.4    0.1093  21.1760      0.1090
+   1525   1523   90.0    0.1093   0.2544      0.1090
+Wrote pdb files with previous and current coordinates
+/var/spool/slurmd/job557939/slurm_script: Zeile 9: 22088 Speicherzugriffsfehler  (Speicherabzug geschrieben) gmx mdrun -deffnm 13_npt

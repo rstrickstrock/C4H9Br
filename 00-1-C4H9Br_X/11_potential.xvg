@@ -1,0 +1,37 @@
+# This file was created Wed Jun 11 09:39:36 2025
+# Created by:
+#                      :-) GROMACS - gmx energy, 2024.1 (-:
+# 
+# Executable:   /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0/bin/gmx
+# Data prefix:  /usr/local/hpc1/software_molmod/gromacs/gromacs-2024.1-bin_wr0
+# Working dir:  /work/rstric2s/current_sim/Application/00-1-C4H9Br_X
+# Command line:
+#   gmx energy -f 11_emin.edr -o 11_potential
+# gmx energy is part of G R O M A C S:
+#
+# Georgetown Riga Oslo Madrid Amsterdam Chisinau Stockholm
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Potential"
+    0.000000  60234.777344
+    1.000000  37707.140625
+    2.000000  24856.429688
+    3.000000  18769.748047
+    4.000000  16614.449219
+    5.000000  15385.986328
+    6.000000  14993.695312
+    7.000000  14002.361328
+    9.000000  13760.327148
+   11.000000  13392.957031
+   12.000000  13313.292969
+   13.000000  12596.305664
+   15.000000  12395.639648
